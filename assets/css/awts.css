@@ -1,0 +1,145 @@
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+
+body{
+  overflow-x: hidden! important;
+}
+
+.container{
+  padding-left: 0px! important;
+  padding-right: 0px! important;
+}
+
+.headerPanelCss{
+  color: #19A0C6;
+}
+
+.headerPanel{
+  font-weight: bold;
+  font-size: 16px! important;
+  color: #505965;
+}
+
+.textPanel{
+  font-size: 12px! important;
+  color: #3C3C3C;
+}
+
+.aboutusmission-css{
+  background-image: url(../images/aboutusandmission1.svg), url(../images/aboutusandmission2.svg);
+  /* background-position: right top; */
+  background-position: -webkit-calc(100% + 165px) 0px, -webkit-calc(100% + 256px) top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 1000px 600px, 600px 600px;
+}
+
+.headerPage{
+  font-weight: bold;
+  font-size: 20px! important;
+  color: #505965;
+}
+
+.lineBreak{
+  width: 5%;
+  position: absolute;
+  left: 47%;
+  border-top: 1.5px solid #19A0C6! important;
+  margin-top: 10px;
+}
+
+.amazonservices-css{
+  background-image: url(../images/amazonservices.svg), url(../images/amazonadvertising.svg);
+  background-position: -505px -150px, -webkit-calc(100% + 465px) top;
+  background-repeat: no-repeat;
+  background-size: 1000px 400px, 600px 600px;
+}
+
+.portfolioLabel{
+  color: #505965;
+  font-family: bold;
+  font-size: 12px;
+}
+
+.contactLabelCss{
+  color: #555E69;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.labelContact{
+  font-size: 12px! important;
+  color: #B7B9BA;
+}
+
+.footerPanel {
+  background: 
+    linear-gradient(to bottom right,transparent 49.8%,#fff 50%) bottom right/65px 65px no-repeat, #505965;
+  height: 50px! important;
+  width: 100%! important;
+  position: relative;
+}
+
+.gradeTriangle {
+  bottom: 8px;
+  right: 20px;
+  position: absolute;
+  color: #505965;
+  font-size: 12px;
+}
+
+.rotateTextFooter{
+  -webkit-transform: rotate(-45deg)! important;
+  -moz-transform: rotate(-45deg)! important;
+}
+
+.portfolioCircle{
+    width: 100%;
+    height: 140px;
+    position: relative;
+    top: 166px;
+    left: -70px;
+    z-index: 1;
+}
+
+.whatsapp{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.nav-link {
+  color: #505965! important;
+  padding-right: 0.75rem! important;
+  padding-left: 0.75rem! important;
+}
+
+.dropdown-menu{
+  background-color: #e6e6e6! important;
+}
+
+.active{
+  font-weight: bold;
+}
+
+.navbar-nav > li > a:focus, 
+.navbar-nav > li > a:hover 
+{
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+

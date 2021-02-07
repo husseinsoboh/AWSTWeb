@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="621.145" height="1192.459" viewBox="0 0 621.145 1192.459">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_66" data-name="Rectangle 66" width="18.736" height="12.847" fill="none"/>
+    </clipPath>
+    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 3 2">
+      <image width="3" height="2" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAA6ADAAQAAAABAAAAAgAAAABJdlXTAAAAG0lEQVQIHWNmYGBQAWJvIH7MDCR+AfF/IL4HACP6BDDttrZ5AAAAAElFTkSuQmCC"/>
+    </pattern>
+  </defs>
+  <g id="shape_blue" data-name="shape blue" transform="matrix(0.087, -0.996, 0.996, 0.087, 0, 1146.894)">
+    <g id="Group_458" data-name="Group 458" transform="translate(566.27 254.974)">
+      <g id="Group_457" data-name="Group 457" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <rect id="Rectangle_65" data-name="Rectangle 65" width="18.736" height="12.847" fill="url(#pattern)"/>
+      </g>
+    </g>
+    <path id="Path_859" data-name="Path 859" d="M441.543,522.586c-50.077-2.413-99.979-25.486-142.886-52.8C206.315,410.46,122.367,325,24.253,283.324L0,274.082V0H1151.275l-5.718,1.8a81.1,81.1,0,0,0-33.54,23.485c-28.605,33.9-26.117,85.385-53.478,120.543C1007.549,212.38,901.837,173.455,821,194.8,669.271,234.982,643.154,478.579,491.426,517.5A162.318,162.318,0,0,1,441.543,522.586Z" transform="translate(0)" fill="#0aa0c6" fill-rule="evenodd"/>
+  </g>
+</svg>

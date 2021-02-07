@@ -1,15 +1,22 @@
 function initMap() {
-    // Latitude and Longitude
-    var myLatLng = {lat: 24.7135517, lng: 46.6752957};
+    var locations = [
+        ['SAUDI ARABIA', 24.7136, 46.6753, 4],
+        ['JORDAN', 31.9539, 35.9106, 5],
+        ['LEBANON', 33.8938, 35.5018, 3],
+        ['CANADA', 45.5017, 73.5673, 2]
+      ];
 
     var map = new google.maps.Map(document.getElementById('myMap'), {
-        zoom: 17,
-        center: myLatLng
+        zoom: 2,
+        center: new google.maps.LatLng(33.8938, 35.5018),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-    var marker = new google.maps.Marker({
-        position: myLatLng,
+    for (var i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
         map: map,
-        title: 'Riyadh, KSA' // Title Location
-    });
+        title: locations[i][0]
+      });
+    }
 }

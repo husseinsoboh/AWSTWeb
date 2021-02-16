@@ -110,7 +110,7 @@ function loadAmazonAdvertising(){
     let elem = list[i];
 
     divMenu += '<li><a class="dropdown-item py-2" href="#services">'+elem.name+'</a></li>';
-    div += '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft"><div class="card card-body border-0 text-center shadow pt-5"><div class="svg-icon mx-auto mb-4"><img src="'+elem.image+'" alt=""></div><h5 class="headerPanel">'+elem.name+'</h5><p class="textPanel mt-4">'+elem.description+'</p></div></div>';
+    div += '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft"><div class="card card-body border-0 text-center shadow pt-5 cardCss"><div class="svg-icon mx-auto mb-4"><img src="'+elem.image+'" alt=""></div><h5 class="headerPanel">'+elem.name+'</h5><p class="textPanel mt-4">'+elem.description+'</p></div></div>';
     console.log(elem.name);
   }
 

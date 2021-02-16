@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="assets/css/animate.css">
 
     <link rel="stylesheet" href="assets/css/carousel.css">
+
+    <link rel="stylesheet" href="assets/scss/text-animation.css" />
     </head>
     
     <body>
@@ -87,30 +89,59 @@
     </header>
     <!-- ***** Header Area End ***** -->
     
-    <div class="welcome-area row" id="welcome">
-        <div class="container header-text" class="row" style="width: 100%! important;">
-            <div style="text-align: left! important; width: 30%! important; position: relative; top: 100px;">
+    <div class="welcome-area row" id="welcome" style="left: 0px;">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+        </video>
+
+        <div class="container header-text row" style="width: 100%! important;">
+            <div style="text-align: left! important; width: 10%! important; position: relative; top: 50px; margin-top: 100px;">
+                <div class="col-lg-12 col-md-12 col-sm-12" style="padding-left: 0px! important; padding-right:0px! important;">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row" style="text-align: left! important; width: 90%! important; position: relative; top: 100px;">
+                <!--
                 <svg xmlns="http://www.w3.org/2000/svg" style="width:100%" height="95" viewBox="0 0 601 95">
                     <text id="LET_S_AMAZON" data-name="LET’S AMAZON" transform="translate(0 78)" fill="#18a0c6" font-size="80" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"><tspan x="0" y="0">LET’S AMAZON</tspan></text>
                 </svg>
+            -->
+                <div class="containerWave col-12">
+                    <div class="coast">
+                        <div class="wave-rel-wrap">
+                        <div class="wave"></div>
+                        </div>
+                    </div>
+                    <div class="coast delay">
+                        <div class="wave-rel-wrap">
+                            <div class="wave delay"></div>
+                        </div>
+                    </div>
+                    <div class="text text-L">L</div>
+                    <div class="text text-e">e</div>
+                    <div class="text text-t">t</div>
+                    <div class="text text-Ap">'</div>
+                    <div class="text text-s">s</div>
+                    <div class="text text-sp"></div>
+                    <div class="text text-A">A</div>
+                    <div class="text text-m">m</div>
+                    <div class="text text-a">a</div>
+                    <div class="text text-z">z</div>
+                    <div class="text text-o">o</div>
+                    <div class="text text-n">n</div>
+                </div>
 
-                <svg xmlns="http://www.w3.org/2000/svg" style="width:100%"  height="113" viewBox="0 0 600 113" style="margin-top: 40px! important;">
-                    <text id="WE_TAKE_YOUR_BRAND_TO_THE_NEXT_LEVEL_ON_AMAZON.SA" data-name="WE TAKE YOUR BRAND TO THE NEXT LEVEL ON AMAZON.SA" fill="#505965" font-size="32" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"><tspan x="0" y="31">WE TAKE YOUR BRAND TO THE NEXT </tspan><tspan x="0" y="70">LEVEL ON AMAZON.SA</tspan></text>
-                </svg>
-            </div>
-
-            <div style="width: 70%! important;">
-            </div>
-        </div>
-
-        <div style="width: 100%! important; margin-left: 50px; margin-top: 100px;">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <ul class="social">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
-                </ul>
+                <div class="col-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="width:100%"  height="113" viewBox="0 0 600 113" style="margin-top: 40px! important;">
+                        <text id="WE_TAKE_YOUR_BRAND_TO_THE_NEXT_LEVEL_ON_AMAZON.SA" data-name="WE TAKE YOUR BRAND TO THE NEXT LEVEL ON AMAZON.SA" fill="#505965" font-size="32" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"><tspan x="0" y="31">WE TAKE YOUR BRAND TO THE NEXT </tspan><tspan x="0" y="70">LEVEL ON AMAZON.SA</tspan></text>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
@@ -133,7 +164,7 @@
     </div>
 
     <div class="aboutusmission-css section" style="padding-top: 0px! important;"> 
-        <div class="ml-32" style="width: 40%! important;">
+        <div class="malr" style="width: 40%! important;">
             <div class="headerPanel">About <span class="headerPanelCss">Us</span></div>
             <div class="mt-6 textPanel">
                     Advanced World Technology Services is a full-Service eCommerce agency offering top quality eCommerce support services and a variety of eCommerce catalog management services at reasonable prices.
@@ -141,14 +172,14 @@
             </div>
         </div>
 
-        <div class="ml-32 mt-10" style="width: 40%! important;">
+        <div class="malr mt-10" style="width: 40%! important;">
             <div class="headerPanel">Our <span class="headerPanelCss">Mission</span></div>
             <div class="mt-6 textPanel">
                     To start with, AWTS eCommerce empower companies to speed up visual content production. We work as one with our clients and partners to deliver highly performing digital tools solutions and best services.
             </div>
         </div>
 
-        <div class="ml-32 mt-10 row" style="width: 100%! important;">
+        <div class="malr mt-10 row" style="width: 100%! important;">
             <div style="width: 50%! important;">
                 <img src="assets/images/whatwedoimg.svg" alt="AWTS" style="width:100%; height:300px;"/>
             </div>
@@ -200,39 +231,7 @@
                         <!-- Amazon advertising start-->
                         <div class="row justify-content-center mt-5">
                             <div class="col-lg-10">
-                                <div id="amazon-advertising-list" class="row justify-content-center">
-                                    <!--
-                                    <div class="col-md-6 col-lg-4 py-3 wow fadeInLeft">
-                                        <div class="card card-body border-0 text-center shadow pt-5">
-                                        <div class="svg-icon mx-auto mb-4">
-                                            <img src="assets/img/payment.png" alt="">
-                                        </div>
-                                        <h5 class="headerPanel">Secure Payment</h5>
-                                        <p class="textPanel mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 py-3 wow fadeInUp">
-                                        <div class="card card-body border-0 text-center shadow pt-5">
-                                        <div class="svg-icon mx-auto mb-4">
-                                            <img src="assets/img/customizable.png" alt="">
-                                        </div>
-                                        <h5 class="headerPanel">Easily Customizable</h5>
-                                        <p class="textPanel mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 py-3 wow fadeInRight">
-                                        <div class="card card-body border-0 text-center shadow pt-5">
-                                        <div class="svg-icon mx-auto mb-4">
-                                            <img src="assets/img/concept.png" alt="">
-                                        </div>
-                                        <h5 class="headerPanel">Powerful Concept</h5>
-                                        <p class="textPanel mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit</p>
-                                        </div>
-                                    </div>
-                                    -->
-
-
-                                </div>
+                                <div id="amazon-advertising-list" class="row justify-content-center"></div>
                             </div>
                         </div>
                         <!-- Amazon advertising end-->
@@ -241,7 +240,7 @@
             </div>
         </div>
     </section>
-    <div class="section" style="padding-top: 0px! important; padding-bottom: 0px! important;"> 
+    <div class="section" style="margin-top: 40px! important; padding-top: 0px! important; padding-bottom: 0px! important;"> 
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 100%; height: 100%;" viewBox="0 0 1979.067 268.117">
             <defs>
                 <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
@@ -269,17 +268,19 @@
 
                         <img src="assets/images/circle.svg" alt="AWTS" class="portfolioCircle"/>
                         <img src="assets/images/portfolio.svg" alt="AWTS" style="width: 100%; height: 500px; z-index: 3;"/>
-                        <hr style="width: 100%;">
-                        <div class="p-4 text-left row">
-                            <div class="portfolioLabel pl-10" style="width: 120px;">Recognised by</div>
-                            <div style="width: 180px;">
+                        
+                        <div class="row text-left">
+                            <hr style="width: 100%;">
+                            <div class="py-4 portfolioLabel" style="width: 120px;">Recognised by</div>
+                            <div class="py-4" style="width: 180px;">
                                     <img src="assets/images/portfoliorecognisedby1.svg" alt="AWTS" style="width: 100%; height: 20px;"/>
                             </div>
-                            <div style="width: 180px;">
+                            <div class="py-4" style="width: 180px;">
                                     <img src="assets/images/portfoliorecognisedby2.svg" alt="AWTS" style="width: 100%; height: 20px;"/>
                             </div>
+                            <hr style="width: 100%;">
                         </div>
-                        <hr style="width: 100%;">
+                        
                     </div>
                 </div>
             </div>
@@ -290,7 +291,7 @@
         <div class="container">
             <div class="row">
                 <div style="padding: 0px! important;">
-                    <div class="column w-full text-center">
+                    <div class="column text-center">
                         <div  id="advertising" class="headerPage mt-10">Contact Us</div>
                         <div><hr class="lineBreak"></hr></div>
 
@@ -333,7 +334,7 @@
 
                             <div class="column w-6/12" style="margin: 0px! important;">
                                 <div class="contactLabelCss text-center">Contact</div>
-                                <div class="mt-4 pl-20 w-full h-full inline-block align-middle">
+                                <div class="mt-4 pl-16 w-full h-full inline-block align-middle">
                                     <div class="row ml-4 w-full py-1">
                                         <div class="row w-6/12">
                                             <div class="labelContact">TEL:</div>

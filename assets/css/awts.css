@@ -1,85 +1,97 @@
 @media all and (min-width: 992px) {
-	.navbar .nav-item .dropdown-menu{ display: none; }
-	.navbar .nav-item:hover .nav-link{ color: #fff;  }
-	.navbar .nav-item:hover .dropdown-menu{ display: block; }
-	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+  .navbar .nav-item .dropdown-menu {
+    display: none;
+  }
+  .navbar .nav-item:hover .nav-link {
+    color: #fff;
+  }
+  .navbar .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+  .navbar .nav-item .dropdown-menu {
+    margin-top: 0;
+  }
 }
 
-body{
-  overflow-x: hidden! important;
+body {
+  overflow-x: hidden !important;
 }
 
-.container{
-  padding-left: 0px! important;
-  padding-right: 0px! important;
+.container {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
-.headerPanelCss{
-  color: #19A0C6;
+.headerPanelCss {
+  color: #19a0c6;
 }
 
-.headerPanel{
+.headerPanel {
   font-weight: bold;
-  font-size: 16px! important;
+  font-size: 16px !important;
   color: #505965;
 }
 
-.textPanel{
-  font-size: 12px! important;
-  color: #3C3C3C;
+.textPanel {
+  font-size: 12px !important;
+  color: #3c3c3c;
 }
 
-.aboutusmission-css{
-  background-image: url(../images/aboutusandmission1.svg), url(../images/aboutusandmission2.svg);
+.aboutusmission-css {
+  background-image: url(../images/aboutusandmission1.svg),
+    url(../images/aboutusandmission2.svg);
   /* background-position: right top; */
-  background-position: -webkit-calc(100% + 165px) 0px, -webkit-calc(100% + 256px) top;
+  background-position: -webkit-calc(100% + 165px) 0px,
+    -webkit-calc(100% + 256px) top;
   background-repeat: no-repeat, no-repeat;
   background-size: 1000px 600px, 600px 600px;
 }
 
-.headerPage{
+.headerPage {
   font-weight: bold;
-  font-size: 20px! important;
+  font-size: 20px !important;
   color: #505965;
 }
 
-.lineBreak{
+.lineBreak {
   width: 5%;
   position: absolute;
   left: 47%;
-  border-top: 1.5px solid #19A0C6! important;
+  border-top: 1.5px solid #19a0c6 !important;
   margin-top: 10px;
 }
 
-.amazonservices-css{
-  background-image: url(../images/amazonservices.svg), url(../images/amazonadvertising.svg);
+.amazonservices-css {
+  background-image: url(../images/amazonservices.svg),
+    url(../images/amazonadvertising.svg);
   background-position: -505px -150px, -webkit-calc(100% + 465px) top;
   background-repeat: no-repeat;
   background-size: 1000px 400px, 600px 600px;
 }
 
-.portfolioLabel{
+.portfolioLabel {
   color: #505965;
   font-family: bold;
   font-size: 12px;
 }
 
-.contactLabelCss{
-  color: #555E69;
+.contactLabelCss {
+  color: #555e69;
   font-size: 20px;
   font-weight: bold;
 }
 
-.labelContact{
-  font-size: 12px! important;
-  color: #B7B9BA;
+.labelContact {
+  font-size: 12px !important;
+  color: #b7b9ba;
 }
 
 .footerPanel {
-  background: 
-    linear-gradient(to bottom right,transparent 49.8%,#fff 50%) bottom right/65px 65px no-repeat, #505965;
-  height: 50px! important;
-  width: 100%! important;
+  background: linear-gradient(to bottom right, transparent 49.8%, #fff 50%)
+      bottom right/65px 65px no-repeat,
+    #505965;
+  height: 50px !important;
+  width: 100% !important;
   position: relative;
 }
 
@@ -91,21 +103,21 @@ body{
   font-size: 12px;
 }
 
-.rotateTextFooter{
-  -webkit-transform: rotate(-45deg)! important;
-  -moz-transform: rotate(-45deg)! important;
+.rotateTextFooter {
+  -webkit-transform: rotate(-45deg) !important;
+  -moz-transform: rotate(-45deg) !important;
 }
 
-.portfolioCircle{
-    width: 100%;
-    height: 140px;
-    position: relative;
-    top: 166px;
-    left: -70px;
-    z-index: 1;
+.portfolioCircle {
+  width: 100%;
+  height: 140px;
+  position: relative;
+  top: 166px;
+  left: -70px;
+  z-index: 1;
 }
 
-.whatsapp{
+.whatsapp {
   position: absolute;
   bottom: 15px;
   right: 15px;
@@ -114,55 +126,52 @@ body{
 }
 
 .nav-link {
-  color: #505965! important;
-  padding-right: 0.75rem! important;
-  padding-left: 0.75rem! important;
+  color: #505965 !important;
+  padding-right: 0.75rem !important;
+  padding-left: 0.75rem !important;
 }
 
-.dropdown-menu{
-  background-color: #e6e6e6! important;
+.dropdown-menu {
+  background-color: #e6e6e6 !important;
 }
 
-div.active{
+div.active {
   font-weight: bold;
-  background: #FFA741;
+  background: #ffa741;
   color: #505965;
   margin-top: 0px;
   height: 240px;
   line-height: 160px;
-  border: 1px solid #FFA741! important;
+  border: 1px solid #ffa741 !important;
   border-radius: 6px;
-  
 }
 
-.navbar-nav > li > a:focus, 
-.navbar-nav > li > a:hover 
-{
+.navbar-nav > li > a:focus,
+.navbar-nav > li > a:hover {
   font-weight: bold;
 }
 
-
-.carousel-control-next-icon{
-  background-color: #d3d3d3! important;
+.carousel-control-next-icon {
+  background-color: #d3d3d3 !important;
 }
 
-.carousel-control-prev-icon{
-  background-color: #d3d3d3! important;
+.carousel-control-prev-icon {
+  background-color: #d3d3d3 !important;
 }
 
-.panel{ 
+.panel {
   height: 200px;
-  vertical-align: middle! important;
+  vertical-align: middle !important;
   line-height: 120px;
-  border: 1px solid #FFA741;
+  border: 1px solid #ffa741;
   margin-top: 20px;
   border-radius: 6px;
-  color: #6A625B;
+  color: #6a625b;
   box-shadow: 0px 10px 6px -6px #d3d3d3;
 }
 
-div.active .panel{
-  box-shadow: none! important;
+div.active .panel {
+  box-shadow: none !important;
 }
 
 .carousel-item {
@@ -173,17 +182,17 @@ div.active .panel{
 }
 
 .carousel-inner {
-  width: 80%! important;
+  width: 80% !important;
 }
 
-.panel-thumbnail{
+.panel-thumbnail {
   font-size: 12px;
   font-weight: bold;
   display: inline-block;
   line-height: 200px;
 }
 
-.carousselIconCss{
+.carousselIconCss {
   color: #ffffff;
   font-size: 18px;
 }
@@ -198,22 +207,43 @@ i.carousselIconCss {
   line-height: 30px;
 }
 
-
-
-/*
-.carousel{
-  background: #d3d3d3;
-  margin-top: 20px;
+div video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
-.carousel-item{
-  text-align: center;
-  min-height: 280px;
+
+.malr {
+  margin-left: 120px !important;
+  margin-right: 120px !important;
 }
-*/
 
+.dropdown-item{
+  color:#7D899A! important;
+}
 
+.dropdown-item:hover {
+  color: #505965! important;
+  /*font-weight: bold;*/
+  background-color: transparent! important;
+}
 
+.dropdown-item:active {
+  color: #505965! important;
+  /*font-weight: bold;*/
+  background-color: transparent! important;
+}
 
-
-
+.cardCss:active{
+  background: #E6E6E6! important;
+}
 

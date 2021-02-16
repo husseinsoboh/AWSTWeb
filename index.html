@@ -13,7 +13,7 @@
 
     <script src="assets/js/google-maps.js"></script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>-->
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
@@ -34,7 +34,12 @@
 
     <link rel="stylesheet" href="assets/css/carousel.css">
 
-    <link rel="stylesheet" href="assets/scss/text-animation.css" />
+    <link rel="stylesheet" href="assets/css/text-animation.css" />
+
+    <link rel="stylesheet" href="assets/css/hover.min.css" />
+
+    <link rel="stylesheet" href="assets/css/map.css" />
+
     </head>
     
     <body>
@@ -98,10 +103,10 @@
             <div style="text-align: left! important; width: 10%! important; position: relative; top: 50px; margin-top: 100px;">
                 <div class="col-lg-12 col-md-12 col-sm-12" style="padding-left: 0px! important; padding-right:0px! important;">
                     <ul class="social">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                        <li style="margin-bottom: 15px;"><a href="#"><i class="fa fa-facebook grow" style="font-size: 24px;"></i></a></li>
+                        <li style="margin-bottom: 15px;"><a href="#"><i class="fa fa-instagram grow" style="font-size: 24px;"></i></a></li>
+                        <li style="margin-bottom: 15px;"><a href="#"><i class="fa fa-linkedin grow" style="font-size: 24px;"></i></a></li>
+                        <li style="margin-bottom: 15px;"><a href="#"><i class="fa fa-whatsapp grow" style="font-size: 24px;"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -123,25 +128,25 @@
                             <div class="wave delay"></div>
                         </div>
                     </div>
-                    <div class="text text-L">L</div>
-                    <div class="text text-e">e</div>
-                    <div class="text text-t">t</div>
-                    <div class="text text-Ap">'</div>
-                    <div class="text text-s">s</div>
-                    <div class="text text-sp"></div>
-                    <div class="text text-A">A</div>
-                    <div class="text text-m">m</div>
-                    <div class="text text-a">a</div>
-                    <div class="text text-z">z</div>
-                    <div class="text text-o">o</div>
-                    <div class="text text-n">n</div>
+                    <div style="margin-left: 20px! important;">
+                        <div class="text text-L">L</div>
+                        <div class="text text-e">e</div>
+                        <div class="text text-t">t</div>
+                        <div class="text text-Ap">'</div>
+                        <div class="text text-s">s</div>
+                        <div class="text text-sp"></div>
+                        <div class="text text-A">A</div>
+                        <div class="text text-m">m</div>
+                        <div class="text text-a">a</div>
+                        <div class="text text-z">z</div>
+                        <div class="text text-o">o</div>
+                        <div class="text text-n">n</div>
+                    </div>
                 </div>
 
-                <div class="col-12">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="width:100%"  height="113" viewBox="0 0 600 113" style="margin-top: 40px! important;">
-                        <text id="WE_TAKE_YOUR_BRAND_TO_THE_NEXT_LEVEL_ON_AMAZON.SA" data-name="WE TAKE YOUR BRAND TO THE NEXT LEVEL ON AMAZON.SA" fill="#505965" font-size="32" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"><tspan x="0" y="31">WE TAKE YOUR BRAND TO THE NEXT </tspan><tspan x="0" y="70">LEVEL ON AMAZON.SA</tspan></text>
-                    </svg>
-                </div>
+                <div class="col-12 headerPanel" style="margin-top: 20px! important;">WE TAKE YOUR BRAND TO THE NEXT</div>
+
+                <div class="col-12 headerPanel">LEVEL ON AMAZON.SA</div>
             </div>
         </div>
     </div>
@@ -164,31 +169,33 @@
     </div>
 
     <div class="aboutusmission-css section" style="padding-top: 0px! important;"> 
-        <div class="malr" style="width: 40%! important;">
-            <div class="headerPanel">About <span class="headerPanelCss">Us</span></div>
-            <div class="mt-6 textPanel">
-                    Advanced World Technology Services is a full-Service eCommerce agency offering top quality eCommerce support services and a variety of eCommerce catalog management services at reasonable prices.
-                    We are the absolute best eCommerce outsourcing services that you didn’t know you could afford.  
+        <div class="container">
+            <div style="width: 40%! important;">
+                <div class="headerPanel">About <span class="headerPanelCss">Us</span></div>
+                <div class="mt-6 textPanel">
+                        Advanced World Technology Services is a full-Service eCommerce agency offering top quality eCommerce support services and a variety of eCommerce catalog management services at reasonable prices.
+                        We are the absolute best eCommerce outsourcing services that you didn’t know you could afford.  
+                </div>
             </div>
-        </div>
 
-        <div class="malr mt-10" style="width: 40%! important;">
-            <div class="headerPanel">Our <span class="headerPanelCss">Mission</span></div>
-            <div class="mt-6 textPanel">
-                    To start with, AWTS eCommerce empower companies to speed up visual content production. We work as one with our clients and partners to deliver highly performing digital tools solutions and best services.
+            <div class="mt-10" style="width: 40%! important;">
+                <div class="headerPanel">Our <span class="headerPanelCss">Mission</span></div>
+                <div class="mt-6 textPanel">
+                        To start with, AWTS eCommerce empower companies to speed up visual content production. We work as one with our clients and partners to deliver highly performing digital tools solutions and best services.
+                </div>
             </div>
-        </div>
 
-        <div class="malr mt-10 row" style="width: 100%! important;">
-            <div style="width: 50%! important;">
-                <img src="assets/images/whatwedoimg.svg" alt="AWTS" style="width:100%; height:300px;"/>
-            </div>
-            <div style="width: 50%! important; position: absolute; bottom: 100px; right: 0;">
-                <div class="headerPanel">What do we do ?</div>
-                <div class="mt-6 textPanel" style="width: 54%;">
-                        To start with, AWTS eCommerce empower companies to speed up visual content production.
-                        <br>
-                        We work as one with our clients and partners to deliver highly performing digital tools solutions and best services.
+            <div class="mt-10 row" style="width: 100%! important;">
+                <div style="width: 50%! important;">
+                    <img src="assets/images/whatwedoimg.svg" alt="AWTS" style="width:100%; height:300px;"/>
+                </div>
+                <div style="width: 50%! important; position: absolute; bottom: 100px; right: 0;">
+                    <div class="headerPanel">What do we do ?</div>
+                    <div class="mt-6 textPanel" style="width: 54%;">
+                            To start with, AWTS eCommerce empower companies to speed up visual content production.
+                            <br>
+                            We work as one with our clients and partners to deliver highly performing digital tools solutions and best services.
+                    </div>
                 </div>
             </div>
         </div>
@@ -290,14 +297,16 @@
     <section id="contact-us" class="section home-feature" style=" background-color: #e6e6e6;">
         <div class="container">
             <div class="row">
-                <div style="padding: 0px! important;">
+                <div style="width: 100%; padding: 0px! important;">
                     <div class="column text-center">
                         <div  id="advertising" class="headerPage mt-10">Contact Us</div>
                         <div><hr class="lineBreak"></hr></div>
 
                         <div class="my-8">
                             <div class="maps-container">
-                                <div id="myMap"></div>
+                                <!--<div id="myMap"></div>-->
+
+                                <div id="chartdiv"></div>
                             </div>
                         </div>
 
@@ -325,7 +334,7 @@
                                         </div>
                                         <div class="col-12 column mt-2">
                                             <fieldset>
-                                            <button type="submit" id="form-submit" class="main-button">Send</button>
+                                                <button type="submit" id="form-submit"  class="main-button hvr-back-pulse">Send</button>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -338,31 +347,31 @@
                                     <div class="row ml-4 w-full py-1">
                                         <div class="row w-6/12">
                                             <div class="labelContact">TEL:</div>
-                                            <div class="textPanel pl-2">+966 11 431 1601</div>
+                                            <div id="tel" class="textPanel pl-2">+966 11 431 1601</div>
                                         </div>
                                         <div class="row w-6/12">
                                             <div class="labelContact">MOBILE:</div>
-                                            <div class="textPanel pl-2">+966 561141047</div>
+                                            <div id="mobile" class="textPanel pl-2">+966 561141047</div>
                                         </div>
                                     </div>
                                     <div class="row ml-4 w-full py-1">
                                         <div class="row w-6/12">
                                             <div class="labelContact">FAX:</div>
-                                            <div class="textPanel pl-2">+966 11 291 3929</div>
+                                            <div id="fax" class="textPanel pl-2">+966 11 291 3929</div>
                                         </div>
                                         <div class="row w-6/12">
                                             <div class="labelContact">EMAIL:</div>
-                                            <div class="textPanel pl-2">INFO@AWTS-LTD.COM</div>
+                                            <div id="emailAddr" class="textPanel pl-2">INFO@AWTS-LTD.COM</div>
                                         </div>
                                     </div>
                                     <div class="row ml-4 w-full py-1">
                                         <div class="row w-6/12">
                                             <div class="labelContact">TOLL FREE:</div>
-                                            <div class="textPanel pl-2">92000 2282</div>
+                                            <div id="toll" class="textPanel pl-2">92000 2282</div>
                                         </div>
                                         <div class="row w-6/12">
                                             <div class="labelContact">P.O BOX::</div>
-                                            <div class="textPanel pl-2">68525 RIYADH 44537</div>
+                                            <div id="pobox" class="textPanel pl-2">68525 RIYADH 44537</div>
                                         </div>
                                     </div>
                                 </div>
@@ -414,5 +423,15 @@
 
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/loader.js"></script>
+
+
+
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/4/plugins/bullets.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+
   </body>
 </html>

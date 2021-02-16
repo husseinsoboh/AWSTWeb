@@ -8,9 +8,23 @@ jQuery(document).ready(function() {
         $(this).parent().addClass('active');
     });
 
+    $('a.thumb').click(function(event){
+      event.preventDefault();
+      var content = $('.modal-body');
+      content.empty();
+        var title = $(this).attr("title");
+        $('.modal-title').html(title);        
+        content.html($(this).html());
+        $(".modal-profile").modal({show:true});
+    });
+
     loadAmozonServices();
 
     loadAmazonAdvertising();
+
+    loadMap();
+
+    loadMap();
 });
 
 function loadAmozonServices(){
@@ -36,7 +50,7 @@ function loadAmozonServices(){
 
     divMenu += '<li><a class="dropdown-item py-2" href="#services">'+elem.name+'</a></li>';
     div += '<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-4 '+classActive+'"><div class="panel panel-default"><div class="panel-thumbnail"><a href="#" class="thumb">'+elem.name+'</a></div></div></div>';
-    console.log(elem.name);
+    //console.log(elem.name);
   }
 
   document.getElementById("amazon-services-menu-list").innerHTML = divMenu;
@@ -111,7 +125,7 @@ function loadAmazonAdvertising(){
 
     divMenu += '<li><a class="dropdown-item py-2" href="#services">'+elem.name+'</a></li>';
     div += '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft"><div class="card card-body border-0 text-center shadow pt-5 cardCss"><div class="svg-icon mx-auto mb-4"><img src="'+elem.image+'" alt=""></div><h5 class="headerPanel">'+elem.name+'</h5><p class="textPanel mt-4">'+elem.description+'</p></div></div>';
-    console.log(elem.name);
+    //console.log(elem.name);
   }
 
   document.getElementById("amazon-advertising-menu-list").innerHTML = divMenu;
@@ -119,14 +133,7 @@ function loadAmazonAdvertising(){
 
 }
 
-
-
-
-
-
 $('#carouselExample').on('slide.bs.carousel', function (e) {
-
-  
   var $e = $(e.relatedTarget);
   var idx = $e.index();
   var itemsPerSlide = 4;
@@ -148,20 +155,7 @@ $('#carouselExample').on('slide.bs.carousel', function (e) {
 
 
 $('#carouselExample').carousel({ 
-              interval: 2000
-      });
-
-
-$(document).ready(function() {
-/* show lightbox when clicking a thumbnail */
-  $('a.thumb').click(function(event){
-    event.preventDefault();
-    var content = $('.modal-body');
-    content.empty();
-      var title = $(this).attr("title");
-      $('.modal-title').html(title);        
-      content.html($(this).html());
-      $(".modal-profile").modal({show:true});
-  });
-
+  interval: 2000
 });
+
+

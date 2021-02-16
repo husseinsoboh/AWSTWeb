@@ -56,7 +56,7 @@ body {
 .lineBreak {
   width: 5%;
   position: absolute;
-  left: 47%;
+  left: 47.5%;
   border-top: 1.5px solid #19a0c6 !important;
   margin-top: 10px;
 }
@@ -246,4 +246,15 @@ div video {
 .cardCss:active{
   background: #E6E6E6! important;
 }
+
+body ul li a i.grow {
+	transition: all .2s ease-in-out;
+}
+
+body ul li a i.grow:hover {
+	transform: scale(1.5);
+}
+
+
+
 

@@ -1,15 +1,15 @@
 let contactList = [
     {
-        "value": 5, "length": 50, "title": 'CANADA', "latitude": 53.2257, "longitude": -91.4062, "TEL": '+961 1 111111', "MOBILE": '+961 2 222222', "FAX": '+961 3 333333', "EMAIL": 'awts@email.ca', "TOLL": '+961 4 444444', "POBOX": 'ABC123'
+        "value": 5, "length": 50, "title": 'CANADA', "latitude": 53.2257, "longitude": -91.4062, "TEL": '+1 1 111111', "MOBILE": '+961 2 222222', "FAX": '+961 3 333333', "EMAIL": 'awts@email.ca', "TOLL": '+961 4 444444', "POBOX": 'ABC123'
     },
     {
         "value": 5, "length": 150, "title": 'LEBANON', "latitude": 33.8938, "longitude": 35.5018, "TEL": '+961 1 111111', "MOBILE": '+961 2 222222', "FAX": '+961 3 333333', "EMAIL": 'awts@email.lb', "TOLL": '+961 4 444444', "POBOX": 'ABC123'
     },
     {
-        "value": 5, "length": 50, "title": 'JORDAN', "latitude": 31.9539, "longitude": 35.9106, "TEL": '+961 1 111111', "MOBILE": '+961 2 222222', "FAX": '+961 3 333333', "EMAIL": 'awts@email.jo', "TOLL": '+961 4 444444', "POBOX": 'ABC123'
+        "value": 5, "length": 50, "title": 'JORDAN', "latitude": 31.9539, "longitude": 35.9106, "TEL": '+962 1 111111', "MOBILE": '+961 2 222222', "FAX": '+961 3 333333', "EMAIL": 'awts@email.jo', "TOLL": '+961 4 444444', "POBOX": 'ABC123'
     },
     {
-        "value": 5, "length": 30, "title": 'SAUDI ARABIA', "latitude": 24.7136, "longitude": 46.6753, "TEL": '+961 1 111111', "MOBILE": '+961 2 222222', "FAX": '+961 3 333333', "EMAIL": 'awts@email.sr', "TOLL": '+961 4 444444', "POBOX": 'ABC123'
+        "value": 5, "length": 30, "title": 'SAUDI ARABIA', "latitude": 24.7136, "longitude": 46.6753, "TEL": '+999 1 111111', "MOBILE": '+961 2 222222', "FAX": '+961 3 333333', "EMAIL": 'awts@email.sr', "TOLL": '+961 4 444444', "POBOX": 'ABC123'
     },
 ];
 
@@ -51,6 +51,8 @@ function initMap() {
 
 function loadMap(){
     am4core.ready(function() {
+
+        loadCountry(contactList[0]);
 
         // Themes begin
         am4core.useTheme(am4themes_animated);
@@ -97,7 +99,6 @@ function loadMap(){
         var imageTemplate = imageSeries.mapImages.template;
         imageTemplate.propertyFields.longitude = "longitude";
         imageTemplate.propertyFields.latitude = "latitude";
-        imageTemplate.nonScaling = true;
 
         // Creating a pin bullet
         var pin = imageTemplate.createChild(am4plugins_bullets.PinBullet);
@@ -111,7 +112,7 @@ function loadMap(){
         pin.label = new am4core.Label();
         //pin.label.text = "{value}%";
         pin.label.fill = color1.alternate;
-        pin.poleHeight = 1;
+        pin.poleHeight = 10;
 
         var label = pin.createChild(am4core.Label);
         label.text = "{title}";
@@ -127,18 +128,19 @@ function loadMap(){
         label.adapter.add("dx", function(dy) {
             return -6;
         });
-        
 
-        chart.events.on("hit", function(event){
-            console.log(event.target);
-            console.log(event.target.baseSprite);
-            console.log(event.target.dataItem.dataContext);
+
+        label.events.on("hit", function(ev){
+            console.log(ev.target);
+            let country = ev.target.currentText;
+
+            for(let i=0; i< contactList.length ; i++){
+                let contact = contactList[i];
+                if(contact.title == country){
+                    loadCountry(contact);
+                }
+            }
         });
-
-        imageSeries.events.on("hit", function(ev){
-            console.log(ev.target.dataItem)
-        });
-
 
         // Creating a "heat rule" to modify "radius" of the bullet based
         // on value in data

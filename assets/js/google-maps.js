@@ -160,6 +160,9 @@ function loadMap(){
         // Add zoom control
         chart.zoomControl = new am4maps.ZoomControl();
 
+        // Disabling mouse wheel zoom in maps
+        chart.chartContainer.wheelable = false;
+
         // Add home button
         let button = chart.chartContainer.createChild(am4core.Button);
         button.padding(5, 5, 5, 5);

@@ -2,6 +2,9 @@ let scrollDurarion = 100;
 
 jQuery(document).ready(function() {
     console.log("Document load ready!!");
+
+    changeLang('en');
+
     $('.navbar-nav li a').on('click', function() {
       console.log("click!!");
         $(this).parent().parent().find('.active').removeClass('active');
@@ -153,9 +156,21 @@ $('#carouselExample').on('slide.bs.carousel', function (e) {
   }
 });
 
-
 $('#carouselExample').carousel({ 
   interval: 2000
 });
 
+function changeLang(lang){
+  let dir = 'ltr';
+  if(lang == 'en') {
+    dir = 'ltr';
+  }
+  else{
+    dir = 'rtl';
+  }
+  console.log(lang, dir);
+  $('html').children().css('direction',dir);
 
+  $("[data-localize]").localize("assets/js/lang/lang", { language: lang });
+
+}

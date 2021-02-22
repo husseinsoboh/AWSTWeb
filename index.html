@@ -62,32 +62,42 @@
                 <!-- ***** Logo Start ***** -->
                 <div class="float-left" style="width: 20%;">
                     <a href="#" class="logo">
-                        <img src="assets/images/logo.svg" alt="AWTS" style="height: 50px;"/>
+                        <img src="assets/images/logo.svg" alt="AWTS" style="height: 70px;"/>
                     </a>
                 </div>
                 <!-- ***** Logo End ***** -->
 
                 <!-- ***** Menu Start ***** -->
                 <div style="width: 80%;">
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-primary float-right" style="width: 750px; border-radius: 50px; border: 1px solid #e6e6e6; background-color: #ffffff! important;">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-primary float-right" style="width: 820px; border-radius: 50px; border: 1px solid #e6e6e6; background-color: #ffffff! important;">
                         <div class="collapse navbar-collapse" id="main_nav">
                             <ul class="navbar-nav">
-                                <li class="nav-item"> <a href="#welcome" class="nav-link active">HOME </a> </li>
+                                <li class="nav-item"><a data-localize="home" href="#welcome" class="nav-link active">HOME </a> </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#services" data-toggle="dropdown"> AWTS SERVICES </a>
+                                    <a data-localize="amazonServices" class="nav-link" href="#services" data-toggle="dropdown"> AWTS SERVICES </a>
                                     <ul id="amazon-services-menu-list" class="dropdown-menu"></ul>
                                 </li>
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#advertising"> AMAZON ADVERTISING </a>
+                                    <a data-localize="amazonAdvertising" class="nav-link" href="#advertising"> AMAZON ADVERTISING </a>
                                     <ul id="amazon-advertising-menu-list" class="dropdown-menu"></ul>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="#portfolio"> PORTFOLIO </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#contact-us"> CONTACT US </a></li>
+                                <li class="nav-item"><a data-localize="portfolio" class="nav-link" href="#portfolio"> PORTFOLIO </a></li>
+                                <li class="nav-item"><a data-localize="contactUs" class="nav-link" href="#contact-us"> CONTACT US </a></li>
+
+                                <li class="nav-item navbarSeperator"></li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-item py-2" href="#language" onclick="changeLang('en')">English</a>
+                                    <ul id="language-menu-list" class="dropdown-menu">
+                                        <li></li>
+                                        <li><a class="dropdown-item py-2" href="#language" onclick="changeLang('ar')">Arabic</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div> 
                     </nav>
-                </div>
+                </div>    
                 <!-- ***** Menu End ***** -->
             </div>
         </div>
@@ -151,21 +161,21 @@
         </div>
     </div>
 
-    <div class="section" style="padding-top: 0px! important;"> 
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 100%; height: 100%;" viewBox="0 0 1979.067 268.117">
+    <div class="hEADER-AREA" style="width: 100%; padding-top: 0px! important;"> 
+        <svg style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1979.067 268.117">
             <defs>
-                <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+              <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
                 <stop offset="0" stop-color="#61c4f3"/>
                 <stop offset="0.5" stop-color="#00aeee"/>
                 <stop offset="1" stop-color="#0095da"/>
-                </linearGradient>
+              </linearGradient>
             </defs>
             <g id="Group_711" data-name="Group 711" transform="translate(0)">
-                <path id="Path_6689" data-name="Path 6689" d="M35.076,296.1c277.426,61.616,789.1,55.08,1223-117.786,212.5-84.653,238.469-108.273,500.211-100.455H35.076Z" transform="translate(-13.748 -63.45)" opacity="0.4" fill="url(#linear-gradient)"/>
-                <path id="Path_6688" data-name="Path 6688" d="M1989.129,240.03c-137.08,4.235-275.391,7.618-410.788-6.366-160.206-16.54-313.582-57.13-475.622-63.8-106.6-4.39-214.727,6.32-313.877,31.079-65.748,16.418-127.229,38.82-192.221,56.368-175.416,47.362-375.928,57.8-561.547,29.246V80.249H1989.129Z" transform="translate(-13.748 -78.526)" fill="#e6e6e6"/>
-                <path id="Path_6690" data-name="Path 6690" d="M2011.556,173.343c-356.226,34.414-712.219-82.289-1069.733-64.8a1428.921,1428.921,0,0,0-300.13,47.029c-202.753,54.4-399.132,154.368-609.2,146.07V80.517H2011.556Z" transform="translate(-32.489 -80.517)" fill="#e6e6e6" opacity="0.3"/>
+              <path id="Path_6689" data-name="Path 6689" d="M35.076,296.1c277.426,61.616,789.1,55.08,1223-117.786,212.5-84.653,238.469-108.273,500.211-100.455H35.076Z" transform="translate(-13.748 -63.45)" opacity="0.4" fill="url(#linear-gradient)"/>
+              <path id="Path_6688" data-name="Path 6688" d="M1989.129,240.03c-137.08,4.235-275.391,7.618-410.788-6.366-160.206-16.54-313.582-57.13-475.622-63.8-106.6-4.39-214.727,6.32-313.877,31.079-65.748,16.418-127.229,38.82-192.221,56.368-175.416,47.362-375.928,57.8-561.547,29.246V80.249H1989.129Z" transform="translate(-13.748 -78.526)" fill="#e6e6e6"/>
+              <path id="Path_6690" data-name="Path 6690" d="M2011.556,173.343c-356.226,34.414-712.219-82.289-1069.733-64.8a1428.921,1428.921,0,0,0-300.13,47.029c-202.753,54.4-399.132,154.368-609.2,146.07V80.517H2011.556Z" transform="translate(-32.489 -80.517)" fill="#e6e6e6" opacity="0.3"/>
             </g>
-        </svg>   
+        </svg>
     </div>
 
     <div class="aboutusmission-css section" style="padding-top: 0px! important;"> 
@@ -402,7 +412,8 @@
     <!-- jQuery -->
     <!--<script src="assets/js/jquery-2.1.0.min.js"></script>-->
     <script src="assets/js/jquery-3.3.1.min.js"></script>
-	<script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="assets/js/jquery.localize.min.js"></script>
 
     <!-- Bootstrap -->
     <script src="assets/js/popper.js"></script>

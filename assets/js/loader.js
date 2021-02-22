@@ -49,7 +49,7 @@ function loadAmozonServices(){
     //div += "<div class='carousel-item col-12 col-sm-6 col-md-4 col-lg-3 align-middle servicesCss "+classActive+"'>"+elem.name+"</div>";
 
     divMenu += '<li><a class="dropdown-item py-2" href="#services">'+elem.name+'</a></li>';
-    div += '<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-4 '+classActive+'"><div class="panel panel-default"><div class="panel-thumbnail"><a href="#" class="thumb">'+elem.name+'</a></div></div></div>';
+    div += '<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-4 '+classActive+'"><div class="panel panel-default"><div class="panel-thumbnail cl-effect-15"><a href="#" class="thumb" data-hover="'+elem.name+'">'+elem.name+'</a></div></div></div>';
     //console.log(elem.name);
   }
 

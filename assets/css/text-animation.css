@@ -87,10 +87,10 @@
 
 .coast {
 	position: absolute;
-	left: 1.3rem;
-	bottom: -2.3rem;
-	width: 6.2rem;
-	height: 2.2rem;
+	left: 0px;
+	bottom: -10px;
+	width: 2.2rem;
+	height: 0.5rem;
 	display: inline-block;
 	animation: coast 2100ms linear infinite;
 	transform: translateZ(0);
@@ -108,7 +108,7 @@
 	position: absolute;
 	width: 2.2rem;
 	height: 0.5rem;
-	border-radius: 1.1rem;
+	border-radius: 0.5rem;
 	background: radial-gradient(ellipse at center, #74f1fc 0%, #32e6ff 73%, #15c7fa 100%);
 	display: inline-block;
 	animation: wave 2100ms linear infinite;

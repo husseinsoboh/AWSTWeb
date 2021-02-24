@@ -266,3 +266,17 @@ body ul li a i.grow {
 body ul li a i.grow:hover {
   transform: scale(1.5);
 }
+
+
+
+
+#carousel-example-generic{
+  width:1280px ! important;
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  user-select: none;
+}

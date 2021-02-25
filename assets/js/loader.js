@@ -215,7 +215,7 @@ function loadPortfolio() {
     $("#portfolio-carousel").carousel("next");
   });
 
-  $(".carousel").swipe({
+  $("#portfolio-carousel").swipe({
     swipe: function (
       event,
       direction,
@@ -224,8 +224,8 @@ function loadPortfolio() {
       fingerCount,
       fingerData
     ) {
-      if (direction == "left") $(this).carousel("next");
-      if (direction == "right") $(this).carousel("prev");
+      if (direction == "left") $("#portfolio-carousel").carousel("next");
+      if (direction == "right") $("#portfolio-carousel").carousel("prev");
     },
     allowPageScroll: "vertical",
   });

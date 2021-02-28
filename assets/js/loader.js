@@ -1,4 +1,4 @@
-let scrollDurarion = 100;
+let scrollDurarion = 10000;
 
 jQuery(document).ready(function () {
   console.log("Document load ready!!");
@@ -51,76 +51,85 @@ function loadAmozonServices() {
 
   for (let i = 0; i < list.length; i++) {
     let elem = list[i];
-    let classActive = i == 0 ? "active" : "";
-    //let classActive = (i == Math.round(list.length/2)) ? 'active' : '';
-    //div += "<div class='carousel-item col-12 col-sm-6 col-md-4 col-lg-3 align-middle servicesCss "+classActive+"'>"+elem.name+"</div>";
 
-    divMenu +=
-      '<li><a class="dropdown-item py-2" href="#services">' +
-      elem.name +
-      "</a></li>";
-    div +=
-      '<div id="amazonServicesDivId" class="carousel-item col-12 col-sm-6 col-md-4 col-lg-4 ' +
-      classActive +
-      '"><div class="panel panel-default"><div class="panel-thumbnail cl-effect-15"><a href="#" class="thumb" data-hover="' +
-      elem.name +
-      '">' +
-      elem.name +
-      "</a></div></div></div>";
+    divMenu += '<li><a class="dropdown-item py-2" href="#services">' + elem.name + "</a></li>";
+
+    div += '<div class="item owlCarouselCss">'+elem.name+'</div>';
+
     //console.log(elem.name);
   }
-
+  console.log(div);
   document.getElementById("amazon-services-menu-list").innerHTML = divMenu;
-  document.getElementById("amazon-services-list").innerHTML = div;
+  document.getElementById("amazon-services-carousel").innerHTML = div;
 
-  amazonServicesEvents();
-}
+  $("#amazon-services-carousel").owlCarousel({
+    items: 3,
+    center: true,
+    nav: false,
+    dots: false,
+    loop: true,
+  });
 
-function amazonServicesEvents() {
   $("#amazon-services-prev").click(function () {
-    $("#amazon-services-carousel").carousel("prev");
+    $("#amazon-services-carousel").owlCarousel("prev");
   });
 
   $("#amazon-services-next").click(function () {
-    $("#amazon-services-carousel").carousel("next");
+    $("#amazon-services-carousel").owlCarousel("next");
   });
+}
 
-  // interval is in milliseconds. 1000 = 1 second -> so 1000 * 10 = 10 seconds
-  $("#amazon-services-carousel").carousel({
+function loadPortfolio() {
+  /*
+  $("#portfolio-carousel").carousel({
     interval: 1000 * scrollDurarion,
-    centerMode: true,
+    keyboard: false,
+    pause: "hover",
+    ride: true,
+    wrap: true
   });
 
-  /*
-      Carousel make slider circle
-  */
-  $("#amazon-services-carousel").on("slide.bs.carousel", function (e) {
-    /*
-          CC 2.0 License Iatek LLC 2018
-          Attribution required
-      */
-    var $e = $(e.relatedTarget);
-    var idx = $e.index();
-    var itemsPerSlide = 5;
-    var totalItems = $(".carousel-item").length;
-
-    if (idx >= totalItems - (itemsPerSlide - 1)) {
-      var it = itemsPerSlide - (totalItems - idx);
-      for (var i = 0; i < it; i++) {
-        // append slides to end
-        if (e.direction == "left") {
-          $(".carousel-item").eq(i).appendTo(".carousel-inner");
-        } else {
-          $(".carousel-item").eq(0).appendTo(".carousel-inner");
-        }
-      }
-    }
+  $("#portfolio-prev").click(function () {
+    $("#portfolio-carousel").carousel("prev");
   });
 
-  /*
-    Wow
+  $("#portfolio-next").click(function () {
+    $("#portfolio-carousel").carousel("next");
+  });
+
+  $("#portfolio-carousel").swipe({
+    swipe: function (
+      event,
+      direction,
+      distance,
+      duration,
+      fingerCount,
+      fingerData
+    ) {
+      if (direction == "left") $("#portfolio-carousel").carousel("next");
+      if (direction == "right") $("#portfolio-carousel").carousel("prev");
+    },
+    allowPageScroll: "vertical",
+  });
   */
-  //new WOW().init();
+
+  $("#portfolio-carousel").owlCarousel({
+    nav : true, // Show next and prev buttons
+    navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+    rewindNav : true,
+    loop : true,
+    autoplay : true,
+    dots: true,
+    
+    slideSpeed : 300,
+    paginationSpeed : 400,
+    lazyLoad : true,
+    items : 1, 
+    itemsDesktop : false,
+    itemsDesktopSmall : false,
+    itemsTablet: false,
+    itemsMobile : false
+  });
 }
 
 function loadAmazonAdvertising() {
@@ -176,12 +185,8 @@ function loadAmazonAdvertising() {
       "</a></li>";
     div +=
       '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft"><div class="card card-body border-0 text-center shadow pt-5 cardCss"><div class="svg-icon mx-auto mb-4"><img src="' +
-      elem.image +
-      '" alt=""></div><h5 class="headerPanel">' +
-      elem.name +
-      '</h5><p class="textPanel mt-4">' +
-      elem.description +
-      "</p></div></div>";
+      elem.image + '" alt=""></div><h5 class="headerPanel">' + elem.name +
+      '</h5><p class="textPanel mt-4">' + elem.description + "</p></div></div>";
     //console.log(elem.name);
   }
 
@@ -200,33 +205,4 @@ function changeLang(lang) {
   $("html").children().css("direction", dir);
 
   $("[data-localize]").localize("assets/js/lang/lang", { language: lang });
-}
-
-function loadPortfolio() {
-  $("#portfolio-carousel").carousel({
-    interval: 1000 * scrollDurarion,
-  });
-
-  $("#portfolio-prev").click(function () {
-    $("#portfolio-carousel").carousel("prev");
-  });
-
-  $("#portfolio-next").click(function () {
-    $("#portfolio-carousel").carousel("next");
-  });
-
-  $("#portfolio-carousel").swipe({
-    swipe: function (
-      event,
-      direction,
-      distance,
-      duration,
-      fingerCount,
-      fingerData
-    ) {
-      if (direction == "left") $("#portfolio-carousel").carousel("next");
-      if (direction == "right") $("#portfolio-carousel").carousel("prev");
-    },
-    allowPageScroll: "vertical",
-  });
 }

@@ -163,7 +163,8 @@ body {
   background-color: #e6e6e6 !important;
 }
 
-#amazonServicesDivId.active {
+/*
+.amazonServicesDivId.active {
   font-weight: bold;
   background: #ffa741;
   color: #505965;
@@ -174,9 +175,10 @@ body {
   border-radius: 6px;
 }
 
-#amazonServicesDivId.active .panel {
+.amazonServicesDivId.active .panel {
   box-shadow: none !important;
 }
+*/
 
 .navbar-nav > li > a:focus,
 .navbar-nav > li > a:hover {
@@ -269,10 +271,6 @@ body ul li a i.grow:hover {
   transform: scale(1.5);
 }
 
-#carousel-example-generic {
-  width: 1280px !important;
-}
-
 img {
   user-drag: none;
   -webkit-user-drag: none;
@@ -280,6 +278,8 @@ img {
   user-select: none;
 }
 
+
+/************************** owl carousel Start *****************************/
 .carousel-caption {
   position: relative;
   /* right: 6%; */
@@ -292,3 +292,34 @@ img {
   text-align: center;
   width: 100%;
 }
+
+.owlCarouselCss{
+  font-weight: bold;
+  color: #505965;
+  margin-top: 0px;
+  height: 240px;
+  line-height: 160px;
+  border: 1px solid #707070 !important;
+  border-radius: 6px;
+  margin-top: 30px;
+  width: 95%;
+}
+
+.center .owlCarouselCss{
+  height: 300px;
+  background: #ffa741;
+  border: 1px solid #ffa741 !important;
+  margin-top: 0px! important;
+}
+
+.owl-carousel-navigation{
+  line-height: 300px;
+  margin-top: 3rem!important;
+  display: flex;
+  justify-content: center;
+}
+
+.owl-carousel{
+  position: relative! important;
+} 
+/************************** owl carousel End *****************************/

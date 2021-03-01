@@ -278,7 +278,6 @@ img {
   user-select: none;
 }
 
-
 /************************** owl carousel Start *****************************/
 .carousel-caption {
   position: relative;
@@ -293,7 +292,7 @@ img {
   width: 100%;
 }
 
-.owlCarouselCss{
+.owlCarouselCss {
   font-weight: bold;
   color: #505965;
   margin-top: 0px;
@@ -305,24 +304,34 @@ img {
   width: 95%;
 }
 
-.center .owlCarouselCss{
+.center .owlCarouselCss {
   height: 300px;
   background: #ffa741;
   border: 1px solid #ffa741 !important;
-  margin-top: 0px! important;
+  margin-top: 0px !important;
 }
 
-.owl-carousel-navigation{
+.owl-carousel-navigation {
   line-height: 300px;
-  margin-top: 3rem!important;
+  margin-top: 3rem !important;
   display: flex;
   justify-content: center;
 }
 
-.owl-carousel{
-  position: relative! important;
-} 
+.owl-carousel {
+  position: relative !important;
+}
 /************************** owl carousel End *****************************/
 
+.waveBackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /*top: 200px;
+  bottom: 100px;*/
+  z-index: 1;
+}
 
-
+.waveBackground + .waveBackground {
+  z-index: 2;
+}

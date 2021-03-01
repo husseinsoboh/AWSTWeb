@@ -21,6 +21,8 @@ jQuery(document).ready(function () {
     $(".modal-profile").modal({ show: true });
   });
 
+  waveLoader();
+
   loadAmozonServices();
 
   loadAmazonAdvertising();
@@ -29,6 +31,50 @@ jQuery(document).ready(function () {
 
   loadPortfolio();
 });
+
+function waveLoader() {
+  var headerWaveTop = $("#header-wave-top").wavify({
+    // Height of wave
+    height: 80,
+    // Total number of articulation in wave
+    bones: 4,
+    // Amplitude of wave
+    amplitude: 50,
+    // Color
+    color: "#61C4F3",
+    // Animation speed
+    speed: 0.15,
+  });
+
+  var headerWaveBottom = $("#header-wave-bottom").wavify({
+    height: 60,
+    bones: 4,
+    amplitude: 50,
+    color: "#E6E6E6",
+    speed: 0.25,
+  });
+
+  var footerWaveTop = $("#footer-wave-top").wavify({
+    // Height of wave
+    height: 80,
+    // Total number of articulation in wave
+    bones: 4,
+    // Amplitude of wave
+    amplitude: 50,
+    // Color
+    color: "#61C4F3",
+    // Animation speed
+    speed: 0.15,
+  });
+
+  var footerWaveBottom = $("#footer-wave-bottom").wavify({
+    height: 60,
+    bones: 4,
+    amplitude: 50,
+    color: "#E6E6E6",
+    speed: 0.25,
+  });
+}
 
 function loadAmozonServices() {
   // Load AWTS Services
@@ -52,9 +98,12 @@ function loadAmozonServices() {
   for (let i = 0; i < list.length; i++) {
     let elem = list[i];
 
-    divMenu += '<li><a class="dropdown-item py-2" href="#services">' + elem.name + "</a></li>";
+    divMenu +=
+      '<li><a class="dropdown-item py-2" href="#services">' +
+      elem.name +
+      "</a></li>";
 
-    div += '<div class="item owlCarouselCss">'+elem.name+'</div>';
+    div += '<div class="item owlCarouselCss">' + elem.name + "</div>";
 
     //console.log(elem.name);
   }
@@ -114,21 +163,24 @@ function loadPortfolio() {
   */
 
   $("#portfolio-carousel").owlCarousel({
-    nav : true, // Show next and prev buttons
-    navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-    rewindNav : true,
-    loop : true,
-    autoplay : true,
+    nav: true, // Show next and prev buttons
+    navText: [
+      "<i class='fa fa-chevron-left'></i>",
+      "<i class='fa fa-chevron-right'></i>",
+    ],
+    rewindNav: true,
+    loop: true,
+    autoplay: true,
     dots: true,
-    
-    slideSpeed : 300,
-    paginationSpeed : 400,
-    lazyLoad : true,
-    items : 1, 
-    itemsDesktop : false,
-    itemsDesktopSmall : false,
+
+    slideSpeed: 300,
+    paginationSpeed: 400,
+    lazyLoad: true,
+    items: 1,
+    itemsDesktop: false,
+    itemsDesktopSmall: false,
     itemsTablet: false,
-    itemsMobile : false
+    itemsMobile: false,
   });
 }
 
@@ -185,8 +237,12 @@ function loadAmazonAdvertising() {
       "</a></li>";
     div +=
       '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft"><div class="card card-body border-0 text-center shadow pt-5 cardCss"><div class="svg-icon mx-auto mb-4"><img src="' +
-      elem.image + '" alt=""></div><h5 class="headerPanel">' + elem.name +
-      '</h5><p class="textPanel mt-4">' + elem.description + "</p></div></div>";
+      elem.image +
+      '" alt=""></div><h5 class="headerPanel">' +
+      elem.name +
+      '</h5><p class="textPanel mt-4">' +
+      elem.description +
+      "</p></div></div>";
     //console.log(elem.name);
   }
 

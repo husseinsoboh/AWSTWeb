@@ -109,6 +109,7 @@ function loadMap() {
     pin.poleHeight = 10;
 
     var label = pin.createChild(am4core.Label);
+    label.userClassName = "hvr-pulse-grow";
     label.text = "{title}";
     label.fontSize = 12;
     label.fontWeight = "bold";

@@ -69,7 +69,7 @@ body {
   background-image: url(../images/aboutusandmission1.svg),
     url(../images/aboutusandmission2.svg);
   /* background-position: right top; */
-  background-position: -webkit-calc(100% + 165px) 0px,
+  background-position: -webkit-calc(100% + 165px) 100px,
     -webkit-calc(100% + 256px) top;
   background-repeat: no-repeat, no-repeat;
   background-size: 1000px 600px, 600px 600px;
@@ -323,6 +323,7 @@ img {
 }
 /************************** owl carousel End *****************************/
 
+/************************** Wave Start *****************************/
 .waveBackground {
   position: absolute;
   left: 0;
@@ -334,4 +335,20 @@ img {
 
 .waveBackground + .waveBackground {
   z-index: 2;
+}
+/************************** Wave End *****************************/
+
+.dropdown-item:hover{
+  color: rgba(0,0,0,0.2)!important;
+  font-weight: 700!important;
+  text-shadow: none!important;
+}
+
+.labelGrowUp { 
+  /*transition: all 1s ease-in-out;*/
+  font-size: 12px;
+}
+.labelGrowUp:hover { 
+  /*transform: scale(1.2); */
+  font-size: 14px;
 }

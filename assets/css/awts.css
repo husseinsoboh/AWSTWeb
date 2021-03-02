@@ -338,17 +338,32 @@ img {
 }
 /************************** Wave End *****************************/
 
-.dropdown-item:hover{
-  color: rgba(0,0,0,0.2)!important;
-  font-weight: 700!important;
-  text-shadow: none!important;
+.dropdown-item:hover {
+  color: rgba(0, 0, 0, 0.2) !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
 }
 
-.labelGrowUp { 
+.labelGrowUp {
   /*transition: all 1s ease-in-out;*/
   font-size: 12px;
 }
-.labelGrowUp:hover { 
+.labelGrowUp:hover {
   /*transform: scale(1.2); */
   font-size: 14px;
 }
+
+/************************** Amazon advertising Start *****************************/
+
+.amazonAdvImgCss {
+  background: #f5cb22;
+  color: red;
+  transition: all 0.65s;
+  transform: rotateY(360deg);
+}
+
+.amazonAdvBlockCss:active {
+  background-color: #d3d3d3;
+}
+
+/************************** Amazon advertising End *****************************/

@@ -236,7 +236,7 @@ function loadAmazonAdvertising() {
       elem.name +
       "</a></li>";
     div +=
-      '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft"><div class="card card-body border-0 text-center shadow pt-5 cardCss"><div class="svg-icon mx-auto mb-4"><img src="' +
+      '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft"><div class="amazonAdvBlockCss card card-body border-0 text-center shadow pt-5 cardCss"><div class="amazonAdvDivCss svg-icon mx-auto mb-4"><img src="' +
       elem.image +
       '" alt=""></div><h5 class="headerPanel">' +
       elem.name +
@@ -248,6 +248,14 @@ function loadAmazonAdvertising() {
 
   document.getElementById("amazon-advertising-menu-list").innerHTML = divMenu;
   document.getElementById("amazon-advertising-list").innerHTML = div;
+
+  $(".amazonAdvDivCss")
+    .mouseenter(function () {
+      $(this).children("img").addClass("amazonAdvImgCss");
+    })
+    .mouseleave(function () {
+      $(this).children("img").removeClass("amazonAdvImgCss");
+    });
 }
 
 function changeLang(lang) {

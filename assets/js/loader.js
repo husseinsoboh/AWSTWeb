@@ -1,9 +1,11 @@
 let scrollDurarion = 10000;
 
+let language = "en";
+
 jQuery(document).ready(function () {
   console.log("Document load ready!!");
 
-  changeLang("en");
+  changeLang(language);
 
   $(".navbar-nav li a").on("click", function () {
     console.log("click!!");
@@ -23,13 +25,13 @@ jQuery(document).ready(function () {
 
   waveLoader();
 
+  /*
   loadAmozonServices();
 
   loadAmazonAdvertising();
+  */
 
   loadMap();
-
-  loadPortfolio();
 });
 
 function waveLoader() {
@@ -77,6 +79,9 @@ function waveLoader() {
 }
 
 function loadAmozonServices() {
+  console.log("===============");
+  console.log(language);
+
   // Load AWTS Services
   let list = [
     { id: 0, name: "Keyword research", description: "Keyword research desc" },
@@ -95,11 +100,18 @@ function loadAmozonServices() {
   let div = "";
   let divMenu = "";
 
+  let textAlignClass = "";
+  if (language == "ar") {
+    textAlignClass = "textAlignRTL";
+  }
+
   for (let i = 0; i < list.length; i++) {
     let elem = list[i];
 
     divMenu +=
-      '<li><a class="dropdown-item py-2" href="#services">' +
+      '<li class="' +
+      textAlignClass +
+      '"><a class="dropdown-item py-2" href="#services">' +
       elem.name +
       "</a></li>";
 
@@ -228,11 +240,18 @@ function loadAmazonAdvertising() {
   let div = "";
   let divMenu = "";
 
+  let textAlignClass = "";
+  if (language == "ar") {
+    textAlignClass = "textAlignRTL";
+  }
+
   for (let i = 0; i < list.length; i++) {
     let elem = list[i];
 
     divMenu +=
-      '<li><a class="dropdown-item py-2" href="#services">' +
+      '<li class="' +
+      textAlignClass +
+      '"><a class="dropdown-item py-2" href="#services">' +
       elem.name +
       "</a></li>";
     div +=
@@ -259,14 +278,56 @@ function loadAmazonAdvertising() {
 }
 
 function changeLang(lang) {
+  document.getElementById("amazon-services-menu-list").innerHTML = "";
+  document.getElementById("amazon-services-carousel").innerHTML = "";
+
+  document.getElementById("amazon-advertising-menu-list").innerHTML = "";
+  document.getElementById("amazon-advertising-list").innerHTML = "";
+
+  document.getElementById("amazon-advertising-menu-list").innerHTML = "";
+  document.getElementById("amazon-advertising-list").innerHTML = "";
+
+  language = lang;
+
   let dir = "ltr";
-  if (lang == "en") {
-    dir = "ltr";
-  } else {
+  let classList = "directionLTR";
+  let navBarClass = "floatLeft";
+
+  if (lang == "ar") {
     dir = "rtl";
+    classList = "directionRTL";
+    $("#whatsappImgId").removeClass("whatsapp");
+    $("#whatsappImgId").addClass("whatsapp-rtl");
+    navBarClass = "floatLeft";
+  } else {
+    dir = "ltr";
+    classList = "directionLTR";
+    $("#whatsappImgId").removeClass("whatsapp-rtl");
+    $("#whatsappImgId").addClass("whatsapp");
+    navBarClass = "floatRight";
   }
-  console.log(lang, dir);
-  $("html").children().css("direction", dir);
+  console.log(lang, dir, classList);
+
+  $(".rtlClass").removeClass("directionLTR");
+  $(".rtlClass").removeClass("directionRTL");
+  $(".rtlClass").addClass(classList);
+
+  $("#navBar").removeClass("floatLeft");
+  $("#navBar").removeClass("floatRight");
+  $("#navBar").addClass(navBarClass);
+
+  //$("html").children().css("direction", dir);
+  //$("html").children().css("text-align", "right");
+
+  $("#whatWeDoDivId").css("direction", dir);
 
   $("[data-localize]").localize("assets/js/lang/lang", { language: lang });
+
+  loadAmozonServices();
+
+  $("#amazon-services-carousel").trigger("refresh.owl.carousel");
+
+  loadAmazonAdvertising();
+
+  loadPortfolio();
 }

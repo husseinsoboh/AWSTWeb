@@ -52,6 +52,7 @@ body {
 
 .headerPanelCss {
   color: #19a0c6;
+  font-weight: bold;
 }
 
 .headerPanel {
@@ -71,6 +72,15 @@ body {
   /* background-position: right top; */
   background-position: -webkit-calc(100% + 165px) 100px,
     -webkit-calc(100% + 256px) top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 1000px 600px, 600px 600px;
+}
+
+.aboutusmission-right-css {
+  background-image: url(../images/aboutusandmission1-rtl.svg),
+    url(../images/aboutusandmission2-rtl.svg);
+  /* background-position: right top; */
+  background-position: 10px 50px, 10px 50px;
   background-repeat: no-repeat, no-repeat;
   background-size: 1000px 600px, 600px 600px;
 }
@@ -149,6 +159,12 @@ body {
   position: absolute;
   bottom: 15px;
   right: 15px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.whatsapp-rtl {
+  left: 60px;
   height: 60px;
   cursor: pointer;
 }
@@ -366,4 +382,27 @@ img {
   background-color: #d3d3d3;
 }
 
+.directionLTR {
+  direction: ltr !important;
+  text-align: left !important;
+  float: left;
+}
+
+.directionRTL {
+  direction: rtl !important;
+  text-align: right !important;
+  float: right;
+}
+
+.textAlignRTL {
+  text-align: right;
+}
+
+.floatLeft {
+  float: left !important;
+}
+
+.floatRight {
+  float: right !important;
+}
 /************************** Amazon advertising End *****************************/

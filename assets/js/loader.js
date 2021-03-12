@@ -200,11 +200,9 @@ function loadAmozonServices() {
     let elem = list[i];
 
     divMenu +=
-      '<li class="' +
-      textAlignClass +
-      '"><a class="dropdown-item py-2" href="#services">' +
+      '<a class="dropdown-item py-2 '+textAlignClass+'" href="#services">' +
       elem.name +
-      "</a></li>";
+      "</a>";
 
     div += '<div class="item owlCarouselCss">' + elem.name + "</div>";
 
@@ -340,11 +338,9 @@ function loadAmazonAdvertising() {
     let elem = list[i];
 
     divMenu +=
-      '<li class="' +
-      textAlignClass +
-      '"><a class="dropdown-item py-2" href="#services">' +
+      '<a class="dropdown-item py-2 '+textAlignClass+'" href="#services">' +
       elem.name +
-      "</a></li>";
+      "</a>";
     div +=
       '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft"><div class="amazonAdvBlockCss card card-body border-0 text-center shadow pt-5 cardCss"><div class="amazonAdvDivCss svg-icon mx-auto mb-4"><img src="' +
       elem.image +
@@ -390,12 +386,14 @@ function changeLang(lang) {
     $("#whatsappImgId").removeClass("whatsapp");
     $("#whatsappImgId").addClass("whatsapp-rtl");
     navBarClass = "floatLeft";
+    $(".menuTopClass").addClass("menuTopRTL");
   } else {
     dir = "ltr";
     classList = "directionLTR";
     $("#whatsappImgId").removeClass("whatsapp-rtl");
     $("#whatsappImgId").addClass("whatsapp");
     navBarClass = "floatRight";
+    $(".menuTopClass").removeClass("menuTopRTL");
   }
   console.log(lang, dir, classList);
 
@@ -427,5 +425,5 @@ function reloadPage(lang){
     //$("#amazon-services-carousel").trigger("refresh.owl.carousel");
     console.log(location.origin + location.pathname + '?lang='+lang);
 
-    window.location.href = location.origin + location.pathname + '?lang='+lang;
+    if(lang != language) window.location.href = location.origin + location.pathname + '?lang='+lang;
 }

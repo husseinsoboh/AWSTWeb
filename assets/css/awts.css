@@ -68,7 +68,7 @@ body {
 
 .aboutusmission-css {
   background-image: url(../images/aboutusandmission2.svg);
-  background-position: -webkit-calc(100% + 256px) 100px;
+  background-position: -webkit-calc(100% + 256px) 350px;
   background-repeat: no-repeat;
   background-size: 600px 600px;
 }
@@ -403,5 +403,9 @@ img {
 
 .floatRight {
   float: right !important;
+}
+
+.menuTopRTL{
+  right: 10px;
 }
 /************************** Amazon advertising End *****************************/

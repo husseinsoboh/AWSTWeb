@@ -52,7 +52,7 @@ function waveLoader() {
     height: 60,
     bones: 4,
     amplitude: 50,
-    color: "#E6E6E6",
+    color: "#ffffff",
     speed: 0.25,
   });
 

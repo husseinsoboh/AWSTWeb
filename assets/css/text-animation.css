@@ -16,15 +16,6 @@
   transform: translatez(0);
 }
 
-/*
-.text-L {
-	left: 0px;
-	transform: translate3d(0, -4rem, 0);
-	animation: text-L 1050ms ease-in infinite;
-	animation-delay: 100ms;
-}
-*/
-
 .text-L {
   left: 0px;
   animation-delay: 50ms;

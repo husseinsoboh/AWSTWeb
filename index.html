@@ -101,10 +101,10 @@
                                 <li class="nav-item navbarSeperator"></li>
 
                                 <li class="nav-item dropdown">
-                                    <a class="dropdown-item py-2" href="#language" onclick="changeLang('en')">English</a>
+                                    <a class="dropdown-item py-2" href="#language" onclick="reloadPage('en')">English</a>
                                     <ul id="language-menu-list" class="dropdown-menu" class="dropdown-menu">
                                         <li></li>
-                                        <li><a class="dropdown-item py-2" href="#language" onclick="changeLang('ar')">Arabic</a></li>
+                                        <li><a class="dropdown-item py-2" href="#language" onclick="reloadPage('ar')">Arabic</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -117,7 +117,7 @@
     </header>
     <!-- ***** Header Area End ***** -->
     
-    <div class="welcome-area column" id="welcome" style="left: 0px;">
+    <div class="welcome-area column" id="welcome" style="left: 0px; height: 715px;">
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
             <source src="assets/video/awts-home.mp4" type="video/mp4">
         </video>
@@ -195,7 +195,7 @@
             </div>
 
             <!-- Mousewheel animation -->
-            <div class="mouse-wrap column" style="width: 10%;">
+            <div class="mouse-wrap column" style="width: 10%; direction: ltr !important;">
                 <div class="mouse">
                     <div class="frame">
                         <svg version="1.1" id="mouse" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

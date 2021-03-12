@@ -68,7 +68,7 @@ body {
 
 .aboutusmission-css {
   background-image: url(../images/aboutusandmission2.svg);
-  background-position: -webkit-calc(100% + 256px) top;
+  background-position: -webkit-calc(100% + 256px) 100px;
   background-repeat: no-repeat;
   background-size: 600px 600px;
 }
@@ -101,7 +101,7 @@ body {
 .amazonservices-css {
   background-image: url(../images/amazonservices.svg),
     url(../images/amazonadvertising.svg);
-  background-position: -505px -150px, -webkit-calc(100% + 465px) top;
+  background-position: -505px -150px, -webkit-calc(100% + 465px) 350px;
   background-repeat: no-repeat;
   background-size: 1000px 400px, 600px 600px;
 }
@@ -371,8 +371,8 @@ img {
 /************************** Amazon advertising Start *****************************/
 
 .amazonAdvImgCss {
-  background: #f5cb22;
-  color: red;
+  /*background: #f5cb22;
+  color: red;*/
   transition: all 0.65s;
   transform: rotateY(360deg);
 }
@@ -388,7 +388,7 @@ img {
 }
 
 .directionRTL {
-  direction: rtl !important;
+  direction: rtl;
   text-align: right !important;
   float: right;
 }

@@ -5,6 +5,9 @@ let language = "en";
 jQuery(document).ready(function () {
   console.log("Document load ready!!");
 
+  language = getUrlVars()["lang"];
+  console.log(language);
+
   changeLang(language);
 
   $(".navbar-nav li a").on("click", function () {
@@ -33,6 +36,15 @@ jQuery(document).ready(function () {
 
   loadMap();
 });
+
+function getUrlVars() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+  });
+  console.log(vars);
+  return vars;
+}
 
 function waveLoader() {
   var headerWaveTop = $("#header-wave-top").wavify({
@@ -409,6 +421,11 @@ function changeLang(lang) {
 
   loadPortfolio();
   */
+}
 
-  $("#amazon-services-carousel").trigger("refresh.owl.carousel");
+function reloadPage(lang){
+    //$("#amazon-services-carousel").trigger("refresh.owl.carousel");
+    console.log(location.origin + location.pathname + '?lang='+lang);
+
+    window.location.href = location.origin + location.pathname + '?lang='+lang;
 }

@@ -67,23 +67,22 @@ body {
 }
 
 .aboutusmission-css {
+  background-image: url(../images/aboutusandmission2.svg);
+  background-position: -webkit-calc(100% + 256px) top;
+  background-repeat: no-repeat;
+  background-size: 600px 600px;
+}
+
+/*
+.aboutusmission-css {
   background-image: url(../images/aboutusandmission1.svg),
     url(../images/aboutusandmission2.svg);
-  /* background-position: right top; */
   background-position: -webkit-calc(100% + 165px) 100px,
     -webkit-calc(100% + 256px) top;
   background-repeat: no-repeat, no-repeat;
   background-size: 1000px 600px, 600px 600px;
 }
-
-.aboutusmission-right-css {
-  background-image: url(../images/aboutusandmission1-rtl.svg),
-    url(../images/aboutusandmission2-rtl.svg);
-  /* background-position: right top; */
-  background-position: 10px 50px, 10px 50px;
-  background-repeat: no-repeat, no-repeat;
-  background-size: 1000px 600px, 600px 600px;
-}
+*/
 
 .headerPage {
   font-weight: bold;

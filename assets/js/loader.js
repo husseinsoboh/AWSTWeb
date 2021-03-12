@@ -25,11 +25,11 @@ jQuery(document).ready(function () {
 
   waveLoader();
 
-  /*
   loadAmozonServices();
 
   loadAmazonAdvertising();
-  */
+
+  loadPortfolio();
 
   loadMap();
 });
@@ -78,9 +78,88 @@ function waveLoader() {
   });
 }
 
+var fnsuccesscallback = function (data) {
+  alert(data);
+};
+
 function loadAmozonServices() {
   console.log("===============");
   console.log(language);
+  /*
+  // + "?callback=?fnsuccesscallback"
+  $.ajax({
+    url: SERVER_API + GET_AWTS_SERVICES,
+    crossOrigin: true,
+    crossDomain: true,
+    jsonp: true,
+    type: "GET",
+    dataType: "jsonp",
+    data: {},
+    contentType: "application/json; charset=utf-8",
+    //jsonpCallback: "fnsuccesscallback",
+    async: false,
+
+    success: function (res) {
+      console.log(res);
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+      // error callback
+      console.log("textStatus: " + textStatus);
+      console.log("Error: " + errorMessage);
+      console.log(jqXhr);
+    },
+    complete: function (xhr, status) {
+      if (status === "error" || !xhr.responseText) {
+        console.log(xhr.responseText);
+      } else {
+        var data = xhr.responseText;
+        console.log(xhr);
+      }
+    },
+  });
+ 
+
+  
+  fetch("https://ipinfo.io/json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (myJson) {
+      console.log(myJson);
+    })
+    .catch(function (error) {
+      console.log("Error: " + error);
+    });
+
+
+
+      let xhr = new XMLHttpRequest();
+  xhr.open("GET", SERVER_API + GET_AWTS_SERVICES);
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+  xhr.send();
+
+  xhr.onload = function () {
+    console.log(xhr.response);
+  };
+
+
+ */
+
+  $.ajax({
+    url: SERVER_API + GET_AWTS_SERVICES,
+    type: "GET",
+    dataType: "json",
+    success: function (res) {
+      console.log(res);
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+      // error callback
+      console.log("textStatus: " + textStatus);
+      console.log("Error: " + errorMessage);
+      console.log(jqXhr);
+    },
+  });
 
   // Load AWTS Services
   let list = [
@@ -323,11 +402,13 @@ function changeLang(lang) {
 
   $("[data-localize]").localize("assets/js/lang/lang", { language: lang });
 
+  /*
   loadAmozonServices();
-
-  $("#amazon-services-carousel").trigger("refresh.owl.carousel");
 
   loadAmazonAdvertising();
 
   loadPortfolio();
+  */
+
+  $("#amazon-services-carousel").trigger("refresh.owl.carousel");
 }

@@ -313,6 +313,8 @@ function loadAmazonAdvertising() {
 }
 
 function changeLang(lang) {
+  $("[data-localize]").localize("assets/js/lang/lang", { language: lang });
+
   document.getElementById("amazon-services-menu-list").innerHTML = "";
   document.getElementById("amazon-services-carousel").innerHTML = "";
 
@@ -377,8 +379,6 @@ function changeLang(lang) {
   //$("html").children().css("text-align", "right");
 
   $("#whatWeDoDivId").css("direction", dir);
-
-  $("[data-localize]").localize("assets/js/lang/lang", { language: lang });
 
   /*
   loadAmozonServices();

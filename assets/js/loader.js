@@ -175,6 +175,7 @@ function loadAmozonServices() {
   });
 }
 
+/*
 function loadPortfolio() {
   $("#portfolio-carousel").owlCarousel({
     nav: true, // Show next and prev buttons
@@ -197,6 +198,7 @@ function loadPortfolio() {
     itemsMobile: false,
   });
 }
+*/
 
 function loadAmazonAdvertising() {
   // Load AWTS Services
@@ -373,22 +375,10 @@ function changeLang(lang) {
   $("#navBar").removeClass("floatRight");
   $("#navBar").addClass(navBarClass);
 
-  //$("html").children().css("direction", dir);
-  //$("html").children().css("text-align", "right");
-
   $("#whatWeDoDivId").css("direction", dir);
-
-  /*
-  loadAmozonServices();
-
-  loadAmazonAdvertising();
-
-  loadPortfolio();
-  */
 }
 
 function reloadPage(lang) {
-  //$("#amazon-services-carousel").trigger("refresh.owl.carousel");
   console.log(location.origin + location.pathname + "?lang=" + lang);
 
   if (lang != language)

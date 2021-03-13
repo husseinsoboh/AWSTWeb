@@ -267,11 +267,9 @@ function loadAmazonAdvertising() {
       '" style="height: 120px;" alt="">';
     div += "</div>";
     div +=
-      '<h5 class="headerPanel">' +
+      '<h5 class="advertisingTitleCss">' +
       elem.name +
-      '</h5><p class="textPanel mt-4">' +
-      elem.description +
-      "</p></div>";
+      '</h5></div>';
     div += "</div>";
     //console.log(elem.name);
   }

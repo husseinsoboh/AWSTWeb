@@ -61,6 +61,12 @@ body {
   color: #505965;
 }
 
+.advertisingTitleCss {
+  font-weight: bold;
+  font-size: 14px !important;
+  color: #505965;
+}
+
 .textPanel {
   font-size: 12px !important;
   color: #3c3c3c;

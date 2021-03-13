@@ -32,16 +32,19 @@ jQuery(document).ready(function () {
 
   loadAmazonAdvertising();
 
-  loadPortfolio();
+  //loadPortfolio();
 
   loadMap();
 });
 
 function getUrlVars() {
   var vars = {};
-  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+  var parts = window.location.href.replace(
+    /[?&]+([^=&]+)=([^&]*)/gi,
+    function (m, key, value) {
       vars[key] = value;
-  });
+    }
+  );
   console.log(vars);
   return vars;
 }
@@ -98,66 +101,6 @@ function loadAmozonServices() {
   console.log("===============");
   console.log(language);
   /*
-  // + "?callback=?fnsuccesscallback"
-  $.ajax({
-    url: SERVER_API + GET_AWTS_SERVICES,
-    crossOrigin: true,
-    crossDomain: true,
-    jsonp: true,
-    type: "GET",
-    dataType: "jsonp",
-    data: {},
-    contentType: "application/json; charset=utf-8",
-    //jsonpCallback: "fnsuccesscallback",
-    async: false,
-
-    success: function (res) {
-      console.log(res);
-    },
-    error: function (jqXhr, textStatus, errorMessage) {
-      // error callback
-      console.log("textStatus: " + textStatus);
-      console.log("Error: " + errorMessage);
-      console.log(jqXhr);
-    },
-    complete: function (xhr, status) {
-      if (status === "error" || !xhr.responseText) {
-        console.log(xhr.responseText);
-      } else {
-        var data = xhr.responseText;
-        console.log(xhr);
-      }
-    },
-  });
- 
-
-  
-  fetch("https://ipinfo.io/json")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (myJson) {
-      console.log(myJson);
-    })
-    .catch(function (error) {
-      console.log("Error: " + error);
-    });
-
-
-
-      let xhr = new XMLHttpRequest();
-  xhr.open("GET", SERVER_API + GET_AWTS_SERVICES);
-  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-  xhr.send();
-
-  xhr.onload = function () {
-    console.log(xhr.response);
-  };
-
-
- */
-
   $.ajax({
     url: SERVER_API + GET_AWTS_SERVICES,
     type: "GET",
@@ -172,6 +115,7 @@ function loadAmozonServices() {
       console.log(jqXhr);
     },
   });
+   */
 
   // Load AWTS Services
   let list = [
@@ -200,7 +144,9 @@ function loadAmozonServices() {
     let elem = list[i];
 
     divMenu +=
-      '<a class="dropdown-item py-2 '+textAlignClass+'" href="#services">' +
+      '<a class="dropdown-item py-2 ' +
+      textAlignClass +
+      '" href="#services">' +
       elem.name +
       "</a>";
 
@@ -230,39 +176,6 @@ function loadAmozonServices() {
 }
 
 function loadPortfolio() {
-  /*
-  $("#portfolio-carousel").carousel({
-    interval: 1000 * scrollDurarion,
-    keyboard: false,
-    pause: "hover",
-    ride: true,
-    wrap: true
-  });
-
-  $("#portfolio-prev").click(function () {
-    $("#portfolio-carousel").carousel("prev");
-  });
-
-  $("#portfolio-next").click(function () {
-    $("#portfolio-carousel").carousel("next");
-  });
-
-  $("#portfolio-carousel").swipe({
-    swipe: function (
-      event,
-      direction,
-      distance,
-      duration,
-      fingerCount,
-      fingerData
-    ) {
-      if (direction == "left") $("#portfolio-carousel").carousel("next");
-      if (direction == "right") $("#portfolio-carousel").carousel("prev");
-    },
-    allowPageScroll: "vertical",
-  });
-  */
-
   $("#portfolio-carousel").owlCarousel({
     nav: true, // Show next and prev buttons
     navText: [
@@ -338,17 +251,28 @@ function loadAmazonAdvertising() {
     let elem = list[i];
 
     divMenu +=
-      '<a class="dropdown-item py-2 '+textAlignClass+'" href="#services">' +
+      '<a class="dropdown-item py-2 ' +
+      textAlignClass +
+      '" href="#services">' +
       elem.name +
       "</a>";
 
     div += '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft">';
-    div += '<div class="amazonAdvBlockCss card card-body border-0 text-center shadow pt-1 cardCss">';
+    div +=
+      '<div class="amazonAdvBlockCss card card-body border-0 text-center shadow pt-1 cardCss">';
     div += '<div class="amazonAdvDivCss svg-icon mx-auto mb-4">';
-    div += '<img class=""advertisingimage src="' + elem.image + '" style="height: 120px;" alt="">';
-    div += '</div>';
-    div += '<h5 class="headerPanel">' + elem.name + '</h5><p class="textPanel mt-4">' + elem.description + '</p></div>';
-    div += '</div>';
+    div +=
+      '<img class=""advertisingimage src="' +
+      elem.image +
+      '" style="height: 120px;" alt="">';
+    div += "</div>";
+    div +=
+      '<h5 class="headerPanel">' +
+      elem.name +
+      '</h5><p class="textPanel mt-4">' +
+      elem.description +
+      "</p></div>";
+    div += "</div>";
     //console.log(elem.name);
   }
 
@@ -363,8 +287,7 @@ function loadAmazonAdvertising() {
       $(this).children("img").removeClass("amazonAdvImgCss");
     });
 
-
-    /*
+  /*
     $('img[src$=".svg"]').each(function() {
       var $img = jQuery(this);
       var imgURL = $img.attr('src');
@@ -413,8 +336,15 @@ function changeLang(lang) {
     navBarClass = "floatLeft";
     $(".menuTopClass").addClass("menuTopRTL");
 
-    $("#phoneMockupId").attr("src","assets/images/phone-mockup-ar.png");
-    $("#phoneMockupId").attr("style","height:500px; float: left");
+    $("#phoneMockupId").attr("src", "assets/images/phone-mockup-ar.png");
+    $("#phoneMockupId").attr("style", "height:450px; float: left");
+
+    if ($("#portfolioImgId") != null) {
+      $("#portfolioImgId").attr(
+        "src",
+        "assets/images/portfolio/portfolio-ar.png"
+      );
+    }
   } else {
     dir = "ltr";
     classList = "directionLTR";
@@ -423,8 +353,15 @@ function changeLang(lang) {
     navBarClass = "floatRight";
     $(".menuTopClass").removeClass("menuTopRTL");
 
-    $("#phoneMockupId").attr("src","assets/images/phone-mockup-en.png");
-    $("#phoneMockupId").attr("style","height:500px; float: right");
+    $("#phoneMockupId").attr("src", "assets/images/phone-mockup-en.png");
+    $("#phoneMockupId").attr("style", "height:450px; float: right");
+
+    if ($("#portfolioImgId") != null) {
+      $("#portfolioImgId").attr(
+        "src",
+        "assets/images/portfolio/portfolio-en.png"
+      );
+    }
   }
   console.log(lang, dir, classList);
 
@@ -452,9 +389,11 @@ function changeLang(lang) {
   */
 }
 
-function reloadPage(lang){
-    //$("#amazon-services-carousel").trigger("refresh.owl.carousel");
-    console.log(location.origin + location.pathname + '?lang='+lang);
+function reloadPage(lang) {
+  //$("#amazon-services-carousel").trigger("refresh.owl.carousel");
+  console.log(location.origin + location.pathname + "?lang=" + lang);
 
-    if(lang != language) window.location.href = location.origin + location.pathname + '?lang='+lang;
+  if (lang != language)
+    window.location.href =
+      location.origin + location.pathname + "?lang=" + lang;
 }

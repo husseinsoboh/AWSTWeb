@@ -119,7 +119,7 @@ body {
 }
 
 .labelContact {
-  font-size: 12px !important;
+  font-size: 14px !important;
   color: #b7b9ba;
 }
 
@@ -415,7 +415,7 @@ svg:hover path {
   float: right !important;
 }
 
-.menuTopRTL{
+.menuTopRTL {
   right: 10px;
 }
 /************************** Amazon advertising End *****************************/

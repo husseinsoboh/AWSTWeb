@@ -292,37 +292,37 @@ function loadAmazonAdvertising() {
       id: 0,
       name: "Sponsored products/Brands",
       description: "Description",
-      image: "assets/img/payment.png",
+      image: "assets/images/advertising/sponsoredproduct.svg",
     },
     {
       id: 1,
       name: "Promotions",
       description: "Description",
-      image: "assets/img/customizable.png",
+      image: "assets/images/advertising/promotions.svg",
     },
     {
       id: 2,
       name: "Deals",
       description: "Description",
-      image: "assets/img/concept.png",
+      image: "assets/images/advertising/deals.svg",
     },
     {
       id: 3,
       name: "Coupons",
       description: "Description",
-      image: "assets/img/payment.png",
+      image: "assets/images/advertising/coupons.svg",
     },
     {
       id: 4,
       name: "Emails Marketing Campaigns",
       description: "Description",
-      image: "assets/img/customizable.png",
+      image: "assets/images/advertising/emailmarketingcampaigns.svg",
     },
     {
       id: 5,
       name: "E-Gifts",
       description: "Description",
-      image: "assets/img/concept.png",
+      image: "assets/images/advertising/e-gifts.svg",
     },
   ];
 
@@ -341,14 +341,14 @@ function loadAmazonAdvertising() {
       '<a class="dropdown-item py-2 '+textAlignClass+'" href="#services">' +
       elem.name +
       "</a>";
-    div +=
-      '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft"><div class="amazonAdvBlockCss card card-body border-0 text-center shadow pt-5 cardCss"><div class="amazonAdvDivCss svg-icon mx-auto mb-4"><img src="' +
-      elem.image +
-      '" alt=""></div><h5 class="headerPanel">' +
-      elem.name +
-      '</h5><p class="textPanel mt-4">' +
-      elem.description +
-      "</p></div></div>";
+
+    div += '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft">';
+    div += '<div class="amazonAdvBlockCss card card-body border-0 text-center shadow pt-1 cardCss">';
+    div += '<div class="amazonAdvDivCss svg-icon mx-auto mb-4">';
+    div += '<img class=""advertisingimage src="' + elem.image + '" style="height: 120px;" alt="">';
+    div += '</div>';
+    div += '<h5 class="headerPanel">' + elem.name + '</h5><p class="textPanel mt-4">' + elem.description + '</p></div>';
+    div += '</div>';
     //console.log(elem.name);
   }
 
@@ -362,6 +362,31 @@ function loadAmazonAdvertising() {
     .mouseleave(function () {
       $(this).children("img").removeClass("amazonAdvImgCss");
     });
+
+
+    /*
+    $('img[src$=".svg"]').each(function() {
+      var $img = jQuery(this);
+      var imgURL = $img.attr('src');
+      var attributes = $img.prop("attributes");
+
+      $.get(imgURL, function(data) {
+          // Get the SVG tag, ignore the rest
+          var $svg = jQuery(data).find('svg');
+
+          // Remove any invalid XML tags
+          $svg = $svg.removeAttr('xmlns:a');
+
+          // Loop through IMG attributes and apply on SVG
+          $.each(attributes, function() {
+              $svg.attr(this.name, this.value);
+          });
+
+          // Replace IMG with SVG
+          $img.replaceWith($svg);
+      }, 'xml');
+  });
+  */
 }
 
 function changeLang(lang) {
@@ -387,6 +412,9 @@ function changeLang(lang) {
     $("#whatsappImgId").addClass("whatsapp-rtl");
     navBarClass = "floatLeft";
     $(".menuTopClass").addClass("menuTopRTL");
+
+    $("#phoneMockupId").attr("src","assets/images/phone-mockup-ar.png");
+    $("#phoneMockupId").attr("style","height:500px; float: left");
   } else {
     dir = "ltr";
     classList = "directionLTR";
@@ -394,6 +422,9 @@ function changeLang(lang) {
     $("#whatsappImgId").addClass("whatsapp");
     navBarClass = "floatRight";
     $(".menuTopClass").removeClass("menuTopRTL");
+
+    $("#phoneMockupId").attr("src","assets/images/phone-mockup-en.png");
+    $("#phoneMockupId").attr("style","height:500px; float: right");
   }
   console.log(lang, dir, classList);
 

@@ -377,6 +377,16 @@ img {
   transform: rotateY(360deg);
 }
 
+/*
+.advertisingimage:hover path {
+  fill: red!important;
+}
+
+svg:hover path {
+    fill: red;
+}
+*/
+
 .amazonAdvBlockCss:active {
   background-color: #d3d3d3;
 }

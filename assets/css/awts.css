@@ -323,6 +323,8 @@ img {
   border-radius: 6px;
   margin-top: 30px;
   width: 95%;
+  line-height: 30px;
+  padding-top: 60px;
 }
 
 .center .owlCarouselCss {

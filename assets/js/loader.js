@@ -102,17 +102,19 @@ function loadAmozonServices() {
   console.log(language);
 
   let list = [
-    { id: 0, name: "Keyword research", description: "Keyword research desc" },
+    { id: 0, TitleEn: "Keyword research", DescriptionEn: "Keyword research desc", TitleAr: "Keyword research", DescriptionAr: "Keyword research desc" },
     {
       id: 1,
-      name: "Amazon storefont Design",
-      description: "Amazon storefont Design desc",
+      TitleEn: "Amazon storefont Design for AWTS project",
+      DescriptionEn: "Amazon storefont Design desc",
+      TitleAr: "Amazon storefont Design for AWTS project",
+      DescriptionAr: "Amazon storefont Design desc",
     },
-    { id: 2, name: "Cataloging", description: "Cataloging desc" },
-    { id: 3, name: "Imaging", description: "Imaging desc" },
-    { id: 4, name: "Training", description: "Training desc" },
-    { id: 5, name: "Translation", description: "Translation desc" },
-    { id: 6, name: "Accounting", description: "Accounting desc" },
+    { id: 2, TitleEn: "Cataloging", DescriptionEn: "Cataloging desc", TitleAr: "Cataloging", DescriptionAr: "Cataloging desc"  },
+    { id: 3, TitleEn: "Imaging", DescriptionEn: "Imaging desc", TitleAr: "Imaging", DescriptionAr: "Imaging desc" },
+    { id: 4, TitleEn: "Training", DescriptionEn: "Training desc", TitleAr: "Training", DescriptionAr: "Training desc" },
+    { id: 5, TitleEn: "Translation", DescriptionEn: "Translation desc", TitleAr: "Translation", DescriptionAr: "Translation desc" },
+    { id: 6, TitleEn: "Accounting", DescriptionEn: "Accounting desc", TitleAr: "Accounting", DescriptionAr: "Accounting desc" },
   ];
 
   $.ajax({
@@ -215,38 +217,50 @@ function loadAmazonAdvertising() {
   let list = [
     {
       id: 0,
-      name: "Sponsored products/Brands",
-      description: "Description",
+      TitleEn: "Sponsored products/Brands",
+      DescriptionEn: "Description",
+      TitleAr: "Sponsored products/Brands",
+      DescriptionAr: "Description",
       image: "assets/images/advertising/sponsoredproduct.svg",
     },
     {
       id: 1,
-      name: "Promotions",
-      description: "Description",
+      TitleEn: "Promotions",
+      DescriptionEn: "Description",
+      TitleAr: "Promotions",
+      DescriptionAr: "Description",
       image: "assets/images/advertising/promotions.svg",
     },
     {
       id: 2,
-      name: "Deals",
-      description: "Description",
+      TitleEn: "Deals",
+      DescriptionEn: "Description",
+      TitleAr: "Deals",
+      DescriptionAr: "Description",
       image: "assets/images/advertising/deals.svg",
     },
     {
       id: 3,
-      name: "Coupons",
-      description: "Description",
+      TitleEn: "Coupons",
+      DescriptionEn: "Description",
+      TitleAr: "Coupons",
+      DescriptionAr: "Description",
       image: "assets/images/advertising/coupons.svg",
     },
     {
       id: 4,
-      name: "Emails Marketing Campaigns",
-      description: "Description",
+      TitleEn: "Emails Marketing Campaigns",
+      DescriptionEn: "Description",
+      TitleAr: "Emails Marketing Campaigns",
+      DescriptionAr: "Description",
       image: "assets/images/advertising/emailmarketingcampaigns.svg",
     },
     {
       id: 5,
-      name: "E-Gifts",
-      description: "Description",
+      TitleEn: "E-Gifts",
+      DescriptionEn: "Description",
+      TitleAr: "E-Gifts",
+      DescriptionAr: "Description",
       image: "assets/images/advertising/e-gifts.svg",
     },
   ];
@@ -366,6 +380,8 @@ function changeLang(lang) {
   let navBarClass = "floatLeft";
 
   if (lang == "ar") {
+    $("#videoSrc").attr("src", "assets/video/awts-home-ar.mp4");
+
     dir = "rtl";
     classList = "directionRTL";
     $("#whatsappImgId").removeClass("whatsapp");
@@ -383,6 +399,8 @@ function changeLang(lang) {
       );
     }
   } else {
+    $("#videoSrc").attr("src", "assets/video/awts-home-en.mp4");
+
     dir = "ltr";
     classList = "directionLTR";
     $("#whatsappImgId").removeClass("whatsapp-rtl");

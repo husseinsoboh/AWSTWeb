@@ -100,24 +100,7 @@ var fnsuccesscallback = function (data) {
 function loadAmozonServices() {
   console.log("===============");
   console.log(language);
-  /*
-  $.ajax({
-    url: SERVER_API + GET_AWTS_SERVICES,
-    type: "GET",
-    dataType: "json",
-    success: function (res) {
-      console.log(res);
-    },
-    error: function (jqXhr, textStatus, errorMessage) {
-      // error callback
-      console.log("textStatus: " + textStatus);
-      console.log("Error: " + errorMessage);
-      console.log(jqXhr);
-    },
-  });
-   */
 
-  // Load AWTS Services
   let list = [
     { id: 0, name: "Keyword research", description: "Keyword research desc" },
     {
@@ -132,6 +115,30 @@ function loadAmozonServices() {
     { id: 6, name: "Accounting", description: "Accounting desc" },
   ];
 
+  $.ajax({
+    url: SERVER_API + GET_AWTS_SERVICES,
+    type: "GET",
+    dataType: "json",
+    success: function (res) {
+      console.log("INNNNNNNNN");
+      console.log(res);
+
+      list = res;
+
+      drawServices(list);
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+      // error callback
+      console.log("textStatus: " + textStatus);
+      console.log("Error: " + errorMessage);
+      console.log(jqXhr);
+
+      drawServices(list);
+    },
+  });
+}
+
+function drawServices(list) {
   let div = "";
   let divMenu = "";
 
@@ -142,15 +149,18 @@ function loadAmozonServices() {
 
   for (let i = 0; i < list.length; i++) {
     let elem = list[i];
+    console.log(elem);
+
+    let title = language == "en" ? elem.TitleEn : elem.TitleAr;
 
     divMenu +=
       '<a class="dropdown-item py-2 ' +
       textAlignClass +
       '" href="#services">' +
-      elem.name +
+      title +
       "</a>";
 
-    div += '<div class="item owlCarouselCss">' + elem.name + "</div>";
+    div += '<div class="item owlCarouselCss">' + title + "</div>";
 
     //console.log(elem.name);
   }
@@ -241,6 +251,32 @@ function loadAmazonAdvertising() {
     },
   ];
 
+  console.log(SERVER_API + GET_ADVERTISING);
+
+  $.ajax({
+    url: SERVER_API + GET_ADVERTISING,
+    type: "GET",
+    dataType: "json",
+    success: function (res) {
+      console.log("INNNNNNNNN");
+      console.log(res);
+
+      list = res;
+
+      drawAdvertising(list);
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+      // error callback
+      console.log("textStatus: " + textStatus);
+      console.log("Error: " + errorMessage);
+      console.log(jqXhr);
+
+      drawAdvertising(list);
+    },
+  });
+}
+
+function drawAdvertising(list) {
   let div = "";
   let divMenu = "";
 
@@ -252,11 +288,13 @@ function loadAmazonAdvertising() {
   for (let i = 0; i < list.length; i++) {
     let elem = list[i];
 
+    let title = language == "en" ? elem.TitleEn : elem.TitleAr;
+
     divMenu +=
       '<a class="dropdown-item py-2 ' +
       textAlignClass +
       '" href="#services">' +
-      elem.name +
+      title +
       "</a>";
 
     div += '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft">';
@@ -268,10 +306,7 @@ function loadAmazonAdvertising() {
       elem.image +
       '" style="height: 120px;" alt="">';
     div += "</div>";
-    div +=
-      '<h5 class="advertisingTitleCss">' +
-      elem.name +
-      '</h5></div>';
+    div += '<h5 class="advertisingTitleCss">' + title + "</h5></div>";
     div += "</div>";
     //console.log(elem.name);
   }

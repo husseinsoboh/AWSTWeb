@@ -426,4 +426,13 @@ svg:hover path {
 .menuTopRTL {
   right: 10px;
 }
+
+.dropdown-menu {
+  max-width: 300px !important;
+}
+
+.dropdown-item {
+  word-break: break-all;
+  white-space: pre-wrap !important;
+}
 /************************** Amazon advertising End *****************************/

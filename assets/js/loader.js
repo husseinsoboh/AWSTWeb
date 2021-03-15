@@ -5,6 +5,12 @@ let language = "en";
 jQuery(document).ready(function () {
   console.log("Document load ready!!");
 
+  $("[data-hide]").on("click", function () {
+    $(this)
+      .closest("." + $(this).attr("data-hide"))
+      .hide();
+  });
+
   language = getUrlVars()["lang"];
   console.log(language);
 
@@ -35,6 +41,13 @@ jQuery(document).ready(function () {
   //loadPortfolio();
 
   loadMap();
+
+  $("#contact").on("submit", function (e) {
+    e.preventDefault();
+    //ajax code here
+
+    sendContact();
+  });
 });
 
 function getUrlVars() {
@@ -102,7 +115,13 @@ function loadAmozonServices() {
   console.log(language);
 
   let list = [
-    { id: 0, TitleEn: "Keyword research", DescriptionEn: "Keyword research desc", TitleAr: "Keyword research", DescriptionAr: "Keyword research desc" },
+    {
+      id: 0,
+      TitleEn: "Keyword research",
+      DescriptionEn: "Keyword research desc",
+      TitleAr: "Keyword research",
+      DescriptionAr: "Keyword research desc",
+    },
     {
       id: 1,
       TitleEn: "Amazon storefont Design for AWTS project",
@@ -110,11 +129,41 @@ function loadAmozonServices() {
       TitleAr: "Amazon storefont Design for AWTS project",
       DescriptionAr: "Amazon storefont Design desc",
     },
-    { id: 2, TitleEn: "Cataloging", DescriptionEn: "Cataloging desc", TitleAr: "Cataloging", DescriptionAr: "Cataloging desc"  },
-    { id: 3, TitleEn: "Imaging", DescriptionEn: "Imaging desc", TitleAr: "Imaging", DescriptionAr: "Imaging desc" },
-    { id: 4, TitleEn: "Training", DescriptionEn: "Training desc", TitleAr: "Training", DescriptionAr: "Training desc" },
-    { id: 5, TitleEn: "Translation", DescriptionEn: "Translation desc", TitleAr: "Translation", DescriptionAr: "Translation desc" },
-    { id: 6, TitleEn: "Accounting", DescriptionEn: "Accounting desc", TitleAr: "Accounting", DescriptionAr: "Accounting desc" },
+    {
+      id: 2,
+      TitleEn: "Cataloging",
+      DescriptionEn: "Cataloging desc",
+      TitleAr: "Cataloging",
+      DescriptionAr: "Cataloging desc",
+    },
+    {
+      id: 3,
+      TitleEn: "Imaging",
+      DescriptionEn: "Imaging desc",
+      TitleAr: "Imaging",
+      DescriptionAr: "Imaging desc",
+    },
+    {
+      id: 4,
+      TitleEn: "Training",
+      DescriptionEn: "Training desc",
+      TitleAr: "Training",
+      DescriptionAr: "Training desc",
+    },
+    {
+      id: 5,
+      TitleEn: "Translation",
+      DescriptionEn: "Translation desc",
+      TitleAr: "Translation",
+      DescriptionAr: "Translation desc",
+    },
+    {
+      id: 6,
+      TitleEn: "Accounting",
+      DescriptionEn: "Accounting desc",
+      TitleAr: "Accounting",
+      DescriptionAr: "Accounting desc",
+    },
   ];
 
   $.ajax({
@@ -437,4 +486,41 @@ function reloadPage(lang) {
   if (lang != language)
     window.location.href =
       location.origin + location.pathname + "?lang=" + lang;
+}
+
+function sendContact() {
+  var name = $("#name").val();
+  var email = $("#email").val();
+  var message = $("#message").val();
+
+  console.log(name + " " + email + " " + message);
+
+  let param = {
+    Name: name,
+    Email: email,
+    Message: message,
+  };
+
+  $.ajax({
+    url: SERVER_API + Post_EMAIL_ADD,
+    type: "GET",
+    dataType: "json",
+    data: param,
+    success: function (res) {
+      console.log("INNNNNNNNN");
+      console.log(res);
+
+      $("#alertFormSubmitId").alert("open");
+      $("#alertFormSubmitId").show();
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+      // error callback
+      console.log("textStatus: " + textStatus);
+      console.log("Error: " + errorMessage);
+      console.log(jqXhr);
+
+      $("#alertFormSubmitErrorId").alert("open");
+      $("#alertFormSubmitErrorId").show();
+    },
+  });
 }

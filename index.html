@@ -359,7 +359,7 @@
 
                         <div class="rtlClass row pb-4 w-full" style="padding-left: 50px! important; padding-right: 50px! important;">
                             <div class="row contact-form w-5/12" style="padding-left: 10px; padding-right: 10px;">
-                                <form id="contact" action="" method="get">
+                                <form id="contact" method="get">
                                     <div class="row">
                                         <div class="col-12 column">
                                             <div class="pb-2" data-localize="name">Name</div>
@@ -381,11 +381,21 @@
                                         </div>
                                         <div class="col-12 column mt-2">
                                             <fieldset>
-                                                <button type="submit" id="form-submit" data-localize="send" class="main-button hvr-back-pulse">Send</button>
+                                                <button id="form-submit" type='submit' data-localize="send" class="main-button hvr-back-pulse">Send</button>
                                             </fieldset>
                                         </div>
                                     </div>
                                 </form>
+
+                                <div id="alertFormSubmitId" class="alert alert-primary mt-2 w-full hidden" role="alert">
+                                    <button type="button" class="close" data-hide="alert">&times;</button>
+                                    Form submitted successfuly
+                                </div>
+
+                                <div id="alertFormSubmitErrorId" class="alert alert-danger mt-2 w-full hidden" role="alert">
+                                    <button type="button" class="close" data-hide="alert">&times;</button>
+                                    Form cannot be submitted
+                                </div>
                             </div>
 
                             <div class="column w-1/12 mt-4">

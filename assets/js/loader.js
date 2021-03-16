@@ -69,7 +69,7 @@ function waveLoader() {
     // Total number of articulation in wave
     bones: 4,
     // Amplitude of wave
-    amplitude: 50,
+    amplitude: 30,
     // Color
     color: "#61C4F3",
     // Animation speed
@@ -77,11 +77,11 @@ function waveLoader() {
   });
 
   var headerWaveBottom = $("#header-wave-bottom").wavify({
-    height: 60,
-    bones: 4,
-    amplitude: 50,
+    height: 80,
+    bones: 3,
+    amplitude: 30,
     color: "#ffffff",
-    speed: 0.25,
+    speed: 0.15,
   });
 
   var footerWaveTop = $("#footer-wave-top").wavify({
@@ -90,7 +90,7 @@ function waveLoader() {
     // Total number of articulation in wave
     bones: 4,
     // Amplitude of wave
-    amplitude: 50,
+    amplitude: 30,
     // Color
     color: "#61C4F3",
     // Animation speed
@@ -98,11 +98,11 @@ function waveLoader() {
   });
 
   var footerWaveBottom = $("#footer-wave-bottom").wavify({
-    height: 60,
-    bones: 4,
-    amplitude: 50,
+    height: 80,
+    bones: 3,
+    amplitude: 30,
     color: "#E6E6E6",
-    speed: 0.25,
+    speed: 0.15,
   });
 }
 

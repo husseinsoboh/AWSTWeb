@@ -69,7 +69,7 @@ function waveLoader() {
     // Total number of articulation in wave
     bones: 4,
     // Amplitude of wave
-    amplitude: 30,
+    amplitude:20,
     // Color
     color: "#61C4F3",
     // Animation speed

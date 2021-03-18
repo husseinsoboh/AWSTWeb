@@ -399,6 +399,8 @@ function drawAdvertising(list) {
     let elem = list[i];
 
     let title = language == "en" ? elem.TitleEn : elem.TitleAr;
+    let description =
+      language == "en" ? elem.DescriptionEn : elem.DescriptionAr;
 
     divMenu +=
       '<a class="dropdown-item py-2 ' +
@@ -407,6 +409,7 @@ function drawAdvertising(list) {
       title +
       "</a>";
 
+    /*
     div += '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft">';
     div +=
       '<div class="amazonAdvBlockCss card card-body border-0 text-center shadow pt-1 cardCss">';
@@ -419,6 +422,42 @@ function drawAdvertising(list) {
     div += '<h5 class="advertisingTitleCss">' + title + "</h5></div>";
     div += "</div>";
     //console.log(elem.name);
+    */
+
+    div += '<div class="card-container">';
+    div += '<div class="card"><a href="hottub">';
+    div += '<div class="card--display">';
+    div +=
+      '<img class=""advertisingimage src="' +
+      elem.image +
+      '" style="height: 120px;" alt="">';
+    div += "<h2>" + title + "</h2></div>";
+    div += '<div class="card--hover">';
+    div +=
+      '<img class=""advertisingimage src="' +
+      elem.image +
+      '" style="height: 120px;" alt="">';
+    div += "<h2>" + title + "</h2>";
+    div += "<p>" + description + "</p>";
+    div += "</div></a>";
+    div += '<div class="card--border"></div>';
+    div += "</div></div>";
+
+    /*
+    <div class="card-container"> 
+      <div class="card"><a href="hottub">
+          <div class="card--display"><i class="material-icons">hot_tub</i>
+            <h2>Hot Tub Time Machine</h2>
+          </div>
+          <div class="card--hover">
+            <h2>Hot Tub Time Machine</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at est orci. Nam molestie pellentesque mi nec lacinia. Cras volutpat arcu sit amet elit sodales, nec volutpat velit bibendum.</p>
+            <p class="link">Click to see project</p>
+          </div></a>
+        <div class="card--border"></div>
+      </div>
+    </div>
+    */
   }
 
   document.getElementById("amazon-advertising-menu-list").innerHTML = divMenu;

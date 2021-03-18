@@ -116,10 +116,6 @@ function waveLoader() {
   });
 }
 
-var fnsuccesscallback = function (data) {
-  alert(data);
-};
-
 function loadAmozonServices() {
   console.log("===============");
   console.log(language);
@@ -314,9 +310,9 @@ function loadAmazonAdvertising() {
     {
       id: 0,
       TitleEn: "Sponsored products/Brands",
-      DescriptionEn: "Description",
+      DescriptionEn: "Description Sponsored products/Brands EN",
       TitleAr: "Sponsored products/Brands",
-      DescriptionAr: "Description",
+      DescriptionAr: "Description Sponsored products/Brands AR",
       image: "assets/images/advertising/sponsoredproduct.svg",
     },
     {
@@ -390,6 +386,8 @@ function drawAdvertising(list) {
   let div = "";
   let divMenu = "";
 
+  console.log(language);
+
   let textAlignClass = "";
   if (language == "ar") {
     textAlignClass = "textAlignRTL";
@@ -424,51 +422,44 @@ function drawAdvertising(list) {
     //console.log(elem.name);
     */
 
-    div += '<div class="card-container">';
-    div += '<div class="card"><a href="hottub">';
+    div += '<div id="'+i+'" class="card-container">';
+    div += '<div class="card"><a>';
     div += '<div class="card--display">';
     div +=
-      '<img class=""advertisingimage src="' +
+      '<img class="" src="' +
       elem.image +
-      '" style="height: 120px;" alt="">';
+      '" style="width: 100%; height: 120px;" alt="">';
     div += "<h2>" + title + "</h2></div>";
     div += '<div class="card--hover">';
     div +=
-      '<img class=""advertisingimage src="' +
+      '<img id="imgAdv'+i+'" class="" src="' +
       elem.image +
-      '" style="height: 120px;" alt="">';
+      '" style="width: 100%; height: 120px;" alt="">';
     div += "<h2>" + title + "</h2>";
     div += "<p>" + description + "</p>";
     div += "</div></a>";
     div += '<div class="card--border"></div>';
     div += "</div></div>";
-
-    /*
-    <div class="card-container"> 
-      <div class="card"><a href="hottub">
-          <div class="card--display"><i class="material-icons">hot_tub</i>
-            <h2>Hot Tub Time Machine</h2>
-          </div>
-          <div class="card--hover">
-            <h2>Hot Tub Time Machine</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at est orci. Nam molestie pellentesque mi nec lacinia. Cras volutpat arcu sit amet elit sodales, nec volutpat velit bibendum.</p>
-            <p class="link">Click to see project</p>
-          </div></a>
-        <div class="card--border"></div>
-      </div>
-    </div>
-    */
   }
 
   document.getElementById("amazon-advertising-menu-list").innerHTML = divMenu;
   document.getElementById("amazon-advertising-list").innerHTML = div;
 
-  $(".amazonAdvDivCss")
+
+  $(".card-container")
     .mouseenter(function () {
-      $(this).children("img").addClass("amazonAdvImgCss");
+      let id = $(this).attr("id");
+      console.log(id);
+      setTimeout(function () {
+        document.getElementById("imgAdv"+id).classList.add("amazonAdvImgCss");
+      }, 100);
     })
     .mouseleave(function () {
-      $(this).children("img").removeClass("amazonAdvImgCss");
+      let id = $(this).attr("id");
+      console.log(id);
+      setTimeout(function () {
+        document.getElementById("imgAdv"+id).classList.remove("amazonAdvImgCss");
+      }, 100);
     });
 
   /*
@@ -507,6 +498,10 @@ function changeLang(lang) {
 
   document.getElementById("amazon-advertising-menu-list").innerHTML = "";
   document.getElementById("amazon-advertising-list").innerHTML = "";
+
+  console.log(lang);
+
+  if(lang != "en" && lang != "ar") lang = "en";
 
   language = lang;
 

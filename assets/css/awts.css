@@ -124,11 +124,6 @@ div video {
   color: #505965;
 }
 
-.textPanel {
-  font-size: 12px !important;
-  color: #3c3c3c;
-}
-
 .aboutusmission-css {
   background-image: url(../images/aboutusandmission2.svg);
   background-position: -webkit-calc(100% + 260px) 160px;
@@ -182,8 +177,13 @@ div video {
 }
 
 .labelContact {
-  font-size: 14px !important;
+  font-size: 16px !important;
   color: #b7b9ba;
+}
+
+.textPanel {
+  font-size: 16px !important;
+  color: #3c3c3c;
 }
 
 .footerPanel {
@@ -421,21 +421,12 @@ img {
 /************************** Amazon advertising Start *****************************/
 
 .amazonAdvImgCss {
-  /*background: #f5cb22;
-  color: red;*/
   transition: all 0.65s;
   transform: rotateY(360deg);
-}
 
-/*
-.advertisingimage:hover path {
-  fill: red!important;
+  -webkit-filter: grayscale(1) invert(1);
+   filter: grayscale(1) invert(1);
 }
-
-svg:hover path {
-    fill: red;
-}
-*/
 
 .amazonAdvBlockCss:active {
   background-color: #d3d3d3;
@@ -481,8 +472,9 @@ svg:hover path {
 
 /************************** Reveal Card Content on Hover Start ********************/
 .card-container {
-  flex: 30%;
-  margin: 10px;
+  flex: 28%;
+  margin: 15px;
+  z-index: 100;
 }
 .card-container .card {
   font-weight: bold;
@@ -496,7 +488,7 @@ svg:hover path {
   cursor: pointer;
 }
 .card-container .card a {
-  padding: 30px;
+  /*padding: 30px;*/
   width: 100%;
   height: 300px;
   /*border: 2px solid black;*/
@@ -512,8 +504,9 @@ svg:hover path {
   border-color: #5bc0eb;
   */
 
-  transform: scale(1.1);
+  transform: scale(1.2);
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  z-index: 9999;
 }
 .card-container .card a:hover .card--display {
   display: none;
@@ -537,6 +530,9 @@ svg:hover path {
 .card-container .card a .card--hover p {
   font-weight: normal;
   line-height: 1.5;
+  font-size: 12px;
+  overflow: auto;
+  height: 100px;
 }
 .card-container .card a .card--hover p.link {
   margin: 20px 0 0;

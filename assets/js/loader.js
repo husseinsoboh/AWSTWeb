@@ -2,6 +2,8 @@ let scrollDurarion = 10000;
 
 let language = "en";
 
+let activeModal = false;
+
 jQuery(document).ready(function () {
   console.log("Document load ready!!");
 
@@ -42,6 +44,14 @@ jQuery(document).ready(function () {
 
   loadMap();
 
+  AOS.init({
+    duration: 1200,
+  });
+
+  setTimeout(function () {
+    document.getElementById("welcomeDivLetsAmazon").style.display = "none";
+  }, 5000);
+
   $("#contact").on("submit", function (e) {
     e.preventDefault();
     //ajax code here
@@ -69,7 +79,7 @@ function waveLoader() {
     // Total number of articulation in wave
     bones: 4,
     // Amplitude of wave
-    amplitude:20,
+    amplitude: 20,
     // Color
     color: "#61C4F3",
     // Animation speed
@@ -203,6 +213,8 @@ function drawServices(list) {
     console.log(elem);
 
     let title = language == "en" ? elem.TitleEn : elem.TitleAr;
+    let description =
+      language == "en" ? elem.DescriptionEn : elem.DescriptionAr;
 
     divMenu +=
       '<a class="dropdown-item py-2 ' +
@@ -211,7 +223,16 @@ function drawServices(list) {
       title +
       "</a>";
 
-    div += '<div class="item owlCarouselCss">' + title + "</div>";
+    div +=
+      "<div class='item owlCarouselCss' onclick='showService(\"" +
+      event +
+      '","' +
+      title +
+      '","' +
+      description +
+      "\")'>" +
+      title +
+      "</div>";
 
     //console.log(elem.name);
   }
@@ -234,6 +255,32 @@ function drawServices(list) {
   $("#amazon-services-next").click(function () {
     $("#amazon-services-carousel").owlCarousel("next");
   });
+
+  $("#amazon-services-carousel").click(function () {
+    console.log("click");
+    activeModal = true;
+  });
+
+  $("#myModal").on("hidden.bs.modal", function () {
+    console.log("myModal close");
+    activeModal = false;
+  });
+}
+
+function showService(event, title, description) {
+  console.log("showService");
+  setTimeout(function () {
+    if (activeModal) {
+      console.log(event);
+
+      console.log(title + "  XXX " + description);
+
+      document.getElementById("myModalTitle").innerHTML = title;
+      document.getElementById("myModalDescription").innerHTML = description;
+
+      $("#myModal").modal();
+    }
+  }, 500);
 }
 
 /*

@@ -1,6 +1,19 @@
 let contactList = [
   {
     value: 5,
+    length: 30,
+    title: "SAUDI ARABIA",
+    latitude: 24.7136,
+    longitude: 46.6753,
+    TEL: "+966 11 431 1601",
+    MOBILE: "+966 561141047",
+    FAX: "+966 11 291 3929",
+    EMAIL: "INFO@AWTS-LTD.COM",
+    TOLL: "92000 2282",
+    POBOX: "68525 RIYADH 44537",
+  },
+  {
+    value: 5,
     length: 50,
     title: "CANADA",
     latitude: 53.2257,
@@ -35,19 +48,6 @@ let contactList = [
     MOBILE: "+961 2 222222",
     FAX: "+961 3 333333",
     EMAIL: "awts@email.jo",
-    TOLL: "+961 4 444444",
-    POBOX: "ABC123",
-  },
-  {
-    value: 5,
-    length: 30,
-    title: "SAUDI ARABIA",
-    latitude: 24.7136,
-    longitude: 46.6753,
-    TEL: "+999 1 111111",
-    MOBILE: "+961 2 222222",
-    FAX: "+961 3 333333",
-    EMAIL: "awts@email.sr",
     TOLL: "+961 4 444444",
     POBOX: "ABC123",
   },
@@ -109,7 +109,7 @@ function loadMap() {
     pin.poleHeight = 10;
 
     var label = pin.createChild(am4core.Label);
-    label.userClassName = "labelGrowUp";//"hvr-pulse-grow";
+    label.userClassName = "labelGrowUp"; //"hvr-pulse-grow";
     label.text = "{title}";
     label.fontSize = 12;
     label.fontWeight = "bold";

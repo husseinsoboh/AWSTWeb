@@ -53,6 +53,8 @@
 
     <link rel="stylesheet" href="assets/css/mousewheel-animation.css" />
 
+    <link rel="stylesheet" href="assets/css/aos.css"/>
+
     </head>
     
     <body>
@@ -133,7 +135,7 @@
                 </div>
             </div>
 
-            <div class="row" style="text-align: left! important; width: 90%! important; position: relative; top: 75px;">
+            <div id="welcomeDivLetsAmazon" class="row" style="text-align: left! important; width: 90%! important; position: relative; top: 75px;">
                 <div class="containerWave col-12">
                     <div class="coast">
                         <div class="wave-rel-wrap">
@@ -176,7 +178,7 @@
         <div class="container">
             <div class="rtlClass container row">
                 <div class="column" style="width: 50%;">
-                    <div class="rtlClass" style="width: 90%! important; padding: 0px 50px;">
+                    <div data-aos="fade-right" class="rtlClass" style="width: 90%! important; padding: 0px 50px;">
                         <div><span data-localize="about" class="headerPanel">About</span> <span data-localize="us" class="headerPanelCss">Us</span></div>
                         <div class="mt-6 textPanel" data-localize="aboutUsContent">
                                 Advanced World Technology Services is a full-Service eCommerce agency offering top quality eCommerce support services and a variety of eCommerce catalog management services at reasonable prices.
@@ -184,7 +186,7 @@
                         </div>
                     </div>
 
-                    <div class="rtlClass mt-10" style="width: 90%! important; padding: 0px 50px;">
+                    <div data-aos="fade-left" class="rtlClass mt-10" style="width: 90%! important; padding: 0px 50px;">
                         <div><span data-localize="our" class="headerPanel">Our</span> <span data-localize="mission" class="headerPanelCss">Mission</span></div>
                         <div class="mt-6 textPanel" data-localize="missionContent">
                                 To start with, AWTS eCommerce empower companies to speed up visual content production. We work as one with our clients and partners to deliver highly performing digital tools solutions and best services.
@@ -401,8 +403,8 @@
                             <div class="column w-1/12 mt-4">
                             </div>
 
-                            <div class="column w-6/12 mt-4" style="padding-left: 30px; padding-right: 30px;">
-                                <div class="contactLabelCss text-center" data-localize="contact">Contact</div>
+                            <div class="column w-6/12 mt-4">
+                                <div class="contactLabelCss text-center"><span  data-localize="contact" style="position: relative; left: -14%;">Contact</span></div>
                                 <div class="mt-4 w-full h-full inline-block align-middle">
                                     <div class="row w-full py-1">
                                         <div class="row col-6" style="margin-left: 0px! important; margin-right: 0px! important;">
@@ -438,16 +440,36 @@
                             </div>
 
                             <div class="column w-1/12">
-                                <a href="https://wa.me/+9613084722?text=Hi" target=”_blank”><img id="whatsappImgId" src="assets/images/whatsapp.svg" alt="Contact Us" style="position: absolute! important; bottom: 10px;"/></a>
+                                <a href="https://wa.me/+96171322077?text=Hi" target=”_blank”><img id="whatsappImgId" src="assets/images/whatsapp.svg" alt="Contact Us" style="position: absolute! important; bottom: 10px;"/></a>
                             </div>
                         </div>
-
-                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="myModalTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div id="myModalDescription" class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
     
     <!-- ***** Footer Start ***** -->
     <footer>
@@ -487,6 +509,8 @@
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/jquery.counterup.min.js"></script>
     <script src="assets/js/imgfix.min.js"></script> 
+
+    <script src="assets/js/aos.js"></script>
     
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>

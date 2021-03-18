@@ -114,7 +114,7 @@ div video {
 
 .headerPanel {
   font-weight: bold;
-  font-size: 16px !important;
+  font-size: 20px !important;
   color: #505965;
 }
 
@@ -149,7 +149,7 @@ div video {
 
 .headerPage {
   font-weight: bold;
-  font-size: 20px !important;
+  font-size: 24px !important;
   color: #505965;
 }
 
@@ -177,7 +177,7 @@ div video {
 
 .contactLabelCss {
   color: #555e69;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 

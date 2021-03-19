@@ -422,7 +422,7 @@ function drawAdvertising(list) {
     //console.log(elem.name);
     */
 
-    div += '<div id="'+i+'" class="card-container">';
+    div += '<div id="' + i + '" class="card-container">';
     div += '<div class="card"><a>';
     div += '<div class="card--display">';
     div +=
@@ -432,7 +432,9 @@ function drawAdvertising(list) {
     div += "<h2>" + title + "</h2></div>";
     div += '<div class="card--hover">';
     div +=
-      '<img id="imgAdv'+i+'" class="" src="' +
+      '<img id="imgAdv' +
+      i +
+      '" class="" src="' +
       elem.image +
       '" style="width: 100%; height: 120px;" alt="">';
     div += "<h2>" + title + "</h2>";
@@ -445,20 +447,23 @@ function drawAdvertising(list) {
   document.getElementById("amazon-advertising-menu-list").innerHTML = divMenu;
   document.getElementById("amazon-advertising-list").innerHTML = div;
 
-
   $(".card-container")
     .mouseenter(function () {
       let id = $(this).attr("id");
       console.log(id);
       setTimeout(function () {
-        document.getElementById("imgAdv"+id).classList.add("amazonAdvImgCss");
+        document.getElementById("" + id).classList.add("mainDivIndex");
+        document.getElementById("imgAdv" + id).classList.add("amazonAdvImgCss");
       }, 100);
     })
     .mouseleave(function () {
       let id = $(this).attr("id");
       console.log(id);
       setTimeout(function () {
-        document.getElementById("imgAdv"+id).classList.remove("amazonAdvImgCss");
+        document.getElementById("" + id).classList.remove("mainDivIndex");
+        document
+          .getElementById("imgAdv" + id)
+          .classList.remove("amazonAdvImgCss");
       }, 100);
     });
 
@@ -501,7 +506,7 @@ function changeLang(lang) {
 
   console.log(lang);
 
-  if(lang != "en" && lang != "ar") lang = "en";
+  if (lang != "en" && lang != "ar") lang = "en";
 
   language = lang;
 

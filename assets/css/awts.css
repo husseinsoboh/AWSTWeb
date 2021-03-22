@@ -68,6 +68,10 @@ body {
   z-index: 99999;
 }
 
+.contact-form input, .contact-form textarea{
+  margin-bottom: 0px! important;
+}
+
 .dropdown-item {
   color: #7d899a !important;
 }

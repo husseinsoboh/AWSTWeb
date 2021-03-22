@@ -58,6 +58,12 @@ body {
   margin-top: 0;
 }
 
+.footerText{
+  text-align: center;
+  line-height: 50px;
+  color: #ffffff;
+}
+
 .dropdown-item {
   color: #7d899a !important;
 }

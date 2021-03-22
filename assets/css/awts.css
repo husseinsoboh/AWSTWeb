@@ -64,6 +64,10 @@ body {
   color: #ffffff;
 }
 
+.modal{    
+  z-index: 99999;
+}
+
 .dropdown-item {
   color: #7d899a !important;
 }

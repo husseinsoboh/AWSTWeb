@@ -37,6 +37,8 @@ body {
   object-fit: cover;
 }
 
+video:focus { outline:none; }
+
 .navbar {
   padding: 0.25rem 0.25rem !important;
   z-index: 105;

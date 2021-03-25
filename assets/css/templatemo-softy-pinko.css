@@ -1544,8 +1544,10 @@ footer {
 
 footer .social {
   overflow: hidden;
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   text-align: center;
+  position: absolute;
+    right: 20px;
 }
 
 footer .social li {

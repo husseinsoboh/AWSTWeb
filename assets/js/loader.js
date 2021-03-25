@@ -240,8 +240,11 @@ function drawServices(list) {
     items: 3,
     center: true,
     nav: false,
-    dots: false,
+    dots: true,
     loop: true,
+    animateOut: 'slideOutDown',
+    animateIn: 'flipInX',
+    smartSpeed:450
   });
 
   $("#amazon-services-prev").click(function () {

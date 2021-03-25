@@ -449,8 +449,8 @@ function loadMap() {
     let image = imageTemplate.createChild(am4core.Image);
     image.propertyFields.href = "imageURL";
     image.userClassName = "labelGrowUp";
-    image.width = 14;
-    image.height = 14;
+    image.width = 20;
+    image.height = 20;
     image.horizontalCenter = "middle";
     image.verticalCenter = "middle";
 
@@ -481,6 +481,15 @@ function loadMap() {
         }
       }
     });
+
+
+    /* Configure series */
+    var polygonTemplate = polygonSeries.mapPolygons.template;
+    polygonTemplate.tooltipText = "label";
+    //polygonTemplate.fill = am4core.color("#74B266");
+    polygonTemplate.events.on("hit", function(ev) {
+      ev.target.series.chart.zoomToMapObject(ev.target);
+    })
 
 
     /*

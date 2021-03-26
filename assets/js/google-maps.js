@@ -482,6 +482,11 @@ function loadMap() {
     image.horizontalCenter = "middle";
     image.verticalCenter = "middle";
 
+    image.tooltip = new am4core.Tooltip();
+    image.tooltip.getFillFromObject = false;
+    image.tooltip.label.fill = color1; //am4core.color("#74B266");
+    image.tooltipText = "{label}";
+
     /*
     let label = imageTemplate.createChild(am4core.Label);
     label.userClassName = "labelGrowUp";

@@ -123,52 +123,121 @@ function loadAmozonServices() {
   let list = [
     {
       id: 0,
-      TitleEn: "Keyword research",
-      DescriptionEn: "Keyword research desc",
-      TitleAr: "Keyword research",
-      DescriptionAr: "Keyword research desc",
+      TitleEn: "Amazon Storefront/Brand page Creation",
+      DescriptionEn: "If you want to succeed on the highly competitive Amazon marketplace, you will need a branded Amazon store "
+      + " Create Amazon Store Dedicated to highlight your catalog, collection and your brand with AWTS Amazon storefront design service. "
+      + " We offer Amazon Storefront design services that craft an exceptionally good-looking Amazon webstore that your customers will fall in love with, at first glance. "
+      + "Our team of highly-talented Amazon store designers is well-aware of the various in-store design elements that will help engage store visitors and make them want to try your products."
+      + " Your store will have the kind of design that is extremely sales-oriented and will result in increased revenue generation and better profitability. "
+      + "With us, you don’t just get a store, you get an online presence that will deliver sustainable returns over a long period of time.",
+      TitleAr: "واجهة متجر أمازون / إنشاء صفحة العلامة التجارية",
+      DescriptionAr: "إذا كنت تريد أن تنجح في سوق أمازون شديد المنافسة، فستحتاج إلى متجر أمازون يحمل علامة تجارية. "
+     +" أنشئ متجر أمازون مخصصًا لتسليط الضوء على الكتالوج الخاص بك ومجموعتك وعلامتك التجارية من خلال خدمتنا     لتصميم واجهة متجرك."
+     +" نحن نقدم خدمات تصميم واجهة امازون التي تصنع صفحتك على امازون ذو مظهر جيد بشكل استثنائي وسيقع في حبه عملاؤك للوهلة الأولى. "
+     +" يدرك فريقنا من مصممي صفحات أمازون الموهوبين جيدًا, بالعناصر المختلفة للتصميم داخل الصفحة والتي ستساعد في زيادة زوار الصفحة وتجعلهم يرغبون في تجربة منتجاتك. "
+     +" سيكون لصفحتك نوع التصميم الموجه للغاية نحو المبيعات وسيؤدي إلى زيادة توليد الإيرادات وتحسين الربح. "
+     +" معنا ، لا تحصل على صفح ة فحسب ، بل تحصل على تواجد عبر الإنترنت يحقق عوائد مستدامة على مدى فترة طويلة من الزمن.",
     },
     {
       id: 1,
-      TitleEn: "Amazon storefont Design for AWTS project",
-      DescriptionEn: "Amazon storefont Design desc",
-      TitleAr: "Amazon storefont Design for AWTS project",
-      DescriptionAr: "Amazon storefont Design desc",
+      TitleEn: "Account Management",
+      DescriptionEn: "AWTS provide an all-inclusive Amazon account management service where we will run your Seller central account as well as Vendor central account. "
+      +"This includes, setting up your account Amazon seller central account. "
+      +"If you need help with managing your account and in general with selling more and operating more efficiently, Account management service provides the support you want",
+      TitleAr: "ادارة الحسابات",
+      DescriptionAr: "تقدم شركة علم الخدمات المتطورة المحدودة خدمة إدارة حساب أمازون شاملة حيث سنقوم بتشغيل حساب البائع المركزي وكذلك حساب البائع المركزي. "
+      +"      وهذا يشمل ، إعداد حسابك حساب البائع المركزي في أمازون. "
+      +"      إذا كنت بحاجة إلى مساعدة في إدارة حسابك وبشكل عام مع زيادة البيع والعمل بكفاءة أكبر ، فإن خدمة إدارة الحساب توفر الدعم الذي تريده ",
     },
     {
       id: 2,
-      TitleEn: "Cataloging",
-      DescriptionEn: "Cataloging desc",
-      TitleAr: "Cataloging",
-      DescriptionAr: "Cataloging desc",
+      TitleEn: "Accounting",
+      DescriptionEn: "Accounting services assist sellers with sales channel and payment processor reconciliations. "
+      +"We specialize in helping our clients regarding establishing budgets and managing cashflow by providing them a report so they would know exactly how much they are earning. ",
+      TitleAr: "محاسبة",
+      DescriptionAr: "تساعد خدمات المحاسبة, البائعين في تسويات قناة المبيعات. "
+     +" نحن متخصصون في مساعدة عملائنا فيما يتعلق بوضع الميزانيات وإدارة التدفق النقدي من خلال تزويدهم بتقرير حتى يعرفوا بالضبط مقدار ما يكسبونه",
     },
     {
       id: 3,
-      TitleEn: "Imaging",
-      DescriptionEn: "Imaging desc",
-      TitleAr: "Imaging",
-      DescriptionAr: "Imaging desc",
+      TitleEn: "Cataloging",
+      DescriptionEn: "The moment that you have developed a new product, you would like to launch it and sell it in different places immediately, AWTS can be the help fulfill your need in order to have the pages that will make customers read and become motivated to purchase your items."
+      +" Whether you would like to add new products or you want to improve the ones that you already have, cataloguing services will help you.",
+      TitleAr: "إدراج المنتجات",
+      DescriptionAr: "في اللحظة التي تطور فيها منتجًا جديدًا ، ترغب في إطلاقه وبيعه في أماكن مختلفة على الفور ، يمكن أن تكون شركة عالم الخدمات المتطورة المحدودة هي المساعدة في تلبية احتياجاتك من أجل الحصول على الصفحات التي ستجعل العملاء يقرؤون وتحفزهم على شراء العناصر الخاصة بك ."
+     +" سواء كنت ترغب في إضافة منتجات جديدة أو ترغب في تحسين المنتجات التي لديك بالفعل ، فإن خدمات إدراج المنتجات ستساعدك.",
     },
     {
       id: 4,
-      TitleEn: "Training",
-      DescriptionEn: "Training desc",
-      TitleAr: "Training",
-      DescriptionAr: "Training desc",
+      TitleEn: "Enhanced Brand Content",
+      DescriptionEn: "A few shoppers read each passage and others like to read filter bolded headers and visual cues for a general diagram. "
+      + "Pictures and recordings offer to visual aid and can undoubtedly represent item properties."
+      + "We analyze the products in your account to select the perfect modular templates for your EBC content Amazon needs, we convert boring product images into visually stunning pieces of art to make your products even more attractive and appealing, We create an interesting and gripping brand story that is woven through striking product imagery to drive conversions."
+      + "Adding Amazon Enhanced Brand Content to your product detail pages includes Keyword, Product research, Creative banners, and A+ content creation which promote your business. ",
+      TitleAr: "تعزيز إنشاء محتوى العلامة التجارية",
+      DescriptionAr: "يقرأ عدد قليل من المتسوقين كل فقرة ويحب الآخرون قراءة رؤوس أقلام والإشارات المرئية عامةً. "
+     +" تقدم الصور والتسجيلات مساعدة مرئية ويمكن أن تمثل بلا شك خصائص العنصر. "
+     +" نقوم بتحليل المنتجات في حسابك لتحديد القوالب المعيارية المثالية لمحتوى EBC الذي يحتاجه أمازون ، ونحول صور المنتجات المملة إلى قطع فنية مذهلة بصريًا لجعل منتجاتك أكثر جاذبية, وننشئ قصة علامة تجارية مثيرة للاهتمام وجذابة تم نسجها من خلال صور المنتج الرائعة لجذب العملاء. "
+     +" تتضمن إضافة محتوى العلامة التجارية المحسّن من أمازون إلى صفحات تفاصيل المنتج, الكلمات الرئيسية ، وأبحاث المنتج ، واللافتات الإبداعية ، وإنشاء محتوى A + الذي يروج لعملك. ",
     },
     {
       id: 5,
-      TitleEn: "Translation",
-      DescriptionEn: "Translation desc",
-      TitleAr: "Translation",
-      DescriptionAr: "Translation desc",
+      TitleEn: "Excess Inventory",
+      DescriptionEn: "AWTS is the best spot to sell your new, overload, out of date, client returned stock straightforwardly to a large number of expert purchasers. "
+      + "We have some expertise in aiding FBA merchants liquidate their overabundance stock in bulk and immediately.",
+      TitleAr: "إدارة المخزون الزائد",
+      DescriptionAr: "شركة عالم الخدمات المتطورة المحدودة هي أفضل مكان لبيع مخزونك الجديد، الزائد، القديم الذي قام العميل بإعادته, مباشرة إلى عدد كبير من المشترين الخبراء."
+      + " لدينا بعض الخبرة في مساعدة تجار FBA على تصفية المخزون الفائض بكميات كبيرة وعلى الفور.",
     },
     {
       id: 6,
-      TitleEn: "Accounting",
-      DescriptionEn: "Accounting desc",
-      TitleAr: "Accounting",
-      DescriptionAr: "Accounting desc",
+      TitleEn: "FBA preparation",
+      DescriptionEn: "AWTS has a dedicated team that can process your shipments instantly, accurately, without exceeding your budget. "
+      + "Our FBA preparations service include, controlling, packing and labeling your shipments to protect your products and create a better customer experience. "
+      + "Moreover, AWTS will take upon itself to store carefully your products in its warehouse in the Kingdom of Saudi Arabia.",
+      TitleAr: "التكلف بشحن و تخزين البضاعة",
+      DescriptionAr: "لدى شركة عالم الخدمات المتطورة المحدودة فريق متخصص يمكنه معالجة شحناتك على الفور وبدقة دون تجاوز ميزانيتك. "
+     +" تشمل خدمة استعدادات FBA لدينا ، التحكم في الشحنات الخاصة بك وتعبئتها ووضع العلامات عليها لحماية منتجاتك وخلق تجربة عملاء أفضل. "
+     +"علاوة على ذلك ، ستأخذ شركة عالم الخدمات المتطورة المحدودة على عاتقها تخزين منتجاتك بعناية في مستودعاتها في المملكة العربية السعودية.",
+    },
+    {
+      id: 7,
+      TitleEn: "Imaging",
+      DescriptionEn: "Pictures speak louder than Words and when you manage to improve the quality of the pictures it is likely to entice your audience. "
+      + "There is no denying to the fact that Amazon Product Images are the secret sauce to increasing conversion rates and sales. "
+      + "Get Amazon-ready photos with AWTS E-Commerce Product photoshoot and Image Editing Services. Using our Amazon Imaging Service can give you a competitive advantage over your competitors.",
+      TitleAr: "العناية بالصور",
+      DescriptionAr: "تتحدث الصور بصوت أعلى من الكلمات وعندما تتمكن من تحسين جودة الصور ، فمن المحتمل أن تغري جمهورك."
+      +"  ليس هناك من ينكر حقيقة أن صور منتجات أمازون هي الصلصة السرية لزيادة معدلات الجذب والمبيعات."
+      +"  احصل على صور جاهزة لامازون باستخدام جلسة تصوير منتجات وخدمات تحرير الصور. "
+      +"  يمكن أن يمنحك استخدام العناية بالصور  ميزة تنافسية.",
+    },
+    {
+      id: 8,
+      TitleEn: "Training",
+      DescriptionEn: "A highly experienced team in E-Commerce, Consulting, and IT will coach you to manage your seller account. Our purpose is to offer online training covering these sections: Account settings, shipping, adding products, managing inventory, managing returns, account health management.",
+      TitleAr: "تمرين",
+      DescriptionAr: "سيقوم فريق ذو خبرة عالية في التجارة الإلكترونية والاستشارات وتكنولوجيا المعلومات بتدريبك على إدارة حساب البائع الخاص بك. هدفنا هو تقديم تدريب عبر الإنترنت يغطي هذه الأقسام: إعدادات الحساب ، والشحن ، وإضافة المنتجات ، وإدارة المخزون ، وإدارة المرتجعات ، وإدارة صحة الحساب.",
+    },
+    {
+      id: 9,
+      TitleEn: "Translation",
+      DescriptionEn: "We provide an expert translation service to help you conveniently translate your Listings, Keywords, titles, product description (A+/EBC)..So you can expand your sales performance and succeed internationally.",
+      TitleAr: "ترجمة",
+      DescriptionAr: "نحن نقدم خدمة ترجمة متخصصة لمساعدتك في ترجمة القوائم والكلمات الرئيسية والعناوين ووصف المنتج (A + / EBC) بسهولة، حتى تتمكن من توسيع أداء مبيعاتك والنجاح على المستوى الدولي.",
+    },
+    {
+      id: 10,
+      TitleEn: "Keyword Research",
+      DescriptionEn: "Keywords can ensure that your content will be valued by various search engine sites. "
+      +" We manually collect all the relevant product-related key phrases, search them into various keyword research tool for Amazon and sort the keywords based on volume, convertibility and relevance to get the final set of most important keywords. "
+      +" We make sure that your Amazon site will consistently rank great even alongside your competitors. We already have strategies that are formulated by our team of experts that will make your site easy to search.",
+      TitleAr: "البحث عن الكلمات الرئيسية",
+      DescriptionAr: "يمكن أن تضمن الكلمات الرئيسية أن المحتوى الخاص بك سيتم تقييمه من خلال مواقع محركات البحث المختلفة. "
+      +" نقوم يدويًا بتجميع جميع العبارات الرئيسية ذات الصلة بالمنتج ، والبحث عنها في أداة بحث الكلمات الرئيسية المختلفة  لأمازون "
+      +" وفرز الكلمات الرئيسية بناءً على الحجم وقابلية التحويل والأهمية للحصول على المجموعة النهائية من الكلمات الرئيسية الأكثر أهمية. "
+      +"نحن نتأكد من أن موقع أمازون الخاص بك سيحتل مرتبة عالية باستمرار. "
+      +" لدينا بالفعل استراتيجيات صاغها فريق الخبراء لدينا والتي ستجعل من السهل البحث في موقعك. ",
     },
   ];
 
@@ -313,49 +382,58 @@ function loadAmazonAdvertising() {
     {
       id: 0,
       TitleEn: "Sponsored products/Brands",
-      DescriptionEn: "Description Sponsored products/Brands EN",
-      TitleAr: "Sponsored products/Brands",
-      DescriptionAr: "Description Sponsored products/Brands AR",
+      DescriptionEn: "Get instant visibility with Customer Quick Ads, Sponsored Products display with an Amazon search results add on products pages, right the customers will see them. "
+      +"Sponsored brands available to brands owner, take you to a step further featuring your logo, headline and up to 3 products helping shoppers to see your brand the way you want it to be seen. "
+      +"Once We’re done with our Sponsored Display Campaign creation, Amazon will automatically generate the Ad we created, featuring information from the product detail page, like a product image, title, star rating, prime badging and price.",
+      TitleAr: "المنتجات / العلامات التجارية الممولة",
+      DescriptionAr: "احصل على رؤية فورية من خلال الإعلانات السريعة للعملاء ، يتم عرض المنتجات الدعائية مع إضافة نتائج بحث أمازون على صفحات المنتجات ، وسوف يراها العملاء بشكل صحيح. "
+      +"العلامات التجارية لأصحاب العلامات التجارية ، تأخذك إلى خطوة أبعد من خلال عرض شعارك وعنوانك وما يصل إلى 3 منتجات لمساعدة المتسوقين على رؤية علامتك التجارية بالطريقة التي تريدها. "
+      +" بمجرد الانتهاء من إنشاء حملة إعلانية على الشبكة الإعلانية ، سينشئ أمازون تلقائيًا الإعلان الذي أنشأناه ، والذي يعرض معلومات من صفحة تفاصيل المنتج ، مثل صورة المنتج ، والعنوان ، والتقييم، والشارة الأولية والسعر.",
       image: "assets/images/advertising/sponsoredproduct.svg",
     },
     {
       id: 1,
       TitleEn: "Promotions",
-      DescriptionEn: "Description",
-      TitleAr: "Promotions",
-      DescriptionAr: "Description",
+      DescriptionEn: "Can also help make the sale, offer free shipping, % discounts, or buy one get one free promos, and get a custom Amazon URL to share on your marketing campaigns."
+      +" Promoting products can be vital to our Amazon Strategy helping drive sales, launching products, generate reviews and more.",
+      TitleAr: "الترقيات",
+      DescriptionAr: "يمكن أن تساعد أيضًا في إجراء عملية البيع ، أو تقديم شحن مجاني ، أو تخفيضات بنسبة مئوية ، أو شراء واحدة والحصول على واحدة ترويجية مجانية ، والحصول على عنوان URL مخصص من امازون لمشاركته في حملاتك التسويقية. "
+      +"يمكن أن يكون الترويج للمنتجات أمرًا حيويًا لاستراتيجية امازون الخاصة بنا للمساعدة في زيادة المبيعات وإطلاق المنتجات وإنشاء المراجعات والمزيد.",
       image: "assets/images/advertising/promotions.svg",
     },
     {
       id: 2,
       TitleEn: "Deals",
-      DescriptionEn: "Description",
-      TitleAr: "Deals",
-      DescriptionAr: "Description",
+      DescriptionEn: "Customers also love Lightning a Deal, help them out by running lightning deal flash sales on one of the most visited pages on amazon.",
+      TitleAr: "صفقات",
+      DescriptionAr: "يحب العملاء أيضًا الصفقات. "
+      +"ساعدهم من خلال تشغيل الصفقات على واحدة من أكثر الصفحات زيارة على أمازون. ",
       image: "assets/images/advertising/deals.svg",
     },
     {
       id: 3,
       TitleEn: "Coupons",
-      DescriptionEn: "Description",
-      TitleAr: "Coupons",
-      DescriptionAr: "Description",
+      DescriptionEn: "Offering Coupons allow users to click for savings and search results on product savings or in their shopping cards.",
+      TitleAr: "حملات التسويق عبر البريد الإلكتروني",
+      DescriptionAr: "عند استخدام طريقة الإعلان هذه ، فإننا نمتلك قوائمنا ، فهي إحدى أفضل الطرق لتنمية نشاط تجاري.",
       image: "assets/images/advertising/coupons.svg",
     },
     {
       id: 4,
       TitleEn: "Emails Marketing Campaigns",
-      DescriptionEn: "Description",
-      TitleAr: "Emails Marketing Campaigns",
-      DescriptionAr: "Description",
+      DescriptionEn: "When using this way of Advertising we own our lists, it’s one of the best ways to grow a business.",
+      TitleAr: "حملات التسويق عبر البريد الإلكتروني",
+      DescriptionAr: "عند استخدام طريقة الإعلان هذه ، فإننا نمتلك قوائمنا ، فهي إحدى أفضل الطرق لتنمية نشاط تجاري.",
       image: "assets/images/advertising/emailmarketingcampaigns.svg",
     },
     {
       id: 5,
       TitleEn: "E-Gifts",
-      DescriptionEn: "Description",
-      TitleAr: "E-Gifts",
-      DescriptionAr: "Description",
+      DescriptionEn: "Whatever our business’s Goals are, an Amazon Gift Card can help to achieve the. "
+      +"If we’re looking to attract new customers, or we simply wish to say “Thanks” and reward our loyal customers, Amazon Gift Cards is the Key.",
+      TitleAr: "الهدايا الإلكترونية",
+      DescriptionAr: "مهما كانت أهداف أعمالنا ، يمكن أن تساعد بطاقة هدايا أمازون في تحقيقها. "
+      +"إذا كنا نتطلع إلى جذب عملاء جدد ، أو نود ببساطة أن نقول شكرًا ونكافئ عملائنا المخلصين ، فإن بطاقات هدايا أمازون هي المفتاح. ",
       image: "assets/images/advertising/e-gifts.svg",
     },
   ];

@@ -528,7 +528,7 @@ function drawAdvertising(list) {
     divMenu +=
       '<a class="dropdown-item py-2 ' +
       textAlignClass +
-      '" href="#services">' +
+      '" href="#advertising">' +
       title +
       "</a>";
 

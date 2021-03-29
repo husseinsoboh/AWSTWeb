@@ -730,3 +730,10 @@ function sendContact() {
     },
   });
 }
+
+function loadAmazonSpn() {
+  window.open(
+    "https://sellercentral.amazon.com/gspn/searchpage/Cataloguing?ref_=sc_gspn_hp_clst&sellFrom=SA&sellIn=SA&localeSelection=en_US",
+    "_blank"
+  );
+}

@@ -217,8 +217,8 @@ video:focus {
 }
 
 .whatsapp {
-  position: absolute;
-  bottom: 20px;
+  position: fixed;
+  bottom: 70px;
   right: 20px;
   height: 60px;
   cursor: pointer;
@@ -593,11 +593,11 @@ img {
   letter-spacing: 1.3px;
   font-weight: 700;
   color: #313133;
-  background: #4fd1c5;
+  background: #21b1dd;
   background: linear-gradient(
     90deg,
-    rgba(129, 230, 217, 1) 0%,
-    rgba(79, 209, 197, 1) 100%
+    #21b1dd 0%,
+    #21b1dd 100%
   );
   border: none;
   border-radius: 1000px;
@@ -614,8 +614,8 @@ img {
   border-radius: 1000px;
   min-width: calc(122px + 12px);
   min-height: calc(50px + 12px);
-  border: 6px solid #00ffcb;
-  box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
+  border: 6px solid #21b1dd;
+  box-shadow: 0 0 60px #21b1dd;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -640,7 +640,7 @@ img {
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  border: 6px solid #00ffcb;
+  border: 6px solid #21b1dd;
   position: absolute;
   z-index: -1;
   top: 50%;

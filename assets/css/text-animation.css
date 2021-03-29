@@ -16,64 +16,74 @@
   transform: translatez(0);
 }
 
-.text-L {
+.text-1 {
   left: 0px;
   animation-delay: 50ms;
 }
 
-.text-e {
+.text-2 {
   left: 30px;
   animation-delay: 100ms;
 }
 
-.text-t {
+.text-3 {
   left: 60px;
   animation-delay: 150ms;
 }
 
-.text-Ap {
+.text-4 {
   left: 90px;
   animation-delay: 200ms;
 }
 
-.text-s {
+.text-5 {
   left: 120px;
   animation-delay: 250ms;
 }
 
-.text-sp {
+.text-6 {
   left: 140px;
   animation-delay: 300ms;
 }
 
-.text-A {
+.text-7 {
   left: 160px;
   animation-delay: 350ms;
 }
 
-.text-m {
+.text-8 {
   left: 190px;
   animation-delay: 400ms;
 }
 
-.text-a {
+.text-9 {
   left: 220px;
   animation-delay: 450ms;
 }
 
-.text-z {
+.text-10 {
   left: 250px;
   animation-delay: 500ms;
 }
 
-.text-o {
+.text-11 {
   left: 280px;
   animation-delay: 550ms;
 }
 
-.text-n {
+.text-12 {
   left: 310px;
   animation-delay: 600ms;
+}
+
+.text-13 {
+  left: 340px;
+  animation-delay: 650ms;
+}
+
+.text-14 {
+  left: 370px;
+  animation-delay: 700ms;
 }
 
 .coast {
@@ -134,7 +144,7 @@
   }
 }
 
-@keyframes text-L {
+@keyframes text-1 {
   0% {
     transform: translate3d(0, -4rem, 0);
   }

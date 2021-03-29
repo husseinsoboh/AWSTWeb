@@ -2,7 +2,7 @@ body {
   overflow-x: hidden !important;
 }
 
-.fa{
+.fa {
   color: #505965;
 }
 
@@ -16,7 +16,7 @@ body {
   /*top: 90px;*/
   left: 0;
   z-index: 99;
-  opacity: .1!important;
+  opacity: 0.1 !important;
 }
 
 .slider-revoluation {
@@ -37,7 +37,9 @@ body {
   object-fit: cover;
 }
 
-video:focus { outline:none; }
+video:focus {
+  outline: none;
+}
 
 .navbar {
   padding: 0.25rem 0.25rem !important;
@@ -60,18 +62,19 @@ video:focus { outline:none; }
   margin-top: 0;
 }
 
-.footerText{
+.footerText {
   text-align: center;
   line-height: 50px;
   color: #ffffff;
 }
 
-.modal{    
+.modal {
   z-index: 99999;
 }
 
-.contact-form input, .contact-form textarea{
-  margin-bottom: 0px! important;
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 0px !important;
 }
 
 .dropdown-item {
@@ -229,8 +232,8 @@ video:focus { outline:none; }
   position: absolute;
 }
 
-.socialIconCss{
-  font-size: 20px; 
+.socialIconCss {
+  font-size: 20px;
   color: white;
   margin-left: 20px;
 }
@@ -422,7 +425,7 @@ img {
   transform: scale(1.5);
   font-size: 14px;
 
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 /************************** Amazon advertising Start *****************************/
@@ -432,7 +435,7 @@ img {
   transform: rotateY(360deg);
 
   -webkit-filter: grayscale(1) invert(1);
-   filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
 }
 
 .amazonAdvBlockCss:active {
@@ -490,8 +493,10 @@ img {
 
   border-radius: 4px;
   background: #fff;
-  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
   cursor: pointer;
 }
 .card-container .card a {
@@ -510,13 +515,13 @@ img {
   transform: translate(-30px, -30px);
   border-color: #5bc0eb;
   */
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   transform: scale(1.3);
-  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   z-index: 101;
 }
 
-.mainDivIndex{
+.mainDivIndex {
   z-index: 101;
 }
 
@@ -569,3 +574,97 @@ img {
   color: #fde74c;
 }
 /************************** Reveal Card Content on Hover End ********************/
+
+/************************** Button on Hover Start ********************/
+
+.btnParent {
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.buttonHover {
+  min-width: 100px;
+  min-height: 44px;
+  font-family: "Nunito", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4fd1c5;
+  background: linear-gradient(
+    90deg,
+    rgba(129, 230, 217, 1) 0%,
+    rgba(79, 209, 197, 1) 100%
+  );
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 0px 10px;
+}
+
+.buttonHover::before {
+  content: "";
+  border-radius: 1000px;
+  min-width: calc(122px + 12px);
+  min-height: calc(50px + 12px);
+  border: 6px solid #00ffcb;
+  box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.buttonHover:hover,
+.buttonHover:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.buttonHover:hover::before,
+.buttonHover:focus::before {
+  opacity: 1;
+}
+
+.buttonHover::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00ffcb;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.buttonHover:hover::after,
+.buttonHover:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+/************************** Button on Hover End ********************/

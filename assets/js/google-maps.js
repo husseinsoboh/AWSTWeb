@@ -8,7 +8,7 @@ let contactList = [
     TEL: "+966 11 431 1601",
     MOBILE: "+966 561141047",
     FAX: "+966 11 291 3929",
-    EMAIL: "INFO@AWTS-LTD.COM",
+    EMAIL: "info@awts-store.com",
     TOLL: "92000 2282",
     POBOX: "68525 RIYADH 44537",
   },

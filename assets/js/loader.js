@@ -308,7 +308,7 @@ function drawServices(list) {
     divMenu +=
       '<a class="dropdown-item py-2 ' +
       textAlignClass +
-      '" href="#services">' +
+      '" href="#services" onclick="setActiveService('+i+')">' +
       title +
       "</a>";
 
@@ -360,6 +360,11 @@ function drawServices(list) {
     console.log("myModal close");
     activeModal = false;
   });
+}
+
+function setActiveService(index){
+  console.log(index);
+  $('#amazon-services-carousel').trigger('to.owl.carousel', index);
 }
 
 function showService(event, title, description) {
@@ -523,7 +528,7 @@ function drawAdvertising(list) {
     divMenu +=
       '<a class="dropdown-item py-2 ' +
       textAlignClass +
-      '" href="#services">' +
+      '" href="#advertising">' +
       title +
       "</a>";
 
@@ -613,6 +618,8 @@ function drawAdvertising(list) {
 }
 
 function changeLang(lang) {
+  if (lang != "en" && lang != "ar") lang = "en";
+
   $("[data-localize]").localize("assets/js/lang/lang", { language: lang });
 
   document.getElementById("amazon-services-menu-list").innerHTML = "";
@@ -625,8 +632,6 @@ function changeLang(lang) {
   document.getElementById("amazon-advertising-list").innerHTML = "";
 
   console.log(lang);
-
-  if (lang != "en" && lang != "ar") lang = "en";
 
   language = lang;
 

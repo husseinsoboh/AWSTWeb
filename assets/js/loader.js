@@ -4,7 +4,19 @@ let language = "en";
 
 let activeModal = false;
 
+let isMobile = false;
+
 jQuery(document).ready(function () {
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    // The viewport is less than 768 pixels wide
+    console.log("This is a mobile device.");
+    isMobile = true;
+  } else {
+    // The viewport is at least 768 pixels wide
+    console.log("This is a tablet or desktop.");
+    isMobile = false;
+  }
+
   console.log("Document load ready!!");
 
   $("[data-hide]").on("click", function () {
@@ -334,8 +346,10 @@ function drawServices(list) {
   document.getElementById("amazon-services-menu-list").innerHTML = divMenu;
   document.getElementById("amazon-services-carousel").innerHTML = div;
 
+  let nbItems = isMobile ? 1 : 3;
+
   $("#amazon-services-carousel").owlCarousel({
-    items: 3,
+    items: nbItems,
     center: true,
     nav: false,
     dots: true,
@@ -549,7 +563,14 @@ function drawAdvertising(list) {
     //console.log(elem.name);
     */
 
-    div += '<div id="' + i + '" class="card-container">';
+    let cardContainerCss = isMobile ? "card-container-mobile" : "";
+
+    div +=
+      '<div id="' +
+      i +
+      '" class="card-container ' +
+      cardContainerCss +
+      ' col-md-12 col-lg-3">';
     div += '<div class="card"><a>';
     div += '<div class="card--display">';
     div +=

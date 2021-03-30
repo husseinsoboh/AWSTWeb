@@ -487,10 +487,22 @@ img {
 
 /************************** Reveal Card Content on Hover Start ********************/
 .card-container {
-  flex: 28%;
-  margin: 15px;
+  margin: 10px;
+  margin-right: 0px;
+  margin-bottom: 0px;
   z-index: 100;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
 }
+
+.card-container-mobile {
+  margin: 10px 30px;
+  margin-bottom: 5px;
+  z-index: 100;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
 .card-container .card {
   font-weight: bold;
   position: relative;

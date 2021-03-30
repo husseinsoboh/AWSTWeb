@@ -228,8 +228,8 @@ video:focus {
   left: 20px;
   height: 60px;
   cursor: pointer;
-  bottom: 20px;
-  position: absolute;
+  position: fixed;
+  bottom: 70px;
 }
 
 .socialIconCss {

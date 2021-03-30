@@ -565,7 +565,7 @@ function drawAdvertising(list) {
       elem.image +
       '" style="width: 100%; height: 120px;" alt="">';
     div += "<h2>" + title + "</h2>";
-    div += "<p>" + description + "</p>";
+    div += "<p class='p-1'>" + description + "</p>";
     div += "</div></a>";
     div += '<div class="card--border"></div>';
     div += "</div></div>";

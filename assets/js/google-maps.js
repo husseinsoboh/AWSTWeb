@@ -380,7 +380,7 @@ let contactList = [
 
 function loadMap() {
   am4core.ready(function () {
-    loadCountry(contactList[0]);
+    //loadCountry(contactList[0]);
 
     // Themes begin
     am4core.useTheme(am4themes_animated);
@@ -432,97 +432,6 @@ function loadMap() {
     image.tooltip.label.fill = color1; //am4core.color("#74B266");
     image.tooltipText = "{label}";
 
-    /*
-    let label = imageTemplate.createChild(am4core.Label);
-    label.userClassName = "labelGrowUp";
-    label.text = "{label}";
-    label.horizontalCenter = "middle";
-    label.verticalCenter = "top";
-    label.dy = 20;
-
-    label.fontSize = 12;
-    label.fontWeight = "bold";
-    label.verticalCenter = "middle";
-    label.fill = am4core.color("black");
-    */
-
-    /*
-    image.events.on("hit", function (ev) {
-      console.log(ev.target);
-      console.log(ev.target.properties);
-      console.log(ev.target.properties.href);
-      let country = ev.target.properties.href;//ev.target.currentText;
-      console.log(country);
-      for (let i = 0; i < contactList.length; i++) {
-        let contact = contactList[i];
-        if (contact.imageURL == country) {
-          loadCountry(contact);
-        }
-      }
-    });
-
-    var polygonTemplate = polygonSeries.mapPolygons.template;
-    polygonTemplate.tooltipText = "label";
-    //polygonTemplate.fill = am4core.color("#74B266");
-    polygonTemplate.events.on("hit", function (ev) {
-      ev.target.series.chart.zoomToMapObject(ev.target);
-    });
-    */
-
-    /*
-    // Creating a pin bullet
-    var pin = imageTemplate.createChild(am4plugins_bullets.PinBullet);
-
-    // Configuring pin appearance
-    pin.background.fill = color1;
-    pin.background.pointerBaseWidth = 1;
-    pin.background.pointerLength = 5;
-    pin.background.propertyFields.pointerLength = "length";
-    pin.circle.fill = pin.background.fill;
-    pin.label = new am4core.Label();
-    //pin.label.text = "{value}%";
-    pin.label.fill = color1.alternate;
-    pin.poleHeight = 10;
-
-    var label = pin.createChild(am4core.Label);
-    label.userClassName = "labelGrowUp"; //"hvr-pulse-grow";
-    label.text = "{title}";
-    label.fontSize = 12;
-    label.fontWeight = "bold";
-    label.propertyFields.dy = "length";
-    label.verticalCenter = "middle";
-    label.fill = am4core.color("black"); //color1;
-    label.adapter.add("dy", function (dy) {
-      return (26 + dy) * -1;
-    });
-
-    label.adapter.add("dx", function (dy) {
-      return -6;
-    });
-
-    label.events.on("hit", function (ev) {
-      console.log(ev.target);
-      let country = ev.target.currentText;
-
-      for (let i = 0; i < contactList.length; i++) {
-        let contact = contactList[i];
-        if (contact.title == country) {
-          loadCountry(contact);
-        }
-      }
-    });
-
-    // Creating a "heat rule" to modify "radius" of the bullet based
-    // on value in data
-    imageSeries.heatRules.push({
-      target: pin.background,
-      property: "radius",
-      min: 1,
-      max: 5,
-      dataField: "value",
-    });
-    */
-
     // Pin data
     imageSeries.data = contactList;
 
@@ -546,6 +455,7 @@ function loadMap() {
   });
 }
 
+/*
 function loadCountry(data) {
   document.getElementById("country").innerText = data["label"];
   document.getElementById("tel").innerText = data["TEL"];
@@ -555,3 +465,4 @@ function loadCountry(data) {
   document.getElementById("toll").innerText = data["TOLL"];
   document.getElementById("pobox").innerText = data["POBOX"];
 }
+*/

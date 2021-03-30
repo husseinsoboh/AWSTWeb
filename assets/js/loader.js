@@ -534,21 +534,6 @@ function drawAdvertising(list) {
       title +
       "</a>";
 
-    /*
-    div += '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft">';
-    div +=
-      '<div class="amazonAdvBlockCss card card-body border-0 text-center shadow pt-1 cardCss">';
-    div += '<div class="amazonAdvDivCss svg-icon mx-auto mb-4">';
-    div +=
-      '<img class=""advertisingimage src="' +
-      elem.image +
-      '" style="height: 120px;" alt="">';
-    div += "</div>";
-    div += '<h5 class="advertisingTitleCss">' + title + "</h5></div>";
-    div += "</div>";
-    //console.log(elem.name);
-    */
-
     div += '<div id="' + i + '" class="card-container">';
     div += '<div class="card"><a>';
     div += '<div class="card--display">';
@@ -593,30 +578,6 @@ function drawAdvertising(list) {
           .classList.remove("amazonAdvImgCss");
       }, 100);
     });
-
-  /*
-    $('img[src$=".svg"]').each(function() {
-      var $img = jQuery(this);
-      var imgURL = $img.attr('src');
-      var attributes = $img.prop("attributes");
-
-      $.get(imgURL, function(data) {
-          // Get the SVG tag, ignore the rest
-          var $svg = jQuery(data).find('svg');
-
-          // Remove any invalid XML tags
-          $svg = $svg.removeAttr('xmlns:a');
-
-          // Loop through IMG attributes and apply on SVG
-          $.each(attributes, function() {
-              $svg.attr(this.name, this.value);
-          });
-
-          // Replace IMG with SVG
-          $img.replaceWith($svg);
-      }, 'xml');
-  });
-  */
 }
 
 function changeLang(lang) {

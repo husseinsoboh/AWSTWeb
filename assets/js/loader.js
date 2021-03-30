@@ -144,7 +144,7 @@ function loadAmozonServices() {
       id: 1,
       TitleEn: "Account Management",
       DescriptionEn:
-        "AWTS provide an all-inclusive Amazon account management service where we will run your Seller central account as well as Vendor central account. " +
+        "AWTS-Store provide an all-inclusive Amazon account management service where we will run your Seller central account as well as Vendor central account. " +
         "This includes, setting up your account Amazon seller central account. " +
         "If you need help with managing your account and in general with selling more and operating more efficiently, Account management service provides the support you want",
       TitleAr: "ادارة الحسابات",
@@ -168,7 +168,7 @@ function loadAmozonServices() {
       id: 3,
       TitleEn: "Cataloging",
       DescriptionEn:
-        "The moment that you have developed a new product, you would like to launch it and sell it in different places immediately, AWTS can be the help fulfill your need in order to have the pages that will make customers read and become motivated to purchase your items." +
+        "The moment that you have developed a new product, you would like to launch it and sell it in different places immediately, AWTS-Store can be the help fulfill your need in order to have the pages that will make customers read and become motivated to purchase your items." +
         " Whether you would like to add new products or you want to improve the ones that you already have, cataloguing services will help you.",
       TitleAr: "إدراج المنتجات",
       DescriptionAr:
@@ -194,7 +194,7 @@ function loadAmozonServices() {
       id: 5,
       TitleEn: "Excess Inventory",
       DescriptionEn:
-        "AWTS is the best spot to sell your new, overload, out of date, client returned stock straightforwardly to a large number of expert purchasers. " +
+        "AWTS-Store is the best spot to sell your new, overload, out of date, client returned stock straightforwardly to a large number of expert purchasers. " +
         "We have some expertise in aiding FBA merchants liquidate their overabundance stock in bulk and immediately.",
       TitleAr: "إدارة المخزون الزائد",
       DescriptionAr:
@@ -205,9 +205,9 @@ function loadAmozonServices() {
       id: 6,
       TitleEn: "FBA preparation",
       DescriptionEn:
-        "AWTS has a dedicated team that can process your shipments instantly, accurately, without exceeding your budget. " +
+        "AWTS-Store has a dedicated team that can process your shipments instantly, accurately, without exceeding your budget. " +
         "Our FBA preparations service include, controlling, packing and labeling your shipments to protect your products and create a better customer experience. " +
-        "Moreover, AWTS will take upon itself to store carefully your products in its warehouse in the Kingdom of Saudi Arabia.",
+        "Moreover, AWTS-Store will take upon itself to store carefully your products in its warehouse in the Kingdom of Saudi Arabia.",
       TitleAr: "التكلف بشحن و تخزين البضاعة",
       DescriptionAr:
         "لدى شركة عالم الخدمات المتطورة المحدودة فريق متخصص يمكنه معالجة شحناتك على الفور وبدقة دون تجاوز ميزانيتك. " +
@@ -220,7 +220,7 @@ function loadAmozonServices() {
       DescriptionEn:
         "Pictures speak louder than Words and when you manage to improve the quality of the pictures it is likely to entice your audience. " +
         "There is no denying to the fact that Amazon Product Images are the secret sauce to increasing conversion rates and sales. " +
-        "Get Amazon-ready photos with AWTS E-Commerce Product photoshoot and Image Editing Services. Using our Amazon Imaging Service can give you a competitive advantage over your competitors.",
+        "Get Amazon-ready photos with AWTS-Store E-Commerce Product photoshoot and Image Editing Services. Using our Amazon Imaging Service can give you a competitive advantage over your competitors.",
       TitleAr: "العناية بالصور",
       DescriptionAr:
         "تتحدث الصور بصوت أعلى من الكلمات وعندما تتمكن من تحسين جودة الصور ، فمن المحتمل أن تغري جمهورك." +
@@ -308,7 +308,9 @@ function drawServices(list) {
     divMenu +=
       '<a class="dropdown-item py-2 ' +
       textAlignClass +
-      '" href="#services" onclick="setActiveService('+i+')">' +
+      '" href="#services" onclick="setActiveService(' +
+      i +
+      ')">' +
       title +
       "</a>";
 
@@ -362,9 +364,9 @@ function drawServices(list) {
   });
 }
 
-function setActiveService(index){
+function setActiveService(index) {
   console.log(index);
-  $('#amazon-services-carousel').trigger('to.owl.carousel', index);
+  $("#amazon-services-carousel").trigger("to.owl.carousel", index);
 }
 
 function showService(event, title, description) {

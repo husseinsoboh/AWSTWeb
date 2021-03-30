@@ -49,7 +49,7 @@ jQuery(document).ready(function () {
   });
 
   setTimeout(function () {
-    //document.getElementById("welcomeDivLetsAmazon").style.display = "none";
+    document.getElementById("welcomeDivLetsAmazon").style.display = "none";
   }, 5000);
 
   $("#contact").on("submit", function (e) {

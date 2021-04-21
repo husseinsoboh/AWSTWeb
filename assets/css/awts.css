@@ -129,6 +129,7 @@ video:focus {
   background-position: -webkit-calc(100% + 260px) 160px;
   background-repeat: no-repeat;
   background-size: 600px 600px;
+  z-index: 9999;
 }
 
 /*
@@ -449,14 +450,14 @@ img {
   direction: ltr !important;
   text-align: left !important;
   float: left;
-  padding-left: 20px !important;
+  padding-left: 0px !important;
 }
 
 .directionRTL {
   direction: rtl;
   text-align: right !important;
   float: right;
-  padding-right: 20px !important;
+  padding-right: 0px !important;
 }
 
 .textAlignRTL {

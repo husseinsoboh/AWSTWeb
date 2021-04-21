@@ -7,14 +7,43 @@ let activeModal = false;
 let isMobile = false;
 
 jQuery(document).ready(function () {
+  let gridMobileRowColumn = document.getElementsByClassName(
+    "gridMobileRowColumn"
+  );
+  let showHideImagesMobile = document.getElementsByClassName(
+    "showHideImagesMobile"
+  );
+
   if (window.matchMedia("(max-width: 767px)").matches) {
     // The viewport is less than 768 pixels wide
     console.log("This is a mobile device.");
     isMobile = true;
+
+    for (let i = 0; i < gridMobileRowColumn.length; i++) {
+      let elem = gridMobileRowColumn[i];
+      elem.classList.remove("row");
+      elem.classList.add("column");
+    }
+
+    for (let i = 0; i < showHideImagesMobile.length; i++) {
+      let elem = showHideImagesMobile[i];
+      elem.style.display = "none";
+    }
   } else {
     // The viewport is at least 768 pixels wide
     console.log("This is a tablet or desktop.");
     isMobile = false;
+
+    for (let i = 0; i < gridMobileRowColumn.length; i++) {
+      let elem = gridMobileRowColumn[i];
+      elem.classList.remove("column");
+      elem.classList.add("row");
+    }
+
+    for (let i = 0; i < showHideImagesMobile.length; i++) {
+      let elem = showHideImagesMobile[i];
+      elem.style.display = "block";
+    }
   }
 
   console.log("Document load ready!!");

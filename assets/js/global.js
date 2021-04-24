@@ -1,4 +1,4 @@
-var SERVER_API = "https://192.168.1.5:5001";
+var SERVER_API = "https://192.168.1.5:5001";//"http://awts-api.com";
 
 /* AWTS Services */
 var GET_AWTS_SERVICES = "/api/Service/Web/GetServices";

@@ -69,19 +69,56 @@
     </div>  
     <!-- ***** Preloader End ***** -->
     
+    <nav id="navBarMobile" class="navbar navbar-expand-lg navbar-light bg-light rtlClass w-full" style="padding: 0px ! important;">
+        <a class="navbar-brand mx-2 py-0" href="#">
+            <img src="assets/images/logo.svg" alt="AWTS" style="height: 60px;"/>
+        </a>
+
+        <button class="navbar-toggler border-0 collapsed mx-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- these spans become the three lines -->
+            <span> </span>
+            <span> </span>
+            <span> </span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a data-localize="home" href="#welcome" class="nav-link active">HOME </a> </li>
+            <li class="nav-item dropdown">
+                <a id="awtsServicesNavbarDropdown" data-localize="awtsServices" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> AWTS SERVICES </a>
+                <div id="amazon-services-mobile-menu-list" class="dropdown-menu menuTopRTL" aria-labelledby="awtsServicesNavbarDropdown" style="width: 300px! important;"></div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a id="amazonAdvertisingNavbarDropdown" data-localize="amazonAdvertising" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> AMAZON ADVERTISING </a>
+                <div id="amazon-advertising-mobile-menu-list" class="dropdown-menu menuTopRTL" aria-labelledby="amazonAdvertisingNavbarDropdown" style="width: 300px! important;"></div>
+            </li>
+            <li class="nav-item"><a data-localize="portfolio" class="nav-link" href="#portfolio"> PORTFOLIO </a></li>
+            <li class="nav-item"><a data-localize="contactUs" class="nav-link" href="#contact-us"> CONTACT US </a></li>
+
+            <!--<li class="nav-item navbarSeperator"></li>-->
+
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#language" onclick="reloadPage('en')">English</a>
+                <div id="language-menu-list" class="dropdown-menu" style="min-width: 100px;">
+                    <a class="dropdown-item py-2" href="#language" onclick="reloadPage('ar')">Arabic</a>
+                </div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+      
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky rtlClass px-0" style="z-index: 9999;">
+    <header id="navBarWeb" class="header-area header-sticky rtlClass px-0" style="z-index: 9999; visibility: hidden;">
         <div class="container">
             <div style="width: 100%; padding-left:0px! important; padding-right: 0px! important; margin-left: 0px! important; margin-right: 0px! important; margin-top: 20px;" class="row">
-                <!-- ***** Logo Start ***** -->
+
                 <div class="float-left d-none d-lg-inline-block" style="width: 20%; padding-left: 30px; padding-right: 30px;">
                     <a href="#" class="logo">
                         <img src="assets/images/logo.svg" alt="AWTS" style="height: 120px;"/>
                     </a>
                 </div>
-                <!-- ***** Logo End ***** -->
 
-                <!-- ***** Menu Start ***** -->
                 <div style="width: 80%;">
                     <nav id="navBar" class="navbar navbar-expand-lg navbar-dark bg-primary" style="border-radius: 50px; border: 1px solid #e6e6e6; background-color: #ffffff! important; margin-top: 35px! important;">
                         <div class="collapse navbar-collapse" id="main_nav">
@@ -110,16 +147,15 @@
                             </ul>
                         </div> 
                     </nav>
-                </div>    
-                <!-- ***** Menu End ***** -->
+                </div>
             </div>
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <div class="slider-revoluation d-none d-lg-inline-block">
+    <!--<div class="slider-revoluation d-none d-lg-inline-block">-->
+    <div id="videoDivId" class="section slider-revoluation">
         <video id="videoSrc" src="" height="0%;" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="z-index: 99;"></video>
-        <!--<div class="pattern"></div>-->
     </div>
     
     <section class="welcome-area column" id="welcome" style="left: 0px; background-color: white;">
@@ -157,12 +193,12 @@
         </div>
     </section>
 
-    <section style="width: 100%; height: 120px; z-index: 102! important; margin-top: -110px;"> 
-        <svg width="100%" height="120px" style="z-index: 102! important;" version="1.1" xmlns="http://www.w3.org/2000/svg" class="waveBackground" style="margin-top: 10px; transform: scale(1,-1)"><defs></defs><path id="header-wave-top" d=""/></svg>
+    <section class="waveHeaderCls section column" style="width: 100%; height: 120px; z-index: 102! important; padding-top: 0px; position: relative; top: -110px;"> 
+        <svg width="100%" height="119px" style="z-index: 102! important;" version="1.1" xmlns="http://www.w3.org/2000/svg" class="waveBackground" style="margin-top: 10px; transform: scale(1,-1)"><defs></defs><path id="header-wave-top" d=""/></svg>
         <svg width="100%" height="120px" style="z-index: 102! important;" version="1.1" xmlns="http://www.w3.org/2000/svg" class="waveBackground" style="transform: scale(1,-1);"><defs></defs><path id="header-wave-bottom" d=""/></svg>
     </section>
 
-    <section class="aboutusmission-css section column" style="padding-top: 50px! important;">
+    <section class="aboutusmission-css section column" style="padding-top: 0px! important;">
         <div class="container">
             <div class="gridMobileRowColumn rtlClass container row">
                 <div class="column col-lg-6 col-md-12" style="padding-top: 12px;">

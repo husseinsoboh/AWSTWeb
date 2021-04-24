@@ -7,44 +7,10 @@ let activeModal = false;
 let isMobile = false;
 
 jQuery(document).ready(function () {
-  let gridMobileRowColumn = document.getElementsByClassName(
-    "gridMobileRowColumn"
-  );
-  let showHideImagesMobile = document.getElementsByClassName(
-    "showHideImagesMobile"
-  );
 
-  if (window.matchMedia("(max-width: 767px)").matches) {
-    // The viewport is less than 768 pixels wide
-    console.log("This is a mobile device.");
-    isMobile = true;
 
-    for (let i = 0; i < gridMobileRowColumn.length; i++) {
-      let elem = gridMobileRowColumn[i];
-      elem.classList.remove("row");
-      elem.classList.add("column");
-    }
-
-    for (let i = 0; i < showHideImagesMobile.length; i++) {
-      let elem = showHideImagesMobile[i];
-      elem.style.display = "none";
-    }
-  } else {
-    // The viewport is at least 768 pixels wide
-    console.log("This is a tablet or desktop.");
-    isMobile = false;
-
-    for (let i = 0; i < gridMobileRowColumn.length; i++) {
-      let elem = gridMobileRowColumn[i];
-      elem.classList.remove("column");
-      elem.classList.add("row");
-    }
-
-    for (let i = 0; i < showHideImagesMobile.length; i++) {
-      let elem = showHideImagesMobile[i];
-      elem.style.display = "block";
-    }
-  }
+  window.addEventListener('resize', resizePage);
+    resizePage();
 
   console.log("Document load ready!!");
 
@@ -61,8 +27,12 @@ jQuery(document).ready(function () {
 
   $(".navbar-nav li a").on("click", function () {
     console.log("click!!");
-    $(this).parent().parent().find(".active").removeClass("active");
-    $(this).parent().addClass("active");
+    //$(this).parent().parent().find(".active").removeClass("active");
+    //$(this).parent().addClass("active");
+    console.log(this);
+
+    $('#navbar-hamburger').toggleClass('hidden');
+    $('#navbar-close').toggleClass('hidden'); 
   });
 
   $("a.thumb").click(function (event) {
@@ -100,6 +70,76 @@ jQuery(document).ready(function () {
     sendContact();
   });
 });
+
+function resizePage(){
+  let gridMobileRowColumn = document.getElementsByClassName(
+    "gridMobileRowColumn"
+  );
+  let showHideImagesMobile = document.getElementsByClassName(
+    "showHideImagesMobile"
+  );
+
+  if (window.matchMedia("(max-width: 500px)").matches) {
+    if(document.getElementById("videoDivId") != null){
+      document.getElementById("videoDivId").classList.add("slider-revoluation-mobile");
+    }
+  }
+  else{
+    if(document.getElementById("videoDivId") != null){
+      document.getElementById("videoDivId").classList.remove("slider-revoluation-mobile");
+    }
+  }
+  
+  if (window.matchMedia("(max-width: 1000px)").matches) {
+    // The viewport is less than 768 pixels wide
+    console.log("This is a mobile device.");
+    isMobile = true;
+
+    if(document.getElementById("navBarMobile") != null) document.getElementById("navBarMobile").style.visibility = "visible";
+    if(document.getElementById("navBarWeb") != null) document.getElementById("navBarWeb").style.visibility = "hidden";
+
+    for (let i = 0; i < gridMobileRowColumn.length; i++) {
+      let elem = gridMobileRowColumn[i];
+      elem.classList.remove("row");
+      elem.classList.add("column");
+    }
+
+    for (let i = 0; i < showHideImagesMobile.length; i++) {
+      let elem = showHideImagesMobile[i];
+      elem.style.display = "none";
+    }
+
+    let elems = document.getElementsByClassName("card-container");
+    for(let i=0; i<elems.length; i++){
+      let elem = elems[i];
+      elem.classList.add("card-container-mobile");
+    }
+  } else {
+    // The viewport is at least 768 pixels wide
+    console.log("This is a tablet or desktop.");
+    isMobile = false;
+
+    if(document.getElementById("navBarMobile") != null) document.getElementById("navBarMobile").style.visibility = "hidden";
+    if(document.getElementById("navBarWeb") != null) document.getElementById("navBarWeb").style.visibility = "visible";
+
+    for (let i = 0; i < gridMobileRowColumn.length; i++) {
+      let elem = gridMobileRowColumn[i];
+      elem.classList.remove("column");
+      elem.classList.add("row");
+    }
+
+    for (let i = 0; i < showHideImagesMobile.length; i++) {
+      let elem = showHideImagesMobile[i];
+      elem.style.display = "block";
+    }
+
+    let elems = document.getElementsByClassName("card-container");
+    for(let i=0; i<elems.length; i++){
+      let elem = elems[i];
+      elem.classList.remove("card-container-mobile");
+    }
+  }
+}
 
 function getUrlVars() {
   var vars = {};
@@ -371,40 +411,59 @@ function drawServices(list) {
 
     //console.log(elem.name);
   }
+
   console.log(div);
-  document.getElementById("amazon-services-menu-list").innerHTML = divMenu;
-  document.getElementById("amazon-services-carousel").innerHTML = div;
+  if(document.getElementById("amazon-services-mobile-menu-list") != null) document.getElementById("amazon-services-mobile-menu-list").innerHTML = divMenu;
+  if(document.getElementById("amazon-services-menu-list") != null) document.getElementById("amazon-services-menu-list").innerHTML = divMenu;
+  if(document.getElementById("amazon-services-carousel") != null){
+    document.getElementById("amazon-services-carousel").innerHTML = div;
 
-  let nbItems = isMobile ? 1 : 3;
+    let nbItems = isMobile ? 1 : 3;
 
-  $("#amazon-services-carousel").owlCarousel({
-    items: nbItems,
-    center: true,
-    nav: false,
-    dots: true,
-    loop: true,
-    animateOut: "slideOutDown",
-    animateIn: "flipInX",
-    smartSpeed: 450,
-  });
+    $("#amazon-services-carousel").owlCarousel({
+      items: nbItems,
+      center: true,
+      nav: false,
+      dots: true,
+      loop: true,
+      animateOut: "slideOutDown",
+      animateIn: "flipInX",
+      responsiveClass: true,
+      responsiveRefreshRate: 200,
+      responsive: {
+          0:{
+            items: 1
+          },
+          480:{
+            items: 1
+          },
+          769:{
+            items: 1
+          },
+          900:{
+            items: 3
+          }
+      }
+    });
 
-  $("#amazon-services-prev").click(function () {
-    $("#amazon-services-carousel").owlCarousel("prev");
-  });
+    $("#amazon-services-prev").click(function () {
+      $("#amazon-services-carousel").owlCarousel("prev");
+    });
 
-  $("#amazon-services-next").click(function () {
-    $("#amazon-services-carousel").owlCarousel("next");
-  });
+    $("#amazon-services-next").click(function () {
+      $("#amazon-services-carousel").owlCarousel("next");
+    });
 
-  $("#amazon-services-carousel").click(function () {
-    console.log("click");
-    activeModal = true;
-  });
+    $("#amazon-services-carousel").click(function () {
+      console.log("click");
+      activeModal = true;
+    });
 
-  $("#myModal").on("hidden.bs.modal", function () {
-    console.log("myModal close");
-    activeModal = false;
-  });
+    $("#myModal").on("hidden.bs.modal", function () {
+      console.log("myModal close");
+      activeModal = false;
+    });
+  }
 }
 
 function setActiveService(index) {
@@ -615,14 +674,15 @@ function drawAdvertising(list) {
       elem.image +
       '" style="width: 100%; height: 120px;" alt="">';
     div += "<h2>" + title + "</h2>";
-    div += "<p class='p-1'>" + description + "</p>";
+    div += "<p style='padding: 20px;'>" + description + "</p>";
     div += "</div></a>";
     div += '<div class="card--border"></div>';
     div += "</div></div>";
   }
 
-  document.getElementById("amazon-advertising-menu-list").innerHTML = divMenu;
-  document.getElementById("amazon-advertising-list").innerHTML = div;
+  if(document.getElementById("amazon-advertising-mobile-menu-list") != null) document.getElementById("amazon-advertising-mobile-menu-list").innerHTML = divMenu;
+  if(document.getElementById("amazon-advertising-menu-list") != null) document.getElementById("amazon-advertising-menu-list").innerHTML = divMenu;
+  if(document.getElementById("amazon-advertising-list") != null) document.getElementById("amazon-advertising-list").innerHTML = div;
 
   $(".card-container")
     .mouseenter(function () {
@@ -674,14 +734,13 @@ function changeLang(lang) {
 
   $("[data-localize]").localize("assets/js/lang/lang", { language: lang });
 
-  document.getElementById("amazon-services-menu-list").innerHTML = "";
-  document.getElementById("amazon-services-carousel").innerHTML = "";
+  if(document.getElementById("amazon-services-mobile-menu-list") != null) document.getElementById("amazon-services-mobile-menu-list").innerHTML = "";
+  if(document.getElementById("amazon-services-menu-list") != null) document.getElementById("amazon-services-menu-list").innerHTML = "";
+  if(document.getElementById("amazon-services-menu-list") != null) document.getElementById("amazon-services-carousel").innerHTML = "";
 
-  document.getElementById("amazon-advertising-menu-list").innerHTML = "";
-  document.getElementById("amazon-advertising-list").innerHTML = "";
-
-  document.getElementById("amazon-advertising-menu-list").innerHTML = "";
-  document.getElementById("amazon-advertising-list").innerHTML = "";
+  if(document.getElementById("amazon-advertising-mobile-menu-list") != null) document.getElementById("amazon-advertising-mobile-menu-list").innerHTML = "";
+  if(document.getElementById("amazon-advertising-menu-list") != null) document.getElementById("amazon-advertising-menu-list").innerHTML = "";
+  if(document.getElementById("amazon-advertising-list") != null) document.getElementById("amazon-advertising-list").innerHTML = "";
 
   console.log(lang);
 

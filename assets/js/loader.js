@@ -514,6 +514,7 @@ function loadPortfolio() {
 
 function loadAmazonAdvertising() {
   // Load AWTS Services
+  /*
   let list = [
     {
       id: 0,
@@ -527,7 +528,7 @@ function loadAmazonAdvertising() {
         "احصل على رؤية فورية من خلال الإعلانات السريعة للعملاء ، يتم عرض المنتجات الدعائية مع إضافة نتائج بحث أمازون على صفحات المنتجات ، وسوف يراها العملاء بشكل صحيح. " +
         "العلامات التجارية لأصحاب العلامات التجارية ، تأخذك إلى خطوة أبعد من خلال عرض شعارك وعنوانك وما يصل إلى 3 منتجات لمساعدة المتسوقين على رؤية علامتك التجارية بالطريقة التي تريدها. " +
         " بمجرد الانتهاء من إنشاء حملة إعلانية على الشبكة الإعلانية ، سينشئ أمازون تلقائيًا الإعلان الذي أنشأناه ، والذي يعرض معلومات من صفحة تفاصيل المنتج ، مثل صورة المنتج ، والعنوان ، والتقييم، والشارة الأولية والسعر.",
-      image: "assets/images/advertising/sponsoredproduct.svg",
+        Logo: "assets/images/advertising/sponsoredproduct.svg",
     },
     {
       id: 1,
@@ -539,7 +540,7 @@ function loadAmazonAdvertising() {
       DescriptionAr:
         "يمكن أن تساعد أيضًا في إجراء عملية البيع ، أو تقديم شحن مجاني ، أو تخفيضات بنسبة مئوية ، أو شراء واحدة والحصول على واحدة ترويجية مجانية ، والحصول على عنوان URL مخصص من امازون لمشاركته في حملاتك التسويقية. " +
         "يمكن أن يكون الترويج للمنتجات أمرًا حيويًا لاستراتيجية امازون الخاصة بنا للمساعدة في زيادة المبيعات وإطلاق المنتجات وإنشاء المراجعات والمزيد.",
-      image: "assets/images/advertising/promotions.svg",
+        Logo: "assets/images/advertising/promotions.svg",
     },
     {
       id: 2,
@@ -550,7 +551,7 @@ function loadAmazonAdvertising() {
       DescriptionAr:
         "يحب العملاء أيضًا الصفقات. " +
         "ساعدهم من خلال تشغيل الصفقات على واحدة من أكثر الصفحات زيارة على أمازون. ",
-      image: "assets/images/advertising/deals.svg",
+        Logo: "assets/images/advertising/deals.svg",
     },
     {
       id: 3,
@@ -560,7 +561,7 @@ function loadAmazonAdvertising() {
       TitleAr: "حملات التسويق عبر البريد الإلكتروني",
       DescriptionAr:
         "عند استخدام طريقة الإعلان هذه ، فإننا نمتلك قوائمنا ، فهي إحدى أفضل الطرق لتنمية نشاط تجاري.",
-      image: "assets/images/advertising/coupons.svg",
+        Logo: "assets/images/advertising/coupons.svg",
     },
     {
       id: 4,
@@ -570,7 +571,7 @@ function loadAmazonAdvertising() {
       TitleAr: "حملات التسويق عبر البريد الإلكتروني",
       DescriptionAr:
         "عند استخدام طريقة الإعلان هذه ، فإننا نمتلك قوائمنا ، فهي إحدى أفضل الطرق لتنمية نشاط تجاري.",
-      image: "assets/images/advertising/emailmarketingcampaigns.svg",
+        Logo: "assets/images/advertising/emailmarketingcampaigns.svg",
     },
     {
       id: 5,
@@ -582,11 +583,12 @@ function loadAmazonAdvertising() {
       DescriptionAr:
         "مهما كانت أهداف أعمالنا ، يمكن أن تساعد بطاقة هدايا أمازون في تحقيقها. " +
         "إذا كنا نتطلع إلى جذب عملاء جدد ، أو نود ببساطة أن نقول شكرًا ونكافئ عملائنا المخلصين ، فإن بطاقات هدايا أمازون هي المفتاح. ",
-      image: "assets/images/advertising/e-gifts.svg",
+      Logo: "assets/images/advertising/e-gifts.svg",
     },
   ];
   drawAdvertising(list);
   console.log(SERVER_API + GET_ADVERTISING);
+  */
 
   $.ajax({
     url: SERVER_API + GET_ADVERTISING,
@@ -653,6 +655,27 @@ function drawAdvertising(list) {
 
     let cardContainerCss = isMobile ? "card-container-mobile" : "";
 
+
+
+    let type = getType(elem.Logo);
+    console.log(type);
+    elem.Logo = "data:image/"+type+";base64,"+elem.Logo;
+    console.log(elem.Logo);
+
+    /*
+    //Usage example:
+    urltoFile('elem.Logo', 'logo.'+type,type)
+    .then(function(file){ console.log(file);});
+*/
+
+    const url = elem.Logo;
+    fetch(url)
+      .then(res => res.blob())
+      .then(blob => {
+        const file = new File([blob], "File name",{ type: type});
+        console.log(file);
+      })
+
     div +=
       '<div id="' +
       i +
@@ -663,7 +686,7 @@ function drawAdvertising(list) {
     div += '<div class="card--display">';
     div +=
       '<img class="" src="' +
-      elem.image +
+      elem.Logo +
       '" style="width: 100%; height: 120px;" alt="">';
     div += "<h2>" + title + "</h2></div>";
     div += '<div class="card--hover">';
@@ -728,6 +751,47 @@ function drawAdvertising(list) {
   });
   */
 }
+
+function getType(encoded) { 
+  // Create Base64 Object
+  var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/\r\n/g,"\n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}}
+
+  // Define the string, also meaning that you need to know the file extension
+  //var encoded = "Base64 encoded image returned from your service";
+
+  // Decode the string
+  var decoded = Base64.decode(encoded);
+  console.log(decoded);
+
+  // if the file extension is unknown
+  var extension = undefined;
+  // do something like this
+  var lowerCase = decoded.toLowerCase();
+
+  if (lowerCase.indexOf("svg") !== -1){
+    console.log(lowerCase.indexOf("svg"));
+    extension = "svg+xml";
+  }
+  else if (lowerCase.indexOf("png") !== -1) {
+    console.log(lowerCase.indexOf("png"));
+    extension = "png";
+  }
+  else if (lowerCase.indexOf("jpg") !== -1 || lowerCase.indexOf("jpeg") !== -1){
+    extension = "jpg";
+  }
+  else extension = "tiff";
+
+  return extension;
+}
+
+/*
+function urltoFile(url, filename, mimeType){
+  return (fetch(url)
+      .then(function(res){return res.arrayBuffer();})
+      .then(function(buf){return new File([buf], filename,{type:mimeType});})
+  );
+}
+*/
 
 function changeLang(lang) {
   if (lang != "en" && lang != "ar") lang = "en";

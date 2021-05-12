@@ -493,7 +493,7 @@ img {
 }
 
 .dropdown-menu {
-  max-width: 300px !important;
+  min-width: 300px !important;
 }
 
 .dropdown-item {

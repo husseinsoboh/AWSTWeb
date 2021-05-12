@@ -1,15 +1,15 @@
 @media screen and (max-width: 500px) {
   .slider-revoluation {
-    height: 50px! important;
+    height: 50px !important;
   }
 
-  .waveHeaderCls{
-    padding-top: 50px! important;
-    position: relative! important;
-    top: -15px! important;
+  .waveHeaderCls {
+    padding-top: 50px !important;
+    position: relative !important;
+    top: -15px !important;
   }
 
-  .aboutusmission-css{
+  .aboutusmission-css {
     margin-top: 30px !important;
   }
 }
@@ -513,7 +513,7 @@ img {
 }
 
 .card-container-mobile {
-  margin: 10px 30px;
+  margin: 10px 60px;
   margin-bottom: 5px;
   z-index: 100;
   padding-right: 0px !important;
@@ -715,7 +715,6 @@ img {
   transform-origin: center left;
 }
 
-
 /* top line needs a little padding */
 .navbar-toggler span:nth-child(1) {
   margin-top: 0.3em;
@@ -735,7 +734,7 @@ img {
 }
 /* bottom line rotates 45 degrees counter clockwise, in, and down a bit to close the center of the X in the center of the button  */
 .navbar-toggler:not(.collapsed) span:nth-child(3) {
-  transform: translate(15%, 33%) rotate(-45deg) ;
+  transform: translate(15%, 33%) rotate(-45deg);
 }
 
 /**
@@ -744,7 +743,7 @@ img {
 
 /* top line moves back to initial position and rotates back to 0 degrees */
 .navbar-toggler span:nth-child(1) {
-  transform: translate(0%, 0%) rotate(0deg) ;
+  transform: translate(0%, 0%) rotate(0deg);
 }
 /* middle line goes back to regular color and opacity */
 .navbar-toggler span:nth-child(2) {
@@ -752,7 +751,7 @@ img {
 }
 /* bottom line goes back to initial position and rotates back to 0 degrees */
 .navbar-toggler span:nth-child(3) {
-  transform: translate(0%, 0%) rotate(0deg) ;
+  transform: translate(0%, 0%) rotate(0deg);
 }
 /************************** Navbar mobile END ********************/
 

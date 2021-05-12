@@ -7,10 +7,8 @@ let activeModal = false;
 let isMobile = false;
 
 jQuery(document).ready(function () {
-
-
-  window.addEventListener('resize', resizePage);
-    resizePage();
+  window.addEventListener("resize", resizePage);
+  resizePage();
 
   console.log("Document load ready!!");
 
@@ -31,8 +29,8 @@ jQuery(document).ready(function () {
     //$(this).parent().addClass("active");
     console.log(this);
 
-    $('#navbar-hamburger').toggleClass('hidden');
-    $('#navbar-close').toggleClass('hidden'); 
+    $("#navbar-hamburger").toggleClass("hidden");
+    $("#navbar-close").toggleClass("hidden");
   });
 
   $("a.thumb").click(function (event) {
@@ -71,7 +69,7 @@ jQuery(document).ready(function () {
   });
 });
 
-function resizePage(){
+function resizePage() {
   let gridMobileRowColumn = document.getElementsByClassName(
     "gridMobileRowColumn"
   );
@@ -80,23 +78,28 @@ function resizePage(){
   );
 
   if (window.matchMedia("(max-width: 500px)").matches) {
-    if(document.getElementById("videoDivId") != null){
-      document.getElementById("videoDivId").classList.add("slider-revoluation-mobile");
+    if (document.getElementById("videoDivId") != null) {
+      document
+        .getElementById("videoDivId")
+        .classList.add("slider-revoluation-mobile");
+    }
+  } else {
+    if (document.getElementById("videoDivId") != null) {
+      document
+        .getElementById("videoDivId")
+        .classList.remove("slider-revoluation-mobile");
     }
   }
-  else{
-    if(document.getElementById("videoDivId") != null){
-      document.getElementById("videoDivId").classList.remove("slider-revoluation-mobile");
-    }
-  }
-  
+
   if (window.matchMedia("(max-width: 1000px)").matches) {
     // The viewport is less than 768 pixels wide
     console.log("This is a mobile device.");
     isMobile = true;
 
-    if(document.getElementById("navBarMobile") != null) document.getElementById("navBarMobile").style.visibility = "visible";
-    if(document.getElementById("navBarWeb") != null) document.getElementById("navBarWeb").style.visibility = "hidden";
+    if (document.getElementById("navBarMobile") != null)
+      document.getElementById("navBarMobile").style.visibility = "visible";
+    if (document.getElementById("navBarWeb") != null)
+      document.getElementById("navBarWeb").style.visibility = "hidden";
 
     for (let i = 0; i < gridMobileRowColumn.length; i++) {
       let elem = gridMobileRowColumn[i];
@@ -110,7 +113,7 @@ function resizePage(){
     }
 
     let elems = document.getElementsByClassName("card-container");
-    for(let i=0; i<elems.length; i++){
+    for (let i = 0; i < elems.length; i++) {
       let elem = elems[i];
       elem.classList.add("card-container-mobile");
     }
@@ -119,8 +122,10 @@ function resizePage(){
     console.log("This is a tablet or desktop.");
     isMobile = false;
 
-    if(document.getElementById("navBarMobile") != null) document.getElementById("navBarMobile").style.visibility = "hidden";
-    if(document.getElementById("navBarWeb") != null) document.getElementById("navBarWeb").style.visibility = "visible";
+    if (document.getElementById("navBarMobile") != null)
+      document.getElementById("navBarMobile").style.visibility = "hidden";
+    if (document.getElementById("navBarWeb") != null)
+      document.getElementById("navBarWeb").style.visibility = "visible";
 
     for (let i = 0; i < gridMobileRowColumn.length; i++) {
       let elem = gridMobileRowColumn[i];
@@ -134,7 +139,7 @@ function resizePage(){
     }
 
     let elems = document.getElementsByClassName("card-container");
-    for(let i=0; i<elems.length; i++){
+    for (let i = 0; i < elems.length; i++) {
       let elem = elems[i];
       elem.classList.remove("card-container-mobile");
     }
@@ -413,9 +418,13 @@ function drawServices(list) {
   }
 
   console.log(div);
-  if(document.getElementById("amazon-services-mobile-menu-list") != null) document.getElementById("amazon-services-mobile-menu-list").innerHTML = divMenu;
-  if(document.getElementById("amazon-services-menu-list") != null) document.getElementById("amazon-services-menu-list").innerHTML = divMenu;
-  if(document.getElementById("amazon-services-carousel") != null){
+  if (document.getElementById("amazon-services-mobile-menu-list") != null)
+    document.getElementById(
+      "amazon-services-mobile-menu-list"
+    ).innerHTML = divMenu;
+  if (document.getElementById("amazon-services-menu-list") != null)
+    document.getElementById("amazon-services-menu-list").innerHTML = divMenu;
+  if (document.getElementById("amazon-services-carousel") != null) {
     document.getElementById("amazon-services-carousel").innerHTML = div;
 
     let nbItems = isMobile ? 1 : 3;
@@ -431,19 +440,19 @@ function drawServices(list) {
       responsiveClass: true,
       responsiveRefreshRate: 200,
       responsive: {
-          0:{
-            items: 1
-          },
-          480:{
-            items: 1
-          },
-          769:{
-            items: 1
-          },
-          900:{
-            items: 3
-          }
-      }
+        0: {
+          items: 1,
+        },
+        480: {
+          items: 1,
+        },
+        769: {
+          items: 1,
+        },
+        900: {
+          items: 3,
+        },
+      },
     });
 
     $("#amazon-services-prev").click(function () {
@@ -514,7 +523,7 @@ function loadPortfolio() {
 
 function loadAmazonAdvertising() {
   // Load AWTS Services
-  /*
+
   let list = [
     {
       id: 0,
@@ -528,7 +537,7 @@ function loadAmazonAdvertising() {
         "احصل على رؤية فورية من خلال الإعلانات السريعة للعملاء ، يتم عرض المنتجات الدعائية مع إضافة نتائج بحث أمازون على صفحات المنتجات ، وسوف يراها العملاء بشكل صحيح. " +
         "العلامات التجارية لأصحاب العلامات التجارية ، تأخذك إلى خطوة أبعد من خلال عرض شعارك وعنوانك وما يصل إلى 3 منتجات لمساعدة المتسوقين على رؤية علامتك التجارية بالطريقة التي تريدها. " +
         " بمجرد الانتهاء من إنشاء حملة إعلانية على الشبكة الإعلانية ، سينشئ أمازون تلقائيًا الإعلان الذي أنشأناه ، والذي يعرض معلومات من صفحة تفاصيل المنتج ، مثل صورة المنتج ، والعنوان ، والتقييم، والشارة الأولية والسعر.",
-        Logo: "assets/images/advertising/sponsoredproduct.svg",
+      Logo: "assets/images/advertising/sponsoredproduct.svg",
     },
     {
       id: 1,
@@ -540,7 +549,7 @@ function loadAmazonAdvertising() {
       DescriptionAr:
         "يمكن أن تساعد أيضًا في إجراء عملية البيع ، أو تقديم شحن مجاني ، أو تخفيضات بنسبة مئوية ، أو شراء واحدة والحصول على واحدة ترويجية مجانية ، والحصول على عنوان URL مخصص من امازون لمشاركته في حملاتك التسويقية. " +
         "يمكن أن يكون الترويج للمنتجات أمرًا حيويًا لاستراتيجية امازون الخاصة بنا للمساعدة في زيادة المبيعات وإطلاق المنتجات وإنشاء المراجعات والمزيد.",
-        Logo: "assets/images/advertising/promotions.svg",
+      Logo: "assets/images/advertising/promotions.svg",
     },
     {
       id: 2,
@@ -551,7 +560,7 @@ function loadAmazonAdvertising() {
       DescriptionAr:
         "يحب العملاء أيضًا الصفقات. " +
         "ساعدهم من خلال تشغيل الصفقات على واحدة من أكثر الصفحات زيارة على أمازون. ",
-        Logo: "assets/images/advertising/deals.svg",
+      Logo: "assets/images/advertising/deals.svg",
     },
     {
       id: 3,
@@ -561,7 +570,7 @@ function loadAmazonAdvertising() {
       TitleAr: "حملات التسويق عبر البريد الإلكتروني",
       DescriptionAr:
         "عند استخدام طريقة الإعلان هذه ، فإننا نمتلك قوائمنا ، فهي إحدى أفضل الطرق لتنمية نشاط تجاري.",
-        Logo: "assets/images/advertising/coupons.svg",
+      Logo: "assets/images/advertising/coupons.svg",
     },
     {
       id: 4,
@@ -571,7 +580,7 @@ function loadAmazonAdvertising() {
       TitleAr: "حملات التسويق عبر البريد الإلكتروني",
       DescriptionAr:
         "عند استخدام طريقة الإعلان هذه ، فإننا نمتلك قوائمنا ، فهي إحدى أفضل الطرق لتنمية نشاط تجاري.",
-        Logo: "assets/images/advertising/emailmarketingcampaigns.svg",
+      Logo: "assets/images/advertising/emailmarketingcampaigns.svg",
     },
     {
       id: 5,
@@ -588,7 +597,6 @@ function loadAmazonAdvertising() {
   ];
   drawAdvertising(list);
   console.log(SERVER_API + GET_ADVERTISING);
-  */
 
   $.ajax({
     url: SERVER_API + GET_ADVERTISING,
@@ -655,11 +663,9 @@ function drawAdvertising(list) {
 
     let cardContainerCss = isMobile ? "card-container-mobile" : "";
 
-
-
     let type = getType(elem.Logo);
     console.log(type);
-    elem.Logo = "data:image/"+type+";base64,"+elem.Logo;
+    elem.Logo = "data:image/" + type + ";base64," + elem.Logo;
     console.log(elem.Logo);
 
     /*
@@ -670,11 +676,11 @@ function drawAdvertising(list) {
 
     const url = elem.Logo;
     fetch(url)
-      .then(res => res.blob())
-      .then(blob => {
-        const file = new File([blob], "File name",{ type: type});
+      .then((res) => res.blob())
+      .then((blob) => {
+        const file = new File([blob], "File name", { type: type });
         console.log(file);
-      })
+      });
 
     div +=
       '<div id="' +
@@ -703,9 +709,14 @@ function drawAdvertising(list) {
     div += "</div></div>";
   }
 
-  if(document.getElementById("amazon-advertising-mobile-menu-list") != null) document.getElementById("amazon-advertising-mobile-menu-list").innerHTML = divMenu;
-  if(document.getElementById("amazon-advertising-menu-list") != null) document.getElementById("amazon-advertising-menu-list").innerHTML = divMenu;
-  if(document.getElementById("amazon-advertising-list") != null) document.getElementById("amazon-advertising-list").innerHTML = div;
+  if (document.getElementById("amazon-advertising-mobile-menu-list") != null)
+    document.getElementById(
+      "amazon-advertising-mobile-menu-list"
+    ).innerHTML = divMenu;
+  if (document.getElementById("amazon-advertising-menu-list") != null)
+    document.getElementById("amazon-advertising-menu-list").innerHTML = divMenu;
+  if (document.getElementById("amazon-advertising-list") != null)
+    document.getElementById("amazon-advertising-list").innerHTML = div;
 
   $(".card-container")
     .mouseenter(function () {
@@ -752,9 +763,106 @@ function drawAdvertising(list) {
   */
 }
 
-function getType(encoded) { 
+function getType(encoded) {
   // Create Base64 Object
-  var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/\r\n/g,"\n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}}
+  var Base64 = {
+    _keyStr:
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+    encode: function (e) {
+      var t = "";
+      var n, r, i, s, o, u, a;
+      var f = 0;
+      e = Base64._utf8_encode(e);
+      while (f < e.length) {
+        n = e.charCodeAt(f++);
+        r = e.charCodeAt(f++);
+        i = e.charCodeAt(f++);
+        s = n >> 2;
+        o = ((n & 3) << 4) | (r >> 4);
+        u = ((r & 15) << 2) | (i >> 6);
+        a = i & 63;
+        if (isNaN(r)) {
+          u = a = 64;
+        } else if (isNaN(i)) {
+          a = 64;
+        }
+        t =
+          t +
+          this._keyStr.charAt(s) +
+          this._keyStr.charAt(o) +
+          this._keyStr.charAt(u) +
+          this._keyStr.charAt(a);
+      }
+      return t;
+    },
+    decode: function (e) {
+      var t = "";
+      var n, r, i;
+      var s, o, u, a;
+      var f = 0;
+      e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+      while (f < e.length) {
+        s = this._keyStr.indexOf(e.charAt(f++));
+        o = this._keyStr.indexOf(e.charAt(f++));
+        u = this._keyStr.indexOf(e.charAt(f++));
+        a = this._keyStr.indexOf(e.charAt(f++));
+        n = (s << 2) | (o >> 4);
+        r = ((o & 15) << 4) | (u >> 2);
+        i = ((u & 3) << 6) | a;
+        t = t + String.fromCharCode(n);
+        if (u != 64) {
+          t = t + String.fromCharCode(r);
+        }
+        if (a != 64) {
+          t = t + String.fromCharCode(i);
+        }
+      }
+      t = Base64._utf8_decode(t);
+      return t;
+    },
+    _utf8_encode: function (e) {
+      e = e.replace(/\r\n/g, "\n");
+      var t = "";
+      for (var n = 0; n < e.length; n++) {
+        var r = e.charCodeAt(n);
+        if (r < 128) {
+          t += String.fromCharCode(r);
+        } else if (r > 127 && r < 2048) {
+          t += String.fromCharCode((r >> 6) | 192);
+          t += String.fromCharCode((r & 63) | 128);
+        } else {
+          t += String.fromCharCode((r >> 12) | 224);
+          t += String.fromCharCode(((r >> 6) & 63) | 128);
+          t += String.fromCharCode((r & 63) | 128);
+        }
+      }
+      return t;
+    },
+    _utf8_decode: function (e) {
+      var t = "";
+      var n = 0;
+      var r = (c1 = c2 = 0);
+      while (n < e.length) {
+        r = e.charCodeAt(n);
+        if (r < 128) {
+          t += String.fromCharCode(r);
+          n++;
+        } else if (r > 191 && r < 224) {
+          c2 = e.charCodeAt(n + 1);
+          t += String.fromCharCode(((r & 31) << 6) | (c2 & 63));
+          n += 2;
+        } else {
+          c2 = e.charCodeAt(n + 1);
+          c3 = e.charCodeAt(n + 2);
+          t += String.fromCharCode(
+            ((r & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63)
+          );
+          n += 3;
+        }
+      }
+      return t;
+    },
+  };
 
   // Define the string, also meaning that you need to know the file extension
   //var encoded = "Base64 encoded image returned from your service";
@@ -768,18 +876,18 @@ function getType(encoded) {
   // do something like this
   var lowerCase = decoded.toLowerCase();
 
-  if (lowerCase.indexOf("svg") !== -1){
+  if (lowerCase.indexOf("svg") !== -1) {
     console.log(lowerCase.indexOf("svg"));
     extension = "svg+xml";
-  }
-  else if (lowerCase.indexOf("png") !== -1) {
+  } else if (lowerCase.indexOf("png") !== -1) {
     console.log(lowerCase.indexOf("png"));
     extension = "png";
-  }
-  else if (lowerCase.indexOf("jpg") !== -1 || lowerCase.indexOf("jpeg") !== -1){
+  } else if (
+    lowerCase.indexOf("jpg") !== -1 ||
+    lowerCase.indexOf("jpeg") !== -1
+  ) {
     extension = "jpg";
-  }
-  else extension = "tiff";
+  } else extension = "tiff";
 
   return extension;
 }
@@ -798,13 +906,20 @@ function changeLang(lang) {
 
   $("[data-localize]").localize("assets/js/lang/lang", { language: lang });
 
-  if(document.getElementById("amazon-services-mobile-menu-list") != null) document.getElementById("amazon-services-mobile-menu-list").innerHTML = "";
-  if(document.getElementById("amazon-services-menu-list") != null) document.getElementById("amazon-services-menu-list").innerHTML = "";
-  if(document.getElementById("amazon-services-menu-list") != null) document.getElementById("amazon-services-carousel").innerHTML = "";
+  if (document.getElementById("amazon-services-mobile-menu-list") != null)
+    document.getElementById("amazon-services-mobile-menu-list").innerHTML = "";
+  if (document.getElementById("amazon-services-menu-list") != null)
+    document.getElementById("amazon-services-menu-list").innerHTML = "";
+  if (document.getElementById("amazon-services-menu-list") != null)
+    document.getElementById("amazon-services-carousel").innerHTML = "";
 
-  if(document.getElementById("amazon-advertising-mobile-menu-list") != null) document.getElementById("amazon-advertising-mobile-menu-list").innerHTML = "";
-  if(document.getElementById("amazon-advertising-menu-list") != null) document.getElementById("amazon-advertising-menu-list").innerHTML = "";
-  if(document.getElementById("amazon-advertising-list") != null) document.getElementById("amazon-advertising-list").innerHTML = "";
+  if (document.getElementById("amazon-advertising-mobile-menu-list") != null)
+    document.getElementById("amazon-advertising-mobile-menu-list").innerHTML =
+      "";
+  if (document.getElementById("amazon-advertising-menu-list") != null)
+    document.getElementById("amazon-advertising-menu-list").innerHTML = "";
+  if (document.getElementById("amazon-advertising-list") != null)
+    document.getElementById("amazon-advertising-list").innerHTML = "";
 
   console.log(lang);
 

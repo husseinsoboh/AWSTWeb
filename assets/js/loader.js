@@ -49,8 +49,6 @@ jQuery(document).ready(function () {
 
   loadAmazonAdvertising();
 
-  //loadPortfolio();
-
   loadMap();
 
   AOS.init({
@@ -206,6 +204,7 @@ function loadAmozonServices() {
   console.log("===============");
   console.log(language);
 
+  /*
   let list = [
     {
       id: 0,
@@ -349,7 +348,8 @@ function loadAmozonServices() {
     },
   ];
   drawServices(list);
-  /*
+  */
+
   $.ajax({
     url: SERVER_API + GET_AWTS_SERVICES,
     type: "GET",
@@ -371,7 +371,6 @@ function loadAmozonServices() {
       drawServices(list);
     },
   });
-  */
 }
 
 function drawServices(list) {
@@ -413,15 +412,12 @@ function drawServices(list) {
       "\")'>Learn more</button>" +
       "</div>" +
       "</div>";
-
-    //console.log(elem.name);
   }
 
   console.log(div);
   if (document.getElementById("amazon-services-mobile-menu-list") != null)
-    document.getElementById(
-      "amazon-services-mobile-menu-list"
-    ).innerHTML = divMenu;
+    document.getElementById("amazon-services-mobile-menu-list").innerHTML =
+      divMenu;
   if (document.getElementById("amazon-services-menu-list") != null)
     document.getElementById("amazon-services-menu-list").innerHTML = divMenu;
   if (document.getElementById("amazon-services-carousel") != null) {
@@ -496,34 +492,10 @@ function showService(event, title, description) {
   }, 500);
 }
 
-/*
-function loadPortfolio() {
-  $("#portfolio-carousel").owlCarousel({
-    nav: true, // Show next and prev buttons
-    navText: [
-      "<i class='fa fa-chevron-left'></i>",
-      "<i class='fa fa-chevron-right'></i>",
-    ],
-    rewindNav: true,
-    loop: true,
-    autoplay: true,
-    dots: true,
-
-    slideSpeed: 300,
-    paginationSpeed: 400,
-    lazyLoad: true,
-    items: 1,
-    itemsDesktop: false,
-    itemsDesktopSmall: false,
-    itemsTablet: false,
-    itemsMobile: false,
-  });
-}
-*/
-
 function loadAmazonAdvertising() {
   // Load AWTS Services
 
+  /*
   let list = [
     {
       id: 0,
@@ -597,6 +569,7 @@ function loadAmazonAdvertising() {
   ];
   drawAdvertising(list);
   console.log(SERVER_API + GET_ADVERTISING);
+  */
 
   $.ajax({
     url: SERVER_API + GET_ADVERTISING,
@@ -632,6 +605,8 @@ function drawAdvertising(list) {
     textAlignClass = "textAlignRTL";
   }
 
+  console.log(list);
+
   for (let i = 0; i < list.length; i++) {
     let elem = list[i];
 
@@ -646,41 +621,12 @@ function drawAdvertising(list) {
       title +
       "</a>";
 
-    /*
-    div += '<div class="col-md-6 col-lg-4 py-3 wow fadeInLeft">';
-    div +=
-      '<div class="amazonAdvBlockCss card card-body border-0 text-center shadow pt-1 cardCss">';
-    div += '<div class="amazonAdvDivCss svg-icon mx-auto mb-4">';
-    div +=
-      '<img class=""advertisingimage src="' +
-      elem.image +
-      '" style="height: 120px;" alt="">';
-    div += "</div>";
-    div += '<h5 class="advertisingTitleCss">' + title + "</h5></div>";
-    div += "</div>";
-    //console.log(elem.name);
-    */
-
     let cardContainerCss = isMobile ? "card-container-mobile" : "";
 
-    let type = getType(elem.Logo);
+    let type = getType(elem.Extension);
     console.log(type);
     elem.Logo = "data:image/" + type + ";base64," + elem.Logo;
-    console.log(elem.Logo);
-
-    /*
-    //Usage example:
-    urltoFile('elem.Logo', 'logo.'+type,type)
-    .then(function(file){ console.log(file);});
-*/
-
-    const url = elem.Logo;
-    fetch(url)
-      .then((res) => res.blob())
-      .then((blob) => {
-        const file = new File([blob], "File name", { type: type });
-        console.log(file);
-      });
+    //console.log(elem.Logo);
 
     div +=
       '<div id="' +
@@ -700,7 +646,7 @@ function drawAdvertising(list) {
       '<img id="imgAdv' +
       i +
       '" class="" src="' +
-      elem.image +
+      elem.Logo +
       '" style="width: 100%; height: 120px;" alt="">';
     div += "<h2>" + title + "</h2>";
     div += "<p style='padding: 20px;'>" + description + "</p>";
@@ -710,9 +656,8 @@ function drawAdvertising(list) {
   }
 
   if (document.getElementById("amazon-advertising-mobile-menu-list") != null)
-    document.getElementById(
-      "amazon-advertising-mobile-menu-list"
-    ).innerHTML = divMenu;
+    document.getElementById("amazon-advertising-mobile-menu-list").innerHTML =
+      divMenu;
   if (document.getElementById("amazon-advertising-menu-list") != null)
     document.getElementById("amazon-advertising-menu-list").innerHTML = divMenu;
   if (document.getElementById("amazon-advertising-list") != null)
@@ -737,143 +682,11 @@ function drawAdvertising(list) {
           .classList.remove("amazonAdvImgCss");
       }, 100);
     });
-
-  /*
-    $('img[src$=".svg"]').each(function() {
-      var $img = jQuery(this);
-      var imgURL = $img.attr('src');
-      var attributes = $img.prop("attributes");
-
-      $.get(imgURL, function(data) {
-          // Get the SVG tag, ignore the rest
-          var $svg = jQuery(data).find('svg');
-
-          // Remove any invalid XML tags
-          $svg = $svg.removeAttr('xmlns:a');
-
-          // Loop through IMG attributes and apply on SVG
-          $.each(attributes, function() {
-              $svg.attr(this.name, this.value);
-          });
-
-          // Replace IMG with SVG
-          $img.replaceWith($svg);
-      }, 'xml');
-  });
-  */
 }
 
-function getType(encoded) {
-  // Create Base64 Object
-  var Base64 = {
-    _keyStr:
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
-    encode: function (e) {
-      var t = "";
-      var n, r, i, s, o, u, a;
-      var f = 0;
-      e = Base64._utf8_encode(e);
-      while (f < e.length) {
-        n = e.charCodeAt(f++);
-        r = e.charCodeAt(f++);
-        i = e.charCodeAt(f++);
-        s = n >> 2;
-        o = ((n & 3) << 4) | (r >> 4);
-        u = ((r & 15) << 2) | (i >> 6);
-        a = i & 63;
-        if (isNaN(r)) {
-          u = a = 64;
-        } else if (isNaN(i)) {
-          a = 64;
-        }
-        t =
-          t +
-          this._keyStr.charAt(s) +
-          this._keyStr.charAt(o) +
-          this._keyStr.charAt(u) +
-          this._keyStr.charAt(a);
-      }
-      return t;
-    },
-    decode: function (e) {
-      var t = "";
-      var n, r, i;
-      var s, o, u, a;
-      var f = 0;
-      e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-      while (f < e.length) {
-        s = this._keyStr.indexOf(e.charAt(f++));
-        o = this._keyStr.indexOf(e.charAt(f++));
-        u = this._keyStr.indexOf(e.charAt(f++));
-        a = this._keyStr.indexOf(e.charAt(f++));
-        n = (s << 2) | (o >> 4);
-        r = ((o & 15) << 4) | (u >> 2);
-        i = ((u & 3) << 6) | a;
-        t = t + String.fromCharCode(n);
-        if (u != 64) {
-          t = t + String.fromCharCode(r);
-        }
-        if (a != 64) {
-          t = t + String.fromCharCode(i);
-        }
-      }
-      t = Base64._utf8_decode(t);
-      return t;
-    },
-    _utf8_encode: function (e) {
-      e = e.replace(/\r\n/g, "\n");
-      var t = "";
-      for (var n = 0; n < e.length; n++) {
-        var r = e.charCodeAt(n);
-        if (r < 128) {
-          t += String.fromCharCode(r);
-        } else if (r > 127 && r < 2048) {
-          t += String.fromCharCode((r >> 6) | 192);
-          t += String.fromCharCode((r & 63) | 128);
-        } else {
-          t += String.fromCharCode((r >> 12) | 224);
-          t += String.fromCharCode(((r >> 6) & 63) | 128);
-          t += String.fromCharCode((r & 63) | 128);
-        }
-      }
-      return t;
-    },
-    _utf8_decode: function (e) {
-      var t = "";
-      var n = 0;
-      var r = (c1 = c2 = 0);
-      while (n < e.length) {
-        r = e.charCodeAt(n);
-        if (r < 128) {
-          t += String.fromCharCode(r);
-          n++;
-        } else if (r > 191 && r < 224) {
-          c2 = e.charCodeAt(n + 1);
-          t += String.fromCharCode(((r & 31) << 6) | (c2 & 63));
-          n += 2;
-        } else {
-          c2 = e.charCodeAt(n + 1);
-          c3 = e.charCodeAt(n + 2);
-          t += String.fromCharCode(
-            ((r & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63)
-          );
-          n += 3;
-        }
-      }
-      return t;
-    },
-  };
+function getType(decoded) {
+  if (decoded == null) return;
 
-  // Define the string, also meaning that you need to know the file extension
-  //var encoded = "Base64 encoded image returned from your service";
-
-  // Decode the string
-  var decoded = Base64.decode(encoded);
-  console.log(decoded);
-
-  // if the file extension is unknown
-  var extension = undefined;
-  // do something like this
   var lowerCase = decoded.toLowerCase();
 
   if (lowerCase.indexOf("svg") !== -1) {
@@ -891,15 +704,6 @@ function getType(encoded) {
 
   return extension;
 }
-
-/*
-function urltoFile(url, filename, mimeType){
-  return (fetch(url)
-      .then(function(res){return res.arrayBuffer();})
-      .then(function(buf){return new File([buf], filename,{type:mimeType});})
-  );
-}
-*/
 
 function changeLang(lang) {
   if (lang != "en" && lang != "ar") lang = "en";

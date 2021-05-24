@@ -6,6 +6,10 @@ let activeModal = false;
 
 let isMobile = false;
 
+let listServices = [];
+
+let listAdvertising = [];
+
 jQuery(document).ready(function () {
   window.addEventListener("resize", resizePage);
   resizePage();
@@ -205,7 +209,7 @@ function loadAmozonServices() {
   console.log(language);
 
   /*
-  let list = [
+  listServices = [
     {
       id: 0,
       TitleEn: "Amazon Storefront/Brand page Creation",
@@ -350,7 +354,6 @@ function loadAmozonServices() {
   drawServices(list);
   */
 
-  let list = [];
   $.ajax({
     url: SERVER_API + GET_AWTS_SERVICES,
     type: "GET",
@@ -359,9 +362,9 @@ function loadAmozonServices() {
       console.log("INNNNNNNNN");
       console.log(res);
 
-      list = res;
+      listServices = res;
 
-      drawServices(list);
+      drawServices(listServices);
     },
     error: function (jqXhr, textStatus, errorMessage) {
       // error callback
@@ -369,7 +372,7 @@ function loadAmozonServices() {
       console.log("Error: " + errorMessage);
       console.log(jqXhr);
 
-      drawServices(list);
+      drawServices(listServices);
     },
   });
 }
@@ -404,13 +407,9 @@ function drawServices(list) {
       "<div class='item owlCarouselCss'>" +
       title +
       "<div class='btnParent'>" +
-      "<button class='buttonHover' onclick='showService(\"" +
-      event +
-      '","' +
-      title +
-      '","' +
-      description +
-      "\")'>Learn more</button>" +
+      "<button class='buttonHover' onclick='showService(" +
+      i +
+      ")'>Learn more</button>" +
       "</div>" +
       "</div>";
   }
@@ -477,11 +476,15 @@ function setActiveService(index) {
   $("#amazon-services-carousel").trigger("to.owl.carousel", index);
 }
 
-function showService(event, title, description) {
+function showService(index) {
   console.log("showService");
+  let elem = listServices[index];
+  let title = language == "en" ? elem.TitleEn : elem.TitleAr;
+  let description =
+    language == "en" ? elem.DescriptionEn : elem.DescriptionAr;
+
   setTimeout(function () {
     if (activeModal) {
-      console.log(event);
 
       console.log(title + "  XXX " + description);
 
@@ -497,7 +500,7 @@ function loadAmazonAdvertising() {
   // Load AWTS Services
 
   /*
-  let list = [
+  listAdvertising = [
     {
       id: 0,
       TitleEn: "Sponsored products/Brands",
@@ -572,7 +575,6 @@ function loadAmazonAdvertising() {
   console.log(SERVER_API + GET_ADVERTISING);
   */
 
-  let list = [];
   $.ajax({
     url: SERVER_API + GET_ADVERTISING,
     type: "GET",
@@ -581,9 +583,9 @@ function loadAmazonAdvertising() {
       console.log("INNNNNNNNN");
       console.log(res);
 
-      list = res;
+      listAdvertising = res;
 
-      drawAdvertising(list);
+      drawAdvertising(listAdvertising);
     },
     error: function (jqXhr, textStatus, errorMessage) {
       // error callback
@@ -591,7 +593,7 @@ function loadAmazonAdvertising() {
       console.log("Error: " + errorMessage);
       console.log(jqXhr);
 
-      drawAdvertising(list);
+      drawAdvertising(listAdvertising);
     },
   });
 }

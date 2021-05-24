@@ -266,6 +266,8 @@ video:focus {
 
 .dropdown-menu {
   background-color: #e6e6e6 !important;
+  min-width: 300px !important;
+  z-index: 99999;
 }
 
 /*
@@ -490,10 +492,6 @@ img {
 
 .menuTopRTL {
   right: 10px;
-}
-
-.dropdown-menu {
-  min-width: 300px !important;
 }
 
 .dropdown-item {
@@ -761,4 +759,12 @@ img {
   width: 100%;
   position: absolute;
   top: 60px;
+}
+
+.headerWaveWebCls {
+  height: 120px;
+}
+
+.headerWaveMobileCls {
+  height: 220px;
 }

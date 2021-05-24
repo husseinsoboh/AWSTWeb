@@ -115,6 +115,9 @@ function resizePage() {
       let elem = elems[i];
       elem.classList.add("card-container-mobile");
     }
+
+    $(".waveHeaderCls").removeClass("headerWaveWebCls");
+    $(".waveHeaderCls").addClass("headerWaveMobileCls");
   } else {
     // The viewport is at least 768 pixels wide
     console.log("This is a tablet or desktop.");
@@ -141,6 +144,9 @@ function resizePage() {
       let elem = elems[i];
       elem.classList.remove("card-container-mobile");
     }
+
+    $(".waveHeaderCls").removeClass("headerWaveMobileCls");
+    $(".waveHeaderCls").addClass("headerWaveWebCls");
   }
 }
 
@@ -350,6 +356,7 @@ function loadAmozonServices() {
   drawServices(list);
   */
 
+  let list = [];
   $.ajax({
     url: SERVER_API + GET_AWTS_SERVICES,
     type: "GET",
@@ -571,6 +578,7 @@ function loadAmazonAdvertising() {
   console.log(SERVER_API + GET_ADVERTISING);
   */
 
+  let list = [];
   $.ajax({
     url: SERVER_API + GET_ADVERTISING,
     type: "GET",

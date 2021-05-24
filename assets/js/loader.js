@@ -115,9 +115,6 @@ function resizePage() {
       let elem = elems[i];
       elem.classList.add("card-container-mobile");
     }
-
-    $(".waveHeaderCls").removeClass("headerWaveWebCls");
-    $(".waveHeaderCls").addClass("headerWaveMobileCls");
   } else {
     // The viewport is at least 768 pixels wide
     console.log("This is a tablet or desktop.");
@@ -144,9 +141,6 @@ function resizePage() {
       let elem = elems[i];
       elem.classList.remove("card-container-mobile");
     }
-
-    $(".waveHeaderCls").removeClass("headerWaveMobileCls");
-    $(".waveHeaderCls").addClass("headerWaveWebCls");
   }
 }
 
@@ -796,9 +790,10 @@ function changeLang(lang) {
 function reloadPage(lang) {
   console.log(location.origin + location.pathname + "?lang=" + lang);
 
-  if (lang != language)
+  if (lang != language) {
     window.location.href =
       location.origin + location.pathname + "?lang=" + lang;
+  }
 }
 
 function sendContact() {
@@ -843,4 +838,23 @@ function loadAmazonSpn() {
     "https://sellercentral.amazon.com/gspn/searchpage/Cataloguing?ref_=sc_gspn_hp_clst&sellFrom=SA&sellIn=SA&localeSelection=en_US",
     "_blank"
   );
+}
+
+function collpaseMenuListener() {
+  console.log("collpaseMenu");
+  $("#navbarSupportedContent").on("shown.bs.collapse", function () {
+    console.log("Opened");
+    if (window.matchMedia("(max-width: 1000px)").matches) {
+      $(".waveHeaderCls").removeClass("headerWaveWebCls");
+      $(".waveHeaderCls").addClass("headerWaveMobileCls");
+    }
+  });
+
+  $("#navbarSupportedContent").on("hidden.bs.collapse", function () {
+    console.log("Closed");
+    if (window.matchMedia("(max-width: 1000px)").matches) {
+      $(".waveHeaderCls").removeClass("headerWaveMobileCls");
+      $(".waveHeaderCls").addClass("headerWaveWebCls");
+    }
+  });
 }

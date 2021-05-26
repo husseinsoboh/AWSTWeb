@@ -119,6 +119,12 @@ function resizePage() {
       let elem = elems[i];
       elem.classList.add("card-container-mobile");
     }
+
+    let elemsModal = document.getElementsByClassName("modal-dialog");
+    for (let i = 0; i < elemsModal.length; i++) {
+      let elem = elemsModal[i];
+      elem.classList.add("modal-dialog-margin-mobile");
+    }
   } else {
     // The viewport is at least 768 pixels wide
     console.log("This is a tablet or desktop.");
@@ -144,6 +150,12 @@ function resizePage() {
     for (let i = 0; i < elems.length; i++) {
       let elem = elems[i];
       elem.classList.remove("card-container-mobile");
+    }
+
+    let elemsModal = document.getElementsByClassName("modal-dialog");
+    for (let i = 0; i < elemsModal.length; i++) {
+      let elem = elemsModal[i];
+      elem.classList.remove("modal-dialog-margin-mobile");
     }
   }
 }
@@ -378,6 +390,9 @@ function loadAmozonServices() {
 }
 
 function drawServices(list) {
+  document.getElementById("divMainServices").style.display = "block";
+  document.getElementById("spinnerServices").style.display = "none";
+
   let div = "";
   let divMenu = "";
 
@@ -480,12 +495,10 @@ function showService(index) {
   console.log("showService");
   let elem = listServices[index];
   let title = language == "en" ? elem.TitleEn : elem.TitleAr;
-  let description =
-    language == "en" ? elem.DescriptionEn : elem.DescriptionAr;
+  let description = language == "en" ? elem.DescriptionEn : elem.DescriptionAr;
 
   setTimeout(function () {
     if (activeModal) {
-
       console.log(title + "  XXX " + description);
 
       document.getElementById("myModalTitle").innerHTML = title;
@@ -599,6 +612,8 @@ function loadAmazonAdvertising() {
 }
 
 function drawAdvertising(list) {
+  document.getElementById("spinnerAdvertising").style.display = "none";
+
   let div = "";
   let divMenu = "";
 

@@ -652,7 +652,14 @@ function drawAdvertising(list) {
     div +=
       '<div id="' +
       i +
-      '" class="card-container ' +
+      '"' +
+      ' onclick="onClickAdvertising(' +
+      i +
+      ')"' +
+      ' onblur="onLostFocusAdvertising(' +
+      i +
+      ')"' +
+      ' class="card-container ' +
       cardContainerCss +
       ' col-md-12 col-lg-3">';
     div += '<div class="card"><a>';
@@ -670,7 +677,8 @@ function drawAdvertising(list) {
       elem.Logo +
       '" style="width: 100%; height: 120px;" alt="">';
     div += "<h2>" + title + "</h2>";
-    div += "<p style='padding: 20px;'>" + description + "</p>";
+    if (description != "")
+      div += "<p style='padding: 20px;'>" + description + "</p>";
     div += "</div></a>";
     div += '<div class="card--border"></div>';
     div += "</div></div>";
@@ -703,6 +711,26 @@ function drawAdvertising(list) {
           .classList.remove("amazonAdvImgCss");
       }, 100);
     });
+}
+
+function onClickAdvertising(id) {
+  console.log(id);
+  for (let i = 0; i < listAdvertising.length; i++) {
+    document.getElementById("" + i).classList.remove("mainDivIndex");
+    document.getElementById("imgAdv" + i).classList.remove("amazonAdvImgCss");
+  }
+  setTimeout(function () {
+    document.getElementById("" + id).classList.add("mainDivIndex");
+    document.getElementById("imgAdv" + id).classList.add("amazonAdvImgCss");
+  }, 100);
+}
+
+function onLostFocusAdvertising(id) {
+  console.log(id);
+  setTimeout(function () {
+    document.getElementById("" + id).classList.remove("mainDivIndex");
+    document.getElementById("imgAdv" + id).classList.remove("amazonAdvImgCss");
+  }, 100);
 }
 
 function getType(decoded) {

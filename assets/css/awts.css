@@ -569,6 +569,11 @@ img {
   z-index: 101;
 }
 
+.card--hover {
+  height: 300px;
+  overflow: auto;
+}
+
 .card-container .card a:hover .card--display {
   display: none;
 }

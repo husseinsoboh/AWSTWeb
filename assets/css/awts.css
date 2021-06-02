@@ -157,7 +157,7 @@ video:focus {
   background-position: -webkit-calc(100% + 260px) 160px;
   background-repeat: no-repeat;
   background-size: 600px 600px;
-  z-index: 9999;
+  z-index: 101;
 }
 
 /*

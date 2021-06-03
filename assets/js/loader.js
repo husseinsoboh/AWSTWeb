@@ -573,6 +573,9 @@ function changeLang(lang) {
   let navBarClass = "floatLeft";
 
   if (lang == "ar") {
+    $("#divFormEmail").addClass("formEmailRTL");
+    $("#divFormEmail").removeClass("formEmailLTR");
+
     $("#videoSrc").attr("src", "assets/video/awts-home-ar.mp4");
 
     dir = "rtl";
@@ -592,6 +595,9 @@ function changeLang(lang) {
       );
     }
   } else {
+    $("#divFormEmail").removeClass("formEmailRTL");
+    $("#divFormEmail").addClass("formEmailLTR");
+
     $("#videoSrc").attr("src", "assets/video/awts-home-en.mp4");
 
     dir = "ltr";

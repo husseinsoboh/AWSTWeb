@@ -798,3 +798,13 @@ img {
 .headerWaveMobileCls {
   height: 220px;
 }
+
+.formEmailLTR {
+  padding-left: 10px !important;
+  padding-right: 20px !important;
+}
+
+.formEmailRTL {
+  padding-left: 20px !important;
+  padding-right: 10px !important;
+}

@@ -808,3 +808,8 @@ img {
   padding-left: 20px !important;
   padding-right: 10px !important;
 }
+
+pre {
+  overflow: hidden !important;
+  white-space: break-spaces !important;
+}

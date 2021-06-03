@@ -415,6 +415,11 @@ img {
     width: 99%;
     margin-left: 1px;
   }
+
+  .myModalDescription {
+    height: 400px;
+    overflow: auto;
+  }
 }
 
 .center .owlCarouselCss {

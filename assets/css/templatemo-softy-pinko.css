@@ -1630,6 +1630,13 @@ preloader
   height: 50px;
 }
 
+@media only screen and (max-width: 600px) {
+  #preloader .jumper {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+
 #preloader .jumper > div {
   background-color: #fff;
   width: 10px;

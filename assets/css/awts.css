@@ -410,6 +410,13 @@ img {
   padding-top: 60px;
 }
 
+@media only screen and (max-width: 600px) {
+  .owlCarouselCss {
+    width: 99%;
+    margin-left: 1px;
+  }
+}
+
 .center .owlCarouselCss {
   height: 360px;
   background: #ffa741;
@@ -570,7 +577,13 @@ img {
 }
 
 .card--hover {
-  height: 300px;
+  height: calc(100% - 10px);
+}
+
+.descriptionContentCls {
+  width: 100%;
+  max-height: 30px;
+  height: auto;
   overflow: auto;
 }
 

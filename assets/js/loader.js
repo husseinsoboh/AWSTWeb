@@ -292,10 +292,7 @@ function drawServices(list) {
   if (document.getElementById("amazon-services-carousel") != null) {
     document.getElementById("amazon-services-carousel").innerHTML = div;
 
-    let nbItems = isMobile ? 1 : 3;
-
     $("#amazon-services-carousel").owlCarousel({
-      items: nbItems,
       center: true,
       nav: false,
       dots: true,
@@ -444,7 +441,7 @@ function drawAdvertising(list) {
       ')"' +
       ' class="card-container ' +
       cardContainerCss +
-      ' col-md-12 col-lg-3">';
+      ' col-sm-12 col-lg-3">';
     div += '<div class="card"><a>';
     div += '<div class="card--display">';
     div +=
@@ -463,7 +460,7 @@ function drawAdvertising(list) {
 
     if (description != "")
       div +=
-        "<span class='descriptionContentCls' style='padding: 20px;'>" +
+        "<span class='descriptionContentCls' style='padding: 20px! important;'>" +
         description +
         "</span>";
 

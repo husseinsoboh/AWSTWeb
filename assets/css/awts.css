@@ -824,3 +824,17 @@ pre {
   overflow: hidden !important;
   white-space: break-spaces !important;
 }
+
+@media only screen and (min-width: 600px) {
+  .owl-carousel .owl-item img {
+    width: 200px !important;
+    left: calc(50% - 100px);
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .owl-carousel .owl-item img {
+    width: 200px !important;
+  }
+}

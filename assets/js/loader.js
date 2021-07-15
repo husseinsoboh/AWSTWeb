@@ -55,6 +55,40 @@ jQuery(document).ready(function () {
     duration: 1200,
   });
 
+  $("#portfolio-carousel").owlCarousel({
+    items: 1,
+    center: true,
+    nav: false,
+    dots: true,
+    loop: true,
+    animateOut: "slideOutDown",
+    animateIn: "flipInX",
+    responsiveClass: true,
+    responsiveRefreshRate: 200,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      480: {
+        items: 1,
+      },
+      769: {
+        items: 1,
+      },
+      900: {
+        items: 1,
+      },
+    },
+  });
+
+  $("#portfolio-prev").click(function () {
+    $("#portfolio-carousel").owlCarousel("prev");
+  });
+
+  $("#portfolio-next").click(function () {
+    $("#portfolio-carousel").owlCarousel("next");
+  });
+
   setTimeout(function () {
     document.getElementById("welcomeDivLetsAmazon").style.display = "none";
   }, 5000);
